@@ -162,6 +162,7 @@ public class ColBean {
 	 */
 	public static String getPropName(String colname) {
         /** 取消强制转为小写,colname.toLowerCase()**/
+		colname = colname.toLowerCase();
 		char[] cs = colname.toCharArray();
 		StringBuffer sb = new StringBuffer();
 		boolean nextUp = false;
