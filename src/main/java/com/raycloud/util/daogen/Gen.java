@@ -40,15 +40,12 @@ public class Gen {
      * 对于dao的生成，暂时特殊定制，硬编码。key 为数据库表名，暂不全量配置
      */
     static {
-        tconfig.put("shop", TableConfig.build("shop"));
+       // tconfig.put("lottery_active", TableConfig.build("lottery_active"));
         /**新增分表模式、符合主键、自定义add_time、upd_time、去除数据库前缀**/
-        tconfig.put("tb_trade", TableConfig.build("tb_trade").setCustomField(false));
+       // tconfig.put("lottery_prize", TableConfig.build("lottery_prize").setCustomField(false));
         //.setSplitTable(true).addQueryMethodAndCol("getTradeListByShopId", new String[] { "shop_id","buyer_nick" })
         //.addQueryMethodAndCol("getTradeByShopId", new String[] { "shop_id" }));;
-        tconfig.put("tb_order", TableConfig.build("tb_order"));
-        tconfig.put("tb_trade_rate", TableConfig.build("tb_trade_rate"));
-
-        tconfig.put("tb_trade_refund", TableConfig.build("tb_trade_refund"));
+        tconfig.put("lottery_win", TableConfig.build("lottery_win"));
 //        tconfig.put("erp_user", TableConfig.build("erp_user").setTablePrefix("erp_").addQueryMethodAndCol("getUserByVisitorId", new String[] { "visitor_id" })
 //                                                             .addQueryMethodAndCol("getUserByUserId", new String[]{"user_id"})
 //                                                             .addQueryMethodAndCol("getUserByNickName", new String[]{"name"})
@@ -126,7 +123,7 @@ public class Gen {
         Gen gen = new Gen(dbConn);
         // 设置工程的全局变量
         gen.globalBean.setNowDate(DateFormatUtils.format(new Date(), "yyyy-MM-dd"));// 设置系统生成时间
-        gen.globalBean.setUserName("Ou zhouyou (ouzhouyou@gmail.com)");// 设置系统当前用户
+        gen.globalBean.setUserName("Wu shaoming(361726442@qq.com)");// 设置系统当前用户
         gen.globalBean.setPackageName(settings.getJavaPackage());// 设置Java_Package路径
         // 生成指定数据库的指定表或所有表数据访问层代码
         String tabName;
@@ -214,8 +211,8 @@ public class Gen {
             }
             // 生成SqlMap配置文件
             String sqlmapVm = settings.getTmplPath() + PATH_RESOURCES + "sqlmap/-sqlmap.xml.vm";
-            String sqlmapDir = settings.getGenPath() + settings.getTmplPath() + PATH_RESOURCES + "sqlmap/";
-            VelocityTemplate.mergeTemplate(sqlmapVm, sqlmapDir + tableBean.getPureTableName() + "-sqlmap.xml", ctx);
+            String sqlmapDir = settings.getGenPath() + settings.getTmplPath() + PATH_RESOURCES + "mappers/";
+            VelocityTemplate.mergeTemplate(sqlmapVm, sqlmapDir + tableBean.getClassName() + "Mapper.xml", ctx);
         } catch (Exception e) {
             logger.error("表[" + tablename + "]生成出错，异常是:", e);
         }

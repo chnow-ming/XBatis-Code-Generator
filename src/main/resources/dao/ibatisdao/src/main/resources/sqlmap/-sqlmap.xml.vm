@@ -10,6 +10,7 @@
 ##$!{cb.colName}字段列名，如：full_name
 ##$!{cb.propertyType}字段属性类型名，如：String
 ##$!{gb.packageName}包名，如：net.letuu.order
+##$cb.propertyType   字段的数据库类型
 ##所有字段
 #macro(allField $tbb)
     #foreach($cb in $tbb.colList)$!{cb.colNameCheck}#if(!$foreach.last) , #end#end
@@ -24,28 +25,29 @@
 #end
 #macro(pklFieldAndValue $tbb)
     #foreach($pkcol in $tbb.pkcol)
-        ${pkcol.colNameCheck}=#${pkcol.propertyName}# #if(!$foreach.last) AND #end
+        ${pkcol.colNameCheck}=#{${pkcol.propertyName}} #if(!$foreach.last) AND #end
     #end
 #end
 ##批量删除与查找
 #macro(pklFieldAndValues $tbb)
     #foreach($pkcol in $tbb.pkcol)
         #if(!$foreach.last)
-            ${pkcol.colNameCheck}=#${pkcol.propertyName}# AND
+            ${pkcol.colNameCheck}=#{${pkcol.propertyName}} AND
         #else
             ${pkcol.colNameCheck} in
-                <iterate conjunction="," open="(" close=")" property="keys">
-                    #keys[]#
-                </iterate>
+                <foreach item="item" index="index" collection="list" open="("
+			        separator="," close=")">
+			        #{item}
+			    </foreach>
         #end
     #end
 #end
 #macro(escape $str)$str#end
 #set($conf=$!{tbb.conf})
 #set($PO = $!{gb.objSuffix})
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
-<sqlMap namespace="${tbb.className}">
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<sqlMap namespace="$!{gb.packageName}.dao.$!{tbb.className}DAO">
     <!-- Alias Map Defined -->
     <typeAlias alias="${tbb.className}Query" type="$!{gb.packageName}.query.${tbb.className}Query"/>
     <typeAlias alias="${tbb.className}" type="$!{gb.packageName}.pojo.${tbb.className}${PO}"/>
@@ -55,95 +57,48 @@
     #end
     </resultMap>
     <!-- Select SQL -->
-    <sql id="${tbb.objectName}${PO}.selector">
-        SELECT
-##如果开启了自定义字段
-#if($conf.isCustomField())
-    <dynamic>
-        <isNotEmpty property="fields">
-            $fields$
-        </isNotEmpty>
-        <isEmpty property="fields">
-            #allField( $tbb )
-        </isEmpty>
-    </dynamic>
-#else
-    #allField( $tbb )
-#end
-        FROM ${tbb.tableName}
+    <sql id="Base_Column_List">
+	#allField( $tbb )
     </sql>
-    <sql id="${tbb.objectName}${PO}List.where">
-        <dynamic prepend=" WHERE ">
-    #foreach($cb in $tbb.colList)
-        #if($cb.propertyType !="Date" )
-        <isNotNull property="$!cb.propertyName" prepend=" AND ">
-            $!{cb.colNameCheck}=#$!{cb.propertyName}#
-        </isNotNull>
-        #elseif(${cb.colName}!=${conf.addField} && ${cb.colName}!=${conf.updField})
-            <isNotNull property="$!{cb.propertyName}Start" prepend=" AND ">
-                <![CDATA[  $!{cb.colNameCheck} >= #$!{cb.propertyName}Start# ]]>
-            </isNotNull>
-            <isNotNull property="$!{cb.propertyName}End" prepend=" AND ">
-                <![CDATA[  $!{cb.colNameCheck} <= #$!{cb.propertyName}End# ]]>
-            </isNotNull>
-            <isNotNull property="$!{cb.propertyName}Equal" prepend=" AND ">
-                <![CDATA[  $!{cb.colNameCheck} = #$!{cb.propertyName}Equal# ]]>
-            </isNotNull>
-        #end
-    #end
-        </dynamic>
-    </sql>
-
-    <!-- 用#号会导致druid连接池报错 -->
-    <sql id="${tbb.objectName}${PO}List.order">
-        <dynamic prepend=" ORDER BY ">
-            <isNotEmpty property="orderFields">
-                <iterate property="orderFields" conjunction="," open="" close="">
-                    #escape("$")orderFields[].fieldName$  #escape("$")orderFields[].order$
-                </iterate>
-            </isNotEmpty>
-        </dynamic>
-    </sql>
-
-    <sql id="${tbb.objectName}${PO}List.limit">
-        <dynamic prepend=" LIMIT  ">
-            <isNotEmpty property="startRow">
-                #startRow#,#pageSize#
-            </isNotEmpty>
-        </dynamic>
-    </sql>
+    
 
     #if($conf.isGetByKey())
         <!-- 根据主键查询 -->
-        <select id="$!{tbb.className}.get$!{tbb.className}${PO}ByKey" resultMap="${tbb.objectName}"  parameterClass="hashMap">
+        <select id="selectByPrimaryKey" resultMap="${tbb.objectName}"  parameterType="java.lang.Long">
            ##POJO对象上没有Field属性所以选择selector会抛出异常,临时解决
-           SELECT   #allField( $tbb )  FROM ${tbb.tableName}
-                WHERE
+           SELECT   <include refid="Base_Column_List" />  FROM ${tbb.tableName}
+           <where>
            #pklFieldAndValue( $tbb )
+           </where>
     </select>
     #end
     #if($conf.isGetByKeys())
-        <select id="$!{tbb.className}.get$!{tbb.className}${PO}sByKeys" resultMap="${tbb.objectName}"  parameterClass="hashMap">
-            SELECT   #allField( $tbb )  FROM ${tbb.tableName}
-                WHERE
+     	<!-- 根据多个主键查询 -->
+        <select id="selectByKeys" resultMap="${tbb.objectName}"  parameterType="hashMap">
+            SELECT    <include refid="Base_Column_List" />  FROM ${tbb.tableName}
+                <where>
             #pklFieldAndValues($tbb)
+            </where>
         </select>
     #end
 
     #if($conf.isDelByKey())
         <!-- 根据主键删除 -->
-        <delete id="$!{tbb.className}.deleteByKey"  parameterClass="hashMap">
+        <delete id="deleteByPrimaryKey"  parameterType="hashMap">
             DELETE FROM ${tbb.tableName}
-                WHERE
+                <where>
             #pklFieldAndValue( $tbb )
+            </where>
         </delete>
     #end
 
     #if($conf.isDelByKeys())
-    <delete id="$!{tbb.className}.deleteByKeys">
+    <!-- 根据多个主键删除 -->
+    <delete id="deleteByKeys">
         DELETE FROM ${tbb.tableName}
-            WHERE
+            <where>
         #pklFieldAndValues($tbb)
+        </where>
     </delete>
     #end
 
@@ -151,109 +106,120 @@
         <!-- 根据主键更新 -->
         ##假设没有数据变化则不会产生io操作
         ##去除更新时间插入时间的字段,有数据变更，时间修改交给数据库执行
-        <update id="${tbb.className}.update${tbb.className}${PO}ByKey" parameterClass="${tbb.className}">
+        <update id="updateByPrimaryKeySelective" parameterType="${tbb.className}">
             UPDATE ${tbb.tableName}
-            <dynamic prepend="SET" >
+            <set >
                 #foreach($cb in $tbb.colList)
                 #if(${cb.colName}!=${conf.addField} && ${cb.colName}!=${conf.updField})
-                    <isNotNull prepend="," property="$!{cb.propertyName}">
+                   <if test="$!{cb.propertyName} != null" >
                         #if($conf.isSubString() && $cb.propertyType =="String")
                         ##这里只对String类型与mysql作了一个示例，其他请自行修改
-                            $cb.colNameCheck =  substring(#$!{cb.propertyName.trim()}#,1,$!{cb.precision})
+                            $cb.colNameCheck =  substring(#{$!{cb.propertyName.trim()},jdbcType=${cb.propertyType}},1,$!{cb.precision}),
                         #else
-                            $cb.colNameCheck = #$!{cb.propertyName}#
+                            $cb.colNameCheck = #{$!{cb.propertyName},jdbcType=${cb.propertyType}},
                         #end
-                    </isNotNull>
+                    </if>
                 #end
             #end
-            </dynamic>
-            WHERE
+            </set>
+            <where>
             #pklFieldAndValue( $tbb )
+            </where>
         </update>
     #end
-    <!-- 分页 -->
-    <select id="${tbb.className}.get${tbb.className}ListWithPage" parameterClass="${tbb.className}Query" resultMap="${tbb.objectName}">
-        <include refid="${tbb.objectName}${PO}.selector"/>
-        <include refid="${tbb.objectName}${PO}List.where"/>
-        <include refid="${tbb.objectName}${PO}List.order"/>
-        <include refid="${tbb.objectName}${PO}List.limit"/>
+   
+    <!-- 搜索列表信息 -->
+    <select id="${tbb.className}.get${tbb.className}List" parameterType="${tbb.className}Query" resultMap="${tbb.objectName}">
+    select <include refid="Base_Column_List" /> from ${tbb.tableName}
+    <where>
+     #foreach($cb in $tbb.colList)
+                #if(${cb.colName}!=${conf.addField} && ${cb.colName}!=${conf.updField})
+                   <if test="$!{cb.propertyName} != null and $!{cb.propertyName} != ''" >
+                        #if($conf.isSubString() && $cb.propertyType =="String")
+                        ##这里只对String类型与mysql作了一个示例，其他请自行修改
+                            $cb.colNameCheck =  substring(#{$!{cb.propertyName.trim()},jdbcType=${cb.propertyType}},1,$!{cb.precision}) AND
+                        #else
+                            $cb.colNameCheck = #{$!{cb.propertyName},jdbcType=${cb.propertyType}} AND
+                        #end
+                    </if>
+                #end
+            #end
+    </where>
     </select>
-    <select id="${tbb.className}.get${tbb.className}ListCount" parameterClass="${tbb.className}Query" resultClass="int">
-        SELECT count(1) FROM ${tbb.tableName}
-        <include refid="${tbb.objectName}${PO}List.where"/>
-    </select>
-    <select id="${tbb.className}.get${tbb.className}List" parameterClass="${tbb.className}Query" resultMap="${tbb.objectName}">
-        <include refid="${tbb.objectName}${PO}.selector"/>
-        <include refid="${tbb.objectName}${PO}List.where"/>
-        <include refid="${tbb.objectName}${PO}List.order"/>
+    
+    <!-- 搜索分页列表信息 -->
+    <select id="${tbb.className}.get${tbb.className}ListByPage" parameterType="${tbb.className}Query" resultMap="${tbb.objectName}">
+    select <include refid="Base_Column_List" /> from ${tbb.tableName}
+    <where>
+     #foreach($cb in $tbb.colList)
+                #if(${cb.colName}!=${conf.addField} && ${cb.colName}!=${conf.updField})
+                   <if test="$!{cb.propertyName} != null and $!{cb.propertyName} != ''" >
+                        #if($conf.isSubString() && $cb.propertyType =="String")
+                        ##这里只对String类型与mysql作了一个示例，其他请自行修改
+                            $cb.colNameCheck =  substring(#{$!{cb.propertyName.trim()},jdbcType=${cb.propertyType}},1,$!{cb.precision}) AND
+                        #else
+                            $cb.colNameCheck = #{$!{cb.propertyName},jdbcType=${cb.propertyType}} AND
+                        #end
+                    </if>
+                #end
+            #end
+    </where>
     </select>
 
-#if($conf.isCustomField())
-    <!-- 如果使用自定义字段查询,则要使用resultClass否则会出现异常-->
-    <select id="${tbb.className}.get${tbb.className}ListWithPageFields" parameterClass="${tbb.className}Query" resultClass="${tbb.className}">
-        <include refid="${tbb.objectName}${PO}.selector"/>
-        <include refid="${tbb.objectName}${PO}List.where"/>
-        <include refid="${tbb.objectName}${PO}List.order"/>
-        <include refid="${tbb.objectName}${PO}List.limit"/>
-    </select>
-    <select id="${tbb.className}.get${tbb.className}ListFields" parameterClass="${tbb.className}Query" resultClass="${tbb.className}">
-        <include refid="${tbb.objectName}${PO}.selector"/>
-        <include refid="${tbb.objectName}${PO}List.where"/>
-        <include refid="${tbb.objectName}${PO}List.order"/>
-    </select>
-#end
-    <!--##add代码
-    <insert id="${tbb.className}.insert${tbb.className}${PO}" parameterClass="${tbb.className}">
+    ##add代码
+    <!--保存所有字段-->
+    <insert id="insert" parameterType="${tbb.className}">
     INSERT INTO ${tbb.tableName}(
     #foreach($cb in $tbb.colList)
        $!{cb.colNameCheck} #if(!$foreach.last),#end
     #end
     VALUES(
     #foreach($cb in $tbb.colList)
-        #$!{cb.propertyName}# #if(!$foreach.last),#end
+        #{$!{cb.propertyName},jdbcType=${cb.propertyType}} #if(!$foreach.last),#end
     #end
     )
     </insert>
-    -->
+    
     ##add代码
-    <insert id="${tbb.className}.insert${tbb.className}${PO}" parameterClass="${tbb.className}">
+    <!--保存所有不为空的字段-->
+    <insert id="insertSelective" parameterType="${tbb.className}">
         INSERT INTO ${tbb.tableName}
-        <dynamic prepend="(" close=")">
+       <trim prefix="(" suffix=")" suffixOverrides="," >
             ##循环所有字段
             #foreach($cb in $tbb.colList)
                 #if($!{cb.colName}==${conf.addField} ||$!{cb.colName}==${conf.updField})
-                    ,$!{cb.colName.trim()}
+                    ,$!{cb.colName.trim()},
                 #else
-                    <isNotEmpty prepend="," property="$!{cb.propertyName}">
-                        $!{cb.colNameCheck.trim()}
-                    </isNotEmpty >
+                    <if test="$!{cb.propertyName} != null" >
+                        $!{cb.colNameCheck.trim()},
+                    </if>
                 #end
             #end
-        </dynamic>
+         </trim>
         VALUES
-        <dynamic prepend="(" close=")">
+        <trim prefix="(" suffix=")" suffixOverrides="," >
             #foreach($cb in $tbb.colList)
                 #if($!{cb.colName}==${conf.addField} ||$!{cb.colName}==${conf.updField})
                             ,now()
                 #else
-                    <isNotEmpty  prepend="," property="$!{cb.propertyName}">
+                    <if test="$!{cb.propertyName} != null" >
                         #if($conf.isSubString() && $cb.propertyType =="String")
                             ##这里只对String类型与mysql作了一个示例，其他请自行修改
-                            substring(#$!{cb.propertyName.trim()}#,1,$!{cb.precision})
+                            substring(#{$!{cb.propertyName.trim()},jdbcType=${cb.propertyType}},1,$!{cb.precision})
                         #else
-                            #$!{cb.propertyName.trim()}#
+                            #{$!{cb.propertyName.trim()},jdbcType=${cb.propertyType}}
                         #end
-                    </isNotEmpty >
+                   </if>
                 #end
             #end
-        </dynamic>
+       </trim>
     </insert>
 
     ##定制产生select方法。
         #if($conf.selectMap.size()>0)
             #foreach($sel in $conf.selectMap.keySet())
                 #if( $conf.selectMap.get($sel) && $conf.selectMap.get($sel).size()>0)
-                <select id="$!{tbb.className}.$sel" parameterClass="hashMap" resultMap="${tbb.objectName}">
+                <select id="$!{tbb.className}.$sel" parameterType="hashMap" resultMap="${tbb.objectName}">
                     <include refid="${tbb.objectName}${PO}.selector"/>
                     where #foreach($w in $conf.selectMap.get($sel))
                     #if($!{tbb.colMap.get($w)})

@@ -10,6 +10,7 @@
   <url>http://maven.apache.org</url>
 
   <properties>
+    <spring.version>4.2.5.RELEASE</spring.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
   
@@ -34,7 +35,7 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.26</version>
+			<version>5.1.34</version>
 		</dependency>
 		<!-- Unit test -->
 		<dependency>
@@ -46,25 +47,25 @@
 
 
 
-        <dependency>
+        <!-- <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring</artifactId>
-            <version>2.5.6.SEC03</version>
-        </dependency>
+            <version>${spring.version}</version>
+        </dependency> -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-aop</artifactId>
-            <version>2.5.6.SEC03</version>
+           <version>${spring.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-            <version>2.5.6.SEC03</version>
+            <version>${spring.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-aspects</artifactId>
-            <version>2.5.6.SEC03</version>
+            <version>${spring.version}</version>
         </dependency>
 
         <dependency>
@@ -72,5 +73,5 @@
             <artifactId>ibatis-sqlmap</artifactId>
             <version>2.3.4.726</version>
         </dependency>
-	</dependencies>
+	</dependencies> 
 </project>

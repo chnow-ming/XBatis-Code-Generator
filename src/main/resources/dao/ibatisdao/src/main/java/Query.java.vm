@@ -13,7 +13,7 @@
 #set($conf=$!{tbb.conf})
 #set($bigDecimal=false)
 #set($Date=false)
-package $!{gb.packageName}.query;
+package $!{gb.packageName}.dto;
 
 #foreach($cb in $tbb.colList)
     #if($!{cb.propertyType}=="Clob"&&!$clob)
@@ -31,12 +31,18 @@ package $!{gb.packageName}.query;
     #end
 #end
 import java.util.*;
+import java.io.Serializable;
 /**
  *
  * @author $!{gb.userName}
  */
-public class $!{tbb.className}Query extends BaseQuery {
+public class $!{tbb.className}Query implements Serializable {
 
+ 	/**
+	 *序列化ID
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	/**==============================批量查询、更新、删除时的Where条件设置==================================**/
 #foreach($cb in $tbb.colList)
 #if($!{cb.propertyType}!="Date")

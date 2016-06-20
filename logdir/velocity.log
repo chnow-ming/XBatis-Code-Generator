@@ -1,0 +1,301 @@
+2016-06-17 16:08:38,843 - ResourceManager : unable to find resource '/C:/Users/Administrator/git/XBatis-Code-Generator/target/classes/dao/ibatisdao/src/main/java/DAO.java.vm' in any resource loader.
+2016-06-17 16:11:07,180 - ResourceManager : unable to find resource 'C:/Users/Administrator/git/XBatis-Code-Generator/target/classes/dao/ibatisdao/src/main/java/DAO.java.vm' in any resource loader.
+2016-06-17 16:12:20,797 - ResourceManager : unable to find resource 'C:/Users/Administrator/git/XBatis-Code-Generator/src/main/resources/dao/ibatisdao/src/main/java/DAO.java.vm' in any resource loader.
+2016-06-20 15:34:33,004 - Parser Exception: dao/ibatisdao/src/main/resources/sqlmap/-sqlmap.xml.vm
+org.apache.velocity.runtime.parser.ParseException: Encountered ",jdbcType=" at line 191, column 42.
+Was expecting one of:
+    "[" ...
+    "}" ...
+    
+	at org.apache.velocity.runtime.parser.Parser.generateParseException(Parser.java:3679)
+	at org.apache.velocity.runtime.parser.Parser.jj_consume_token(Parser.java:3558)
+	at org.apache.velocity.runtime.parser.Parser.Reference(Parser.java:1521)
+	at org.apache.velocity.runtime.parser.Parser.Statement(Parser.java:357)
+	at org.apache.velocity.runtime.parser.Parser.IfStatement(Parser.java:1692)
+	at org.apache.velocity.runtime.parser.Parser.Statement(Parser.java:352)
+	at org.apache.velocity.runtime.parser.Parser.Directive(Parser.java:918)
+	at org.apache.velocity.runtime.parser.Parser.Statement(Parser.java:379)
+	at org.apache.velocity.runtime.parser.Parser.process(Parser.java:317)
+	at org.apache.velocity.runtime.parser.Parser.parse(Parser.java:117)
+	at org.apache.velocity.runtime.RuntimeInstance.parse(RuntimeInstance.java:1226)
+	at org.apache.velocity.runtime.RuntimeInstance.parse(RuntimeInstance.java:1181)
+	at org.apache.velocity.Template.process(Template.java:134)
+	at org.apache.velocity.runtime.resource.ResourceManagerImpl.loadResource(ResourceManagerImpl.java:437)
+	at org.apache.velocity.runtime.resource.ResourceManagerImpl.getResource(ResourceManagerImpl.java:352)
+	at org.apache.velocity.runtime.RuntimeInstance.getTemplate(RuntimeInstance.java:1533)
+	at org.apache.velocity.runtime.RuntimeInstance.getTemplate(RuntimeInstance.java:1514)
+	at org.apache.velocity.runtime.RuntimeSingleton.getTemplate(RuntimeSingleton.java:299)
+	at org.apache.velocity.app.Velocity.getTemplate(Velocity.java:358)
+	at com.raycloud.util.daogen.util.VelocityTemplate.buildTemplate(VelocityTemplate.java:63)
+	at com.raycloud.util.daogen.util.VelocityTemplate.mergeTemplate(VelocityTemplate.java:83)
+	at com.raycloud.util.daogen.Gen.doGenTable(Gen.java:215)
+	at com.raycloud.util.daogen.Gen.doGenDB(Gen.java:141)
+	at com.raycloud.util.daogen.Gen.main(Gen.java:106)
+2016-06-20 15:34:33,006 - ResourceManager.getResource() parse exception
+org.apache.velocity.exception.ParseErrorException: Encountered ",jdbcType=" at dao/ibatisdao/src/main/resources/sqlmap/-sqlmap.xml.vm[line 191, column 42]
+Was expecting one of:
+    "[" ...
+    "}" ...
+    
+	at org.apache.velocity.Template.process(Template.java:151)
+	at org.apache.velocity.runtime.resource.ResourceManagerImpl.loadResource(ResourceManagerImpl.java:437)
+	at org.apache.velocity.runtime.resource.ResourceManagerImpl.getResource(ResourceManagerImpl.java:352)
+	at org.apache.velocity.runtime.RuntimeInstance.getTemplate(RuntimeInstance.java:1533)
+	at org.apache.velocity.runtime.RuntimeInstance.getTemplate(RuntimeInstance.java:1514)
+	at org.apache.velocity.runtime.RuntimeSingleton.getTemplate(RuntimeSingleton.java:299)
+	at org.apache.velocity.app.Velocity.getTemplate(Velocity.java:358)
+	at com.raycloud.util.daogen.util.VelocityTemplate.buildTemplate(VelocityTemplate.java:63)
+	at com.raycloud.util.daogen.util.VelocityTemplate.mergeTemplate(VelocityTemplate.java:83)
+	at com.raycloud.util.daogen.Gen.doGenTable(Gen.java:215)
+	at com.raycloud.util.daogen.Gen.doGenDB(Gen.java:141)
+	at com.raycloud.util.daogen.Gen.main(Gen.java:106)
+2016-06-20 15:34:45,336 - Parser Exception: dao/ibatisdao/src/main/resources/sqlmap/-sqlmap.xml.vm
+org.apache.velocity.runtime.parser.ParseException: Encountered ",jdbcType=" at line 191, column 42.
+Was expecting one of:
+    "[" ...
+    "}" ...
+    
+	at org.apache.velocity.runtime.parser.Parser.generateParseException(Parser.java:3679)
+	at org.apache.velocity.runtime.parser.Parser.jj_consume_token(Parser.java:3558)
+	at org.apache.velocity.runtime.parser.Parser.Reference(Parser.java:1521)
+	at org.apache.velocity.runtime.parser.Parser.Statement(Parser.java:357)
+	at org.apache.velocity.runtime.parser.Parser.IfStatement(Parser.java:1692)
+	at org.apache.velocity.runtime.parser.Parser.Statement(Parser.java:352)
+	at org.apache.velocity.runtime.parser.Parser.Directive(Parser.java:918)
+	at org.apache.velocity.runtime.parser.Parser.Statement(Parser.java:379)
+	at org.apache.velocity.runtime.parser.Parser.process(Parser.java:317)
+	at org.apache.velocity.runtime.parser.Parser.parse(Parser.java:117)
+	at org.apache.velocity.runtime.RuntimeInstance.parse(RuntimeInstance.java:1226)
+	at org.apache.velocity.runtime.RuntimeInstance.parse(RuntimeInstance.java:1181)
+	at org.apache.velocity.Template.process(Template.java:134)
+	at org.apache.velocity.runtime.resource.ResourceManagerImpl.loadResource(ResourceManagerImpl.java:437)
+	at org.apache.velocity.runtime.resource.ResourceManagerImpl.getResource(ResourceManagerImpl.java:352)
+	at org.apache.velocity.runtime.RuntimeInstance.getTemplate(RuntimeInstance.java:1533)
+	at org.apache.velocity.runtime.RuntimeInstance.getTemplate(RuntimeInstance.java:1514)
+	at org.apache.velocity.runtime.RuntimeSingleton.getTemplate(RuntimeSingleton.java:299)
+	at org.apache.velocity.app.Velocity.getTemplate(Velocity.java:358)
+	at com.raycloud.util.daogen.util.VelocityTemplate.buildTemplate(VelocityTemplate.java:63)
+	at com.raycloud.util.daogen.util.VelocityTemplate.mergeTemplate(VelocityTemplate.java:83)
+	at com.raycloud.util.daogen.Gen.doGenTable(Gen.java:215)
+	at com.raycloud.util.daogen.Gen.doGenDB(Gen.java:141)
+	at com.raycloud.util.daogen.Gen.main(Gen.java:106)
+2016-06-20 15:34:45,338 - ResourceManager.getResource() parse exception
+org.apache.velocity.exception.ParseErrorException: Encountered ",jdbcType=" at dao/ibatisdao/src/main/resources/sqlmap/-sqlmap.xml.vm[line 191, column 42]
+Was expecting one of:
+    "[" ...
+    "}" ...
+    
+	at org.apache.velocity.Template.process(Template.java:151)
+	at org.apache.velocity.runtime.resource.ResourceManagerImpl.loadResource(ResourceManagerImpl.java:437)
+	at org.apache.velocity.runtime.resource.ResourceManagerImpl.getResource(ResourceManagerImpl.java:352)
+	at org.apache.velocity.runtime.RuntimeInstance.getTemplate(RuntimeInstance.java:1533)
+	at org.apache.velocity.runtime.RuntimeInstance.getTemplate(RuntimeInstance.java:1514)
+	at org.apache.velocity.runtime.RuntimeSingleton.getTemplate(RuntimeSingleton.java:299)
+	at org.apache.velocity.app.Velocity.getTemplate(Velocity.java:358)
+	at com.raycloud.util.daogen.util.VelocityTemplate.buildTemplate(VelocityTemplate.java:63)
+	at com.raycloud.util.daogen.util.VelocityTemplate.mergeTemplate(VelocityTemplate.java:83)
+	at com.raycloud.util.daogen.Gen.doGenTable(Gen.java:215)
+	at com.raycloud.util.daogen.Gen.doGenDB(Gen.java:141)
+	at com.raycloud.util.daogen.Gen.main(Gen.java:106)
+2016-06-20 15:35:24,968 - Parser Exception: dao/ibatisdao/src/main/resources/sqlmap/-sqlmap.xml.vm
+org.apache.velocity.runtime.parser.ParseException: Encountered ",jdbcType=" at line 191, column 42.
+Was expecting one of:
+    "[" ...
+    "}" ...
+    
+	at org.apache.velocity.runtime.parser.Parser.generateParseException(Parser.java:3679)
+	at org.apache.velocity.runtime.parser.Parser.jj_consume_token(Parser.java:3558)
+	at org.apache.velocity.runtime.parser.Parser.Reference(Parser.java:1521)
+	at org.apache.velocity.runtime.parser.Parser.Statement(Parser.java:357)
+	at org.apache.velocity.runtime.parser.Parser.IfStatement(Parser.java:1692)
+	at org.apache.velocity.runtime.parser.Parser.Statement(Parser.java:352)
+	at org.apache.velocity.runtime.parser.Parser.Directive(Parser.java:918)
+	at org.apache.velocity.runtime.parser.Parser.Statement(Parser.java:379)
+	at org.apache.velocity.runtime.parser.Parser.process(Parser.java:317)
+	at org.apache.velocity.runtime.parser.Parser.parse(Parser.java:117)
+	at org.apache.velocity.runtime.RuntimeInstance.parse(RuntimeInstance.java:1226)
+	at org.apache.velocity.runtime.RuntimeInstance.parse(RuntimeInstance.java:1181)
+	at org.apache.velocity.Template.process(Template.java:134)
+	at org.apache.velocity.runtime.resource.ResourceManagerImpl.loadResource(ResourceManagerImpl.java:437)
+	at org.apache.velocity.runtime.resource.ResourceManagerImpl.getResource(ResourceManagerImpl.java:352)
+	at org.apache.velocity.runtime.RuntimeInstance.getTemplate(RuntimeInstance.java:1533)
+	at org.apache.velocity.runtime.RuntimeInstance.getTemplate(RuntimeInstance.java:1514)
+	at org.apache.velocity.runtime.RuntimeSingleton.getTemplate(RuntimeSingleton.java:299)
+	at org.apache.velocity.app.Velocity.getTemplate(Velocity.java:358)
+	at com.raycloud.util.daogen.util.VelocityTemplate.buildTemplate(VelocityTemplate.java:63)
+	at com.raycloud.util.daogen.util.VelocityTemplate.mergeTemplate(VelocityTemplate.java:83)
+	at com.raycloud.util.daogen.Gen.doGenTable(Gen.java:215)
+	at com.raycloud.util.daogen.Gen.doGenDB(Gen.java:141)
+	at com.raycloud.util.daogen.Gen.main(Gen.java:106)
+2016-06-20 15:35:24,970 - ResourceManager.getResource() parse exception
+org.apache.velocity.exception.ParseErrorException: Encountered ",jdbcType=" at dao/ibatisdao/src/main/resources/sqlmap/-sqlmap.xml.vm[line 191, column 42]
+Was expecting one of:
+    "[" ...
+    "}" ...
+    
+	at org.apache.velocity.Template.process(Template.java:151)
+	at org.apache.velocity.runtime.resource.ResourceManagerImpl.loadResource(ResourceManagerImpl.java:437)
+	at org.apache.velocity.runtime.resource.ResourceManagerImpl.getResource(ResourceManagerImpl.java:352)
+	at org.apache.velocity.runtime.RuntimeInstance.getTemplate(RuntimeInstance.java:1533)
+	at org.apache.velocity.runtime.RuntimeInstance.getTemplate(RuntimeInstance.java:1514)
+	at org.apache.velocity.runtime.RuntimeSingleton.getTemplate(RuntimeSingleton.java:299)
+	at org.apache.velocity.app.Velocity.getTemplate(Velocity.java:358)
+	at com.raycloud.util.daogen.util.VelocityTemplate.buildTemplate(VelocityTemplate.java:63)
+	at com.raycloud.util.daogen.util.VelocityTemplate.mergeTemplate(VelocityTemplate.java:83)
+	at com.raycloud.util.daogen.Gen.doGenTable(Gen.java:215)
+	at com.raycloud.util.daogen.Gen.doGenDB(Gen.java:141)
+	at com.raycloud.util.daogen.Gen.main(Gen.java:106)
+2016-06-20 15:39:45,706 - Parser Exception: dao/ibatisdao/src/main/resources/sqlmap/-sqlmap.xml.vm
+org.apache.velocity.runtime.parser.ParseException: Encountered ",jdbcType=" at line 117, column 86.
+Was expecting one of:
+    "[" ...
+    "}" ...
+    
+	at org.apache.velocity.runtime.parser.Parser.generateParseException(Parser.java:3679)
+	at org.apache.velocity.runtime.parser.Parser.jj_consume_token(Parser.java:3558)
+	at org.apache.velocity.runtime.parser.Parser.Reference(Parser.java:1521)
+	at org.apache.velocity.runtime.parser.Parser.Statement(Parser.java:357)
+	at org.apache.velocity.runtime.parser.Parser.IfStatement(Parser.java:1692)
+	at org.apache.velocity.runtime.parser.Parser.Statement(Parser.java:352)
+	at org.apache.velocity.runtime.parser.Parser.IfStatement(Parser.java:1692)
+	at org.apache.velocity.runtime.parser.Parser.Statement(Parser.java:352)
+	at org.apache.velocity.runtime.parser.Parser.Directive(Parser.java:918)
+	at org.apache.velocity.runtime.parser.Parser.Statement(Parser.java:379)
+	at org.apache.velocity.runtime.parser.Parser.IfStatement(Parser.java:1692)
+	at org.apache.velocity.runtime.parser.Parser.Statement(Parser.java:352)
+	at org.apache.velocity.runtime.parser.Parser.process(Parser.java:317)
+	at org.apache.velocity.runtime.parser.Parser.parse(Parser.java:117)
+	at org.apache.velocity.runtime.RuntimeInstance.parse(RuntimeInstance.java:1226)
+	at org.apache.velocity.runtime.RuntimeInstance.parse(RuntimeInstance.java:1181)
+	at org.apache.velocity.Template.process(Template.java:134)
+	at org.apache.velocity.runtime.resource.ResourceManagerImpl.loadResource(ResourceManagerImpl.java:437)
+	at org.apache.velocity.runtime.resource.ResourceManagerImpl.getResource(ResourceManagerImpl.java:352)
+	at org.apache.velocity.runtime.RuntimeInstance.getTemplate(RuntimeInstance.java:1533)
+	at org.apache.velocity.runtime.RuntimeInstance.getTemplate(RuntimeInstance.java:1514)
+	at org.apache.velocity.runtime.RuntimeSingleton.getTemplate(RuntimeSingleton.java:299)
+	at org.apache.velocity.app.Velocity.getTemplate(Velocity.java:358)
+	at com.raycloud.util.daogen.util.VelocityTemplate.buildTemplate(VelocityTemplate.java:63)
+	at com.raycloud.util.daogen.util.VelocityTemplate.mergeTemplate(VelocityTemplate.java:83)
+	at com.raycloud.util.daogen.Gen.doGenTable(Gen.java:215)
+	at com.raycloud.util.daogen.Gen.doGenDB(Gen.java:141)
+	at com.raycloud.util.daogen.Gen.main(Gen.java:106)
+2016-06-20 15:39:45,708 - ResourceManager.getResource() parse exception
+org.apache.velocity.exception.ParseErrorException: Encountered ",jdbcType=" at dao/ibatisdao/src/main/resources/sqlmap/-sqlmap.xml.vm[line 117, column 86]
+Was expecting one of:
+    "[" ...
+    "}" ...
+    
+	at org.apache.velocity.Template.process(Template.java:151)
+	at org.apache.velocity.runtime.resource.ResourceManagerImpl.loadResource(ResourceManagerImpl.java:437)
+	at org.apache.velocity.runtime.resource.ResourceManagerImpl.getResource(ResourceManagerImpl.java:352)
+	at org.apache.velocity.runtime.RuntimeInstance.getTemplate(RuntimeInstance.java:1533)
+	at org.apache.velocity.runtime.RuntimeInstance.getTemplate(RuntimeInstance.java:1514)
+	at org.apache.velocity.runtime.RuntimeSingleton.getTemplate(RuntimeSingleton.java:299)
+	at org.apache.velocity.app.Velocity.getTemplate(Velocity.java:358)
+	at com.raycloud.util.daogen.util.VelocityTemplate.buildTemplate(VelocityTemplate.java:63)
+	at com.raycloud.util.daogen.util.VelocityTemplate.mergeTemplate(VelocityTemplate.java:83)
+	at com.raycloud.util.daogen.Gen.doGenTable(Gen.java:215)
+	at com.raycloud.util.daogen.Gen.doGenDB(Gen.java:141)
+	at com.raycloud.util.daogen.Gen.main(Gen.java:106)
+2016-06-20 15:40:26,713 - Parser Exception: dao/ibatisdao/src/main/resources/sqlmap/-sqlmap.xml.vm
+org.apache.velocity.runtime.parser.ParseException: Encountered ",jdbcType=" at line 140, column 86.
+Was expecting one of:
+    "[" ...
+    "}" ...
+    
+	at org.apache.velocity.runtime.parser.Parser.generateParseException(Parser.java:3679)
+	at org.apache.velocity.runtime.parser.Parser.jj_consume_token(Parser.java:3558)
+	at org.apache.velocity.runtime.parser.Parser.Reference(Parser.java:1521)
+	at org.apache.velocity.runtime.parser.Parser.Statement(Parser.java:357)
+	at org.apache.velocity.runtime.parser.Parser.IfStatement(Parser.java:1692)
+	at org.apache.velocity.runtime.parser.Parser.Statement(Parser.java:352)
+	at org.apache.velocity.runtime.parser.Parser.IfStatement(Parser.java:1692)
+	at org.apache.velocity.runtime.parser.Parser.Statement(Parser.java:352)
+	at org.apache.velocity.runtime.parser.Parser.Directive(Parser.java:918)
+	at org.apache.velocity.runtime.parser.Parser.Statement(Parser.java:379)
+	at org.apache.velocity.runtime.parser.Parser.process(Parser.java:317)
+	at org.apache.velocity.runtime.parser.Parser.parse(Parser.java:117)
+	at org.apache.velocity.runtime.RuntimeInstance.parse(RuntimeInstance.java:1226)
+	at org.apache.velocity.runtime.RuntimeInstance.parse(RuntimeInstance.java:1181)
+	at org.apache.velocity.Template.process(Template.java:134)
+	at org.apache.velocity.runtime.resource.ResourceManagerImpl.loadResource(ResourceManagerImpl.java:437)
+	at org.apache.velocity.runtime.resource.ResourceManagerImpl.getResource(ResourceManagerImpl.java:352)
+	at org.apache.velocity.runtime.RuntimeInstance.getTemplate(RuntimeInstance.java:1533)
+	at org.apache.velocity.runtime.RuntimeInstance.getTemplate(RuntimeInstance.java:1514)
+	at org.apache.velocity.runtime.RuntimeSingleton.getTemplate(RuntimeSingleton.java:299)
+	at org.apache.velocity.app.Velocity.getTemplate(Velocity.java:358)
+	at com.raycloud.util.daogen.util.VelocityTemplate.buildTemplate(VelocityTemplate.java:63)
+	at com.raycloud.util.daogen.util.VelocityTemplate.mergeTemplate(VelocityTemplate.java:83)
+	at com.raycloud.util.daogen.Gen.doGenTable(Gen.java:215)
+	at com.raycloud.util.daogen.Gen.doGenDB(Gen.java:141)
+	at com.raycloud.util.daogen.Gen.main(Gen.java:106)
+2016-06-20 15:40:26,715 - ResourceManager.getResource() parse exception
+org.apache.velocity.exception.ParseErrorException: Encountered ",jdbcType=" at dao/ibatisdao/src/main/resources/sqlmap/-sqlmap.xml.vm[line 140, column 86]
+Was expecting one of:
+    "[" ...
+    "}" ...
+    
+	at org.apache.velocity.Template.process(Template.java:151)
+	at org.apache.velocity.runtime.resource.ResourceManagerImpl.loadResource(ResourceManagerImpl.java:437)
+	at org.apache.velocity.runtime.resource.ResourceManagerImpl.getResource(ResourceManagerImpl.java:352)
+	at org.apache.velocity.runtime.RuntimeInstance.getTemplate(RuntimeInstance.java:1533)
+	at org.apache.velocity.runtime.RuntimeInstance.getTemplate(RuntimeInstance.java:1514)
+	at org.apache.velocity.runtime.RuntimeSingleton.getTemplate(RuntimeSingleton.java:299)
+	at org.apache.velocity.app.Velocity.getTemplate(Velocity.java:358)
+	at com.raycloud.util.daogen.util.VelocityTemplate.buildTemplate(VelocityTemplate.java:63)
+	at com.raycloud.util.daogen.util.VelocityTemplate.mergeTemplate(VelocityTemplate.java:83)
+	at com.raycloud.util.daogen.Gen.doGenTable(Gen.java:215)
+	at com.raycloud.util.daogen.Gen.doGenDB(Gen.java:141)
+	at com.raycloud.util.daogen.Gen.main(Gen.java:106)
+2016-06-20 15:41:02,150 - Parser Exception: dao/ibatisdao/src/main/resources/sqlmap/-sqlmap.xml.vm
+org.apache.velocity.runtime.parser.ParseException: Encountered ",jdbcType=" at line 208, column 66.
+Was expecting one of:
+    "[" ...
+    "}" ...
+    
+	at org.apache.velocity.runtime.parser.Parser.generateParseException(Parser.java:3679)
+	at org.apache.velocity.runtime.parser.Parser.jj_consume_token(Parser.java:3558)
+	at org.apache.velocity.runtime.parser.Parser.Reference(Parser.java:1521)
+	at org.apache.velocity.runtime.parser.Parser.Statement(Parser.java:357)
+	at org.apache.velocity.runtime.parser.Parser.IfStatement(Parser.java:1692)
+	at org.apache.velocity.runtime.parser.Parser.Statement(Parser.java:352)
+	at org.apache.velocity.runtime.parser.Parser.ElseStatement(Parser.java:1804)
+	at org.apache.velocity.runtime.parser.Parser.IfStatement(Parser.java:1734)
+	at org.apache.velocity.runtime.parser.Parser.Statement(Parser.java:352)
+	at org.apache.velocity.runtime.parser.Parser.Directive(Parser.java:918)
+	at org.apache.velocity.runtime.parser.Parser.Statement(Parser.java:379)
+	at org.apache.velocity.runtime.parser.Parser.process(Parser.java:317)
+	at org.apache.velocity.runtime.parser.Parser.parse(Parser.java:117)
+	at org.apache.velocity.runtime.RuntimeInstance.parse(RuntimeInstance.java:1226)
+	at org.apache.velocity.runtime.RuntimeInstance.parse(RuntimeInstance.java:1181)
+	at org.apache.velocity.Template.process(Template.java:134)
+	at org.apache.velocity.runtime.resource.ResourceManagerImpl.loadResource(ResourceManagerImpl.java:437)
+	at org.apache.velocity.runtime.resource.ResourceManagerImpl.getResource(ResourceManagerImpl.java:352)
+	at org.apache.velocity.runtime.RuntimeInstance.getTemplate(RuntimeInstance.java:1533)
+	at org.apache.velocity.runtime.RuntimeInstance.getTemplate(RuntimeInstance.java:1514)
+	at org.apache.velocity.runtime.RuntimeSingleton.getTemplate(RuntimeSingleton.java:299)
+	at org.apache.velocity.app.Velocity.getTemplate(Velocity.java:358)
+	at com.raycloud.util.daogen.util.VelocityTemplate.buildTemplate(VelocityTemplate.java:63)
+	at com.raycloud.util.daogen.util.VelocityTemplate.mergeTemplate(VelocityTemplate.java:83)
+	at com.raycloud.util.daogen.Gen.doGenTable(Gen.java:215)
+	at com.raycloud.util.daogen.Gen.doGenDB(Gen.java:141)
+	at com.raycloud.util.daogen.Gen.main(Gen.java:106)
+2016-06-20 15:41:02,152 - ResourceManager.getResource() parse exception
+org.apache.velocity.exception.ParseErrorException: Encountered ",jdbcType=" at dao/ibatisdao/src/main/resources/sqlmap/-sqlmap.xml.vm[line 208, column 66]
+Was expecting one of:
+    "[" ...
+    "}" ...
+    
+	at org.apache.velocity.Template.process(Template.java:151)
+	at org.apache.velocity.runtime.resource.ResourceManagerImpl.loadResource(ResourceManagerImpl.java:437)
+	at org.apache.velocity.runtime.resource.ResourceManagerImpl.getResource(ResourceManagerImpl.java:352)
+	at org.apache.velocity.runtime.RuntimeInstance.getTemplate(RuntimeInstance.java:1533)
+	at org.apache.velocity.runtime.RuntimeInstance.getTemplate(RuntimeInstance.java:1514)
+	at org.apache.velocity.runtime.RuntimeSingleton.getTemplate(RuntimeSingleton.java:299)
+	at org.apache.velocity.app.Velocity.getTemplate(Velocity.java:358)
+	at com.raycloud.util.daogen.util.VelocityTemplate.buildTemplate(VelocityTemplate.java:63)
+	at com.raycloud.util.daogen.util.VelocityTemplate.mergeTemplate(VelocityTemplate.java:83)
+	at com.raycloud.util.daogen.Gen.doGenTable(Gen.java:215)
+	at com.raycloud.util.daogen.Gen.doGenDB(Gen.java:141)
+	at com.raycloud.util.daogen.Gen.main(Gen.java:106)
+2016-06-20 16:05:05,343 - ResourceManager : unable to find resource 'dao/lottery/src/main/resources/sqlmap/-sqlmap.xml.vm' in any resource loader.

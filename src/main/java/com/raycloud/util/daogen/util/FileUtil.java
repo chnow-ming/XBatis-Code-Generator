@@ -275,7 +275,7 @@ public class FileUtil {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		String packageStr = FileUtil.findLine(ClassLoader.getSystemResource("dao/taobaodao/src/main/java/DAO.java.vm").getPath(), "package");
+		String packageStr = FileUtil.findLine(ClassLoader.getSystemResource("dao/ibatisdao/src/main/java/DAO.java.vm").getPath(), "package");
 		System.out.println(packageStr);
 		packageStr = packageStr.substring(packageStr.indexOf("$!{gb.packageName}"),packageStr.indexOf(";"));
 		System.out.println(packageStr.replace("$!{gb.packageName}", "com.taobao.trip").replace(".", "/"));

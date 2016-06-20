@@ -88,4 +88,10 @@ public class VelocityTemplate {
 		}
 	}
 
+	public static void main(String[] args) {
+		String path = ClassLoader.getSystemResource("dao/ibatisdao/src/main/java/DAO.java.vm").getPath();
+		path = path.substring(1, path.length());
+		path = "C:/Users/Administrator/git/XBatis-Code-Generator/src/main/resources/dao/ibatisdao/src/main/java/DAO.java.vm";
+		VelocityTemplate.buildTemplate(path);
+	}
 }
