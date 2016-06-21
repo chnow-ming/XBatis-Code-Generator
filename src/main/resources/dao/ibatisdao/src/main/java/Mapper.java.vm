@@ -82,6 +82,6 @@ import com.ct.Base.BaseMapper;
  */
 
 
-public interface $!{tbb.className}Mapper extends BaseMapper<$!{tbb.className}, $!{tbb.className}Query,Long>{
+public interface $!{tbb.className}Mapper extends BaseMapper<$!{tbb.className}, Long>{
 
 }

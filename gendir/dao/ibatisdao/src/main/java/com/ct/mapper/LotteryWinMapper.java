@@ -12,6 +12,6 @@ import com.ct.Base.BaseMapper;
  */
 
 
-public interface LotteryWinMapper extends BaseMapper<LotteryWin, LotteryWinQuery,Long>{
+public interface LotteryWinMapper extends BaseMapper<LotteryWin, Long>{
 
 }
