@@ -6,7 +6,7 @@ import java.io.Serializable;
 /**
  *
  * @author  Wu shaoming(361726442@qq.com)
- * @date    2016-06-20
+ * @date    2016-06-21
  */
 public class LotteryWin implements Serializable{
 

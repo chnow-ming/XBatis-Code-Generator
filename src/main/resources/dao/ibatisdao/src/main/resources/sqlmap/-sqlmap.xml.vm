@@ -28,6 +28,14 @@
         ${pkcol.colNameCheck}=#{${pkcol.propertyName}} #if(!$foreach.last) AND #end
     #end
 #end
+##jdbcType转换
+#macro(validJT $type)
+#if("DATETIME"==($type)) 
+TIMESTAMP#elseif("Long"==($type))
+DECIMAL#elseif("INT"==($type))
+DECIMAL#else
+$type#end
+#end
 ##批量删除与查找
 #macro(pklFieldAndValues $tbb)
     #foreach($pkcol in $tbb.pkcol)
@@ -47,11 +55,12 @@
 #set($PO = $!{gb.objSuffix})
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<sqlMap namespace="$!{gb.packageName}.dao.$!{tbb.className}DAO">
-    <!-- Alias Map Defined -->
+<mapper namespace="$!{gb.packageName}.mapper.$!{tbb.className}Mapper">
+    <!-- Alias Map Defined
     <typeAlias alias="${tbb.className}Query" type="$!{gb.packageName}.query.${tbb.className}Query"/>
     <typeAlias alias="${tbb.className}" type="$!{gb.packageName}.pojo.${tbb.className}${PO}"/>
-    <resultMap id="${tbb.objectName}" class="${tbb.className}">
+     -->
+    <resultMap id="${tbb.objectName}"  type="$!{gb.packageName}.pojo.${tbb.className}${PO}">
     #foreach($cb in $tbb.colList)
         <result property="$!cb.propertyName" column="$!cb.colName"/>
     #end
@@ -64,7 +73,7 @@
 
     #if($conf.isGetByKey())
         <!-- 根据主键查询 -->
-        <select id="selectByPrimaryKey" resultMap="${tbb.objectName}"  parameterType="java.lang.Long">
+        <select id="selectByPrimaryKey" resultMap="${tbb.objectName}"  parameterType="DECIMAL">
            ##POJO对象上没有Field属性所以选择selector会抛出异常,临时解决
            SELECT   <include refid="Base_Column_List" />  FROM ${tbb.tableName}
            <where>
@@ -106,18 +115,13 @@
         <!-- 根据主键更新 -->
         ##假设没有数据变化则不会产生io操作
         ##去除更新时间插入时间的字段,有数据变更，时间修改交给数据库执行
-        <update id="updateByPrimaryKeySelective" parameterType="${tbb.className}">
+        <update id="updateByPrimaryKeySelective" parameterType="${tbb.objectName}">
             UPDATE ${tbb.tableName}
             <set >
                 #foreach($cb in $tbb.colList)
                 #if(${cb.colName}!=${conf.addField} && ${cb.colName}!=${conf.updField})
                    <if test="$!{cb.propertyName} != null" >
-                        #if($conf.isSubString() && $cb.propertyType =="String")
-                        ##这里只对String类型与mysql作了一个示例，其他请自行修改
-                            $cb.colNameCheck =  substring(#{$!{cb.propertyName.trim()},jdbcType=${cb.propertyType}},1,$!{cb.precision}),
-                        #else
-                            $cb.colNameCheck = #{$!{cb.propertyName},jdbcType=${cb.propertyType}},
-                        #end
+                            $cb.colNameCheck = #{$!{cb.propertyName},jdbcType=#validJT(${cb.colType})},
                     </if>
                 #end
             #end
@@ -129,18 +133,23 @@
     #end
    
     <!-- 搜索列表信息 -->
-    <select id="${tbb.className}.get${tbb.className}List" parameterType="${tbb.className}Query" resultMap="${tbb.objectName}">
+    <select id="selectList" parameterType="hashMap" resultMap="${tbb.objectName}">
     select <include refid="Base_Column_List" /> from ${tbb.tableName}
-    <where>
+       <where>
      #foreach($cb in $tbb.colList)
-                #if(${cb.colName}!=${conf.addField} && ${cb.colName}!=${conf.updField})
-                   <if test="$!{cb.propertyName} != null and $!{cb.propertyName} != ''" >
-                        #if($conf.isSubString() && $cb.propertyType =="String")
-                        ##这里只对String类型与mysql作了一个示例，其他请自行修改
-                            $cb.colNameCheck =  substring(#{$!{cb.propertyName.trim()},jdbcType=${cb.propertyType}},1,$!{cb.precision}) AND
-                        #else
-                            $cb.colNameCheck = #{$!{cb.propertyName},jdbcType=${cb.propertyType}} AND
-                        #end
+      			#if($cb.propertyType !="Date" )
+      				<if test="page_object.$!{cb.propertyName} != null and page_object.$!{cb.propertyName} != ''" >
+     				AND  $cb.colNameCheck = #{page_object.$!{cb.propertyName},jdbcType=#validJT(${cb.colType})} 
+     				 </if>
+                #elseif(${cb.colName}!=${conf.addField} && ${cb.colName}!=${conf.updField})
+                    <if test="page_object.$!{cb.propertyName}Start != null" >
+                    AND <![CDATA[  $!{cb.colNameCheck} >= #{$!{cb.propertyName}Start,jdbcType=#validJT(${cb.colType})} ]]>
+                    </if>
+                    <if test="page_object.$!{cb.propertyName}End != null " >
+                     AND <![CDATA[  $!{cb.colNameCheck} <= #{$!{cb.propertyName}End,jdbcType=#validJT(${cb.colType})} ]]>
+                    </if>
+                    <if test="page_object.$!{cb.propertyName}Equal != null " >
+			             AND   <![CDATA[  $!{cb.colNameCheck} = #{$!{cb.propertyName}Equal,jdbcType=#validJT(${cb.colType})} ]]>
                     </if>
                 #end
             #end
@@ -148,18 +157,23 @@
     </select>
     
     <!-- 搜索分页列表信息 -->
-    <select id="${tbb.className}.get${tbb.className}ListByPage" parameterType="${tbb.className}Query" resultMap="${tbb.objectName}">
+    <select id="selectListByPage" parameterType="hashMap" resultMap="${tbb.objectName}">
     select <include refid="Base_Column_List" /> from ${tbb.tableName}
     <where>
      #foreach($cb in $tbb.colList)
-                #if(${cb.colName}!=${conf.addField} && ${cb.colName}!=${conf.updField})
-                   <if test="$!{cb.propertyName} != null and $!{cb.propertyName} != ''" >
-                        #if($conf.isSubString() && $cb.propertyType =="String")
-                        ##这里只对String类型与mysql作了一个示例，其他请自行修改
-                            $cb.colNameCheck =  substring(#{$!{cb.propertyName.trim()},jdbcType=${cb.propertyType}},1,$!{cb.precision}) AND
-                        #else
-                            $cb.colNameCheck = #{$!{cb.propertyName},jdbcType=${cb.propertyType}} AND
-                        #end
+      			#if($cb.propertyType !="Date" )
+      				<if test="page_object.$!{cb.propertyName} != null and page_object.$!{cb.propertyName} != ''" >
+     				AND  $cb.colNameCheck = #{page_object.$!{cb.propertyName},jdbcType=#validJT(${cb.colType})} 
+     				 </if>
+                #elseif(${cb.colName}!=${conf.addField} && ${cb.colName}!=${conf.updField})
+                    <if test="page_object.$!{cb.propertyName}Start != null" >
+                    AND <![CDATA[  $!{cb.colNameCheck} >= #{$!{cb.propertyName}Start,jdbcType=#validJT(${cb.colType})} ]]>
+                    </if>
+                    <if test="page_object.$!{cb.propertyName}End != null " >
+                     AND <![CDATA[  $!{cb.colNameCheck} <= #{$!{cb.propertyName}End,jdbcType=#validJT(${cb.colType})} ]]>
+                    </if>
+                    <if test="page_object.$!{cb.propertyName}Equal != null " >
+			             AND   <![CDATA[  $!{cb.colNameCheck} = #{$!{cb.propertyName}Equal,jdbcType=#validJT(${cb.colType})} ]]>
                     </if>
                 #end
             #end
@@ -168,21 +182,21 @@
 
     ##add代码
     <!--保存所有字段-->
-    <insert id="insert" parameterType="${tbb.className}">
+    <insert id="insert" parameterType="${tbb.objectName}">
     INSERT INTO ${tbb.tableName}(
     #foreach($cb in $tbb.colList)
        $!{cb.colNameCheck} #if(!$foreach.last),#end
     #end
     VALUES(
     #foreach($cb in $tbb.colList)
-        #{$!{cb.propertyName},jdbcType=${cb.propertyType}} #if(!$foreach.last),#end
+        #{$!{cb.propertyName},jdbcType=#validJT(${cb.colType})} #if(!$foreach.last),#end
     #end
     )
     </insert>
     
     ##add代码
     <!--保存所有不为空的字段-->
-    <insert id="insertSelective" parameterType="${tbb.className}">
+    <insert id="insertSelective" parameterType="${tbb.objectName}">
         INSERT INTO ${tbb.tableName}
        <trim prefix="(" suffix=")" suffixOverrides="," >
             ##循环所有字段
@@ -203,12 +217,7 @@
                             ,now()
                 #else
                     <if test="$!{cb.propertyName} != null" >
-                        #if($conf.isSubString() && $cb.propertyType =="String")
-                            ##这里只对String类型与mysql作了一个示例，其他请自行修改
-                            substring(#{$!{cb.propertyName.trim()},jdbcType=${cb.propertyType}},1,$!{cb.precision})
-                        #else
-                            #{$!{cb.propertyName.trim()},jdbcType=${cb.propertyType}}
-                        #end
+                            #{$!{cb.propertyName.trim()},jdbcType=#validJT(${cb.colType})},
                    </if>
                 #end
             #end
@@ -230,4 +239,4 @@
                 #end
             #end
         #end
-</sqlMap>
+</mapper>

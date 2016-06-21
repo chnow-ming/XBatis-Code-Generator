@@ -11,7 +11,7 @@ import com.ct.Base.service.impl.BaseServiceImpl;
 import com.ct.service.LotteryWinService;
 /**
  * @author Wu shaoming(361726442@qq.com)
- * @since 2016-06-20
+ * @since 2016-06-21
  */
 
 public class LotteryWinServiceImpl extends BaseServiceImpl<LotteryWin, LotteryWinQuery, Long> implements LotteryWinService{
