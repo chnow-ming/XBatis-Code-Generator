@@ -70,6 +70,27 @@ $type#end
 	#allField( $tbb )
     </sql>
     
+    <sql id="selectParams">
+    <where>
+     #foreach($cb in $tbb.colList)
+      			#if($cb.propertyType !="Date" )
+      				<if test="page_object.$!{cb.propertyName} != null and page_object.$!{cb.propertyName} != ''" >
+     				AND  $cb.colNameCheck = #{page_object.$!{cb.propertyName},jdbcType=#validJT(${cb.colType})} 
+     				 </if>
+                #elseif(${cb.colName}!=${conf.addField} && ${cb.colName}!=${conf.updField})
+                    <if test="page_object.$!{cb.propertyName}Start != null" >
+                    AND <![CDATA[  $!{cb.colNameCheck} >= #{$!{cb.propertyName}Start,jdbcType=#validJT(${cb.colType})} ]]>
+                    </if>
+                    <if test="page_object.$!{cb.propertyName}End != null " >
+                     AND <![CDATA[  $!{cb.colNameCheck} <= #{$!{cb.propertyName}End,jdbcType=#validJT(${cb.colType})} ]]>
+                    </if>
+                    <if test="page_object.$!{cb.propertyName}Equal != null " >
+			             AND   <![CDATA[  $!{cb.colNameCheck} = #{$!{cb.propertyName}Equal,jdbcType=#validJT(${cb.colType})} ]]>
+                    </if>
+                #end
+            #end
+    </where>
+    </sql>
 
     #if($conf.isGetByKey())
         <!-- 根据主键查询 -->
@@ -135,49 +156,13 @@ $type#end
     <!-- 搜索列表信息 -->
     <select id="selectList" parameterType="hashMap" resultMap="${tbb.objectName}">
     select <include refid="Base_Column_List" /> from ${tbb.tableName}
-       <where>
-     #foreach($cb in $tbb.colList)
-      			#if($cb.propertyType !="Date" )
-      				<if test="page_object.$!{cb.propertyName} != null and page_object.$!{cb.propertyName} != ''" >
-     				AND  $cb.colNameCheck = #{page_object.$!{cb.propertyName},jdbcType=#validJT(${cb.colType})} 
-     				 </if>
-                #elseif(${cb.colName}!=${conf.addField} && ${cb.colName}!=${conf.updField})
-                    <if test="page_object.$!{cb.propertyName}Start != null" >
-                    AND <![CDATA[  $!{cb.colNameCheck} >= #{$!{cb.propertyName}Start,jdbcType=#validJT(${cb.colType})} ]]>
-                    </if>
-                    <if test="page_object.$!{cb.propertyName}End != null " >
-                     AND <![CDATA[  $!{cb.colNameCheck} <= #{$!{cb.propertyName}End,jdbcType=#validJT(${cb.colType})} ]]>
-                    </if>
-                    <if test="page_object.$!{cb.propertyName}Equal != null " >
-			             AND   <![CDATA[  $!{cb.colNameCheck} = #{$!{cb.propertyName}Equal,jdbcType=#validJT(${cb.colType})} ]]>
-                    </if>
-                #end
-            #end
-    </where>
+       <include refid="selectParams" />
     </select>
     
     <!-- 搜索分页列表信息 -->
     <select id="selectListByPage" parameterType="hashMap" resultMap="${tbb.objectName}">
     select <include refid="Base_Column_List" /> from ${tbb.tableName}
-    <where>
-     #foreach($cb in $tbb.colList)
-      			#if($cb.propertyType !="Date" )
-      				<if test="page_object.$!{cb.propertyName} != null and page_object.$!{cb.propertyName} != ''" >
-     				AND  $cb.colNameCheck = #{page_object.$!{cb.propertyName},jdbcType=#validJT(${cb.colType})} 
-     				 </if>
-                #elseif(${cb.colName}!=${conf.addField} && ${cb.colName}!=${conf.updField})
-                    <if test="page_object.$!{cb.propertyName}Start != null" >
-                    AND <![CDATA[  $!{cb.colNameCheck} >= #{$!{cb.propertyName}Start,jdbcType=#validJT(${cb.colType})} ]]>
-                    </if>
-                    <if test="page_object.$!{cb.propertyName}End != null " >
-                     AND <![CDATA[  $!{cb.colNameCheck} <= #{$!{cb.propertyName}End,jdbcType=#validJT(${cb.colType})} ]]>
-                    </if>
-                    <if test="page_object.$!{cb.propertyName}Equal != null " >
-			             AND   <![CDATA[  $!{cb.colNameCheck} = #{$!{cb.propertyName}Equal,jdbcType=#validJT(${cb.colType})} ]]>
-                    </if>
-                #end
-            #end
-    </where>
+    <include refid="selectParams" />
     </select>
 
     ##add代码

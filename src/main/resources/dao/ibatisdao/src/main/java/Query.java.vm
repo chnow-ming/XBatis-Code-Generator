@@ -32,11 +32,12 @@ package $!{gb.packageName}.dto;
 #end
 import java.util.*;
 import java.io.Serializable;
+import com.ct.Base.Page;
 /**
- *
+ *查询实体类
  * @author $!{gb.userName}
  */
-public class $!{tbb.className}Query implements Serializable {
+public class $!{tbb.className}Query extends Page implements Serializable {
 
  	/**
 	 *序列化ID

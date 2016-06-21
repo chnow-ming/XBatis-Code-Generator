@@ -185,7 +185,7 @@ public class Gen {
             String javaVmDir = SOURCE_IN_PATH + settings.getTmplPath() + PATH_JAVA;
             String javaDir = settings.getGenPath() + settings.getTmplPath() + PATH_JAVA;
             List<String> javaVmList = FileUtil.getFileListWithExt(javaVmDir, ".vm");
-            String createFilename, packageDir = "", packageStr;
+            String createFilename, packageDir = "", packageStr,xmlStr;
             for (String vmFilename : javaVmList) {
                 if (vmFilename.startsWith("Base"))
                     continue; // 基类代码跳过
@@ -211,7 +211,9 @@ public class Gen {
             }
             // 生成SqlMap配置文件
             String sqlmapVm = settings.getTmplPath() + PATH_RESOURCES + "sqlmap/-sqlmap.xml.vm";
-            String sqlmapDir = settings.getGenPath() + settings.getTmplPath() + PATH_RESOURCES + "mappers/";
+            String sqlmapDir = settings.getGenPath() + settings.getTmplPath() + PATH_RESOURCES + globalBean.getPackageName().replace(".", "/")+"/mapper/";
+            FileUtil.mkDirs(sqlmapDir);
+            System.out.println("新的路径："+sqlmapDir);
             VelocityTemplate.mergeTemplate(sqlmapVm, sqlmapDir + tableBean.getClassName() + "Mapper.xml", ctx);
         } catch (Exception e) {
             logger.error("表[" + tablename + "]生成出错，异常是:", e);

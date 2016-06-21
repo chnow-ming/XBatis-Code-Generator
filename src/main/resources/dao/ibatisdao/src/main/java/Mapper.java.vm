@@ -42,7 +42,7 @@
 #set($conf=$!{tbb.conf})
 #set($PO = $!{gb.objSuffix})
 #set($clear = "")
-package $!{gb.packageName}.dao;
+package $!{gb.packageName}.mapper;
 
 ##import com.ibatis.sqlmap.client.SqlMapClient;
 ##import org.springframework.stereotype.Repository;
@@ -82,6 +82,6 @@ import com.ct.Base.BaseMapper;
  */
 
 
-public interface $!{tbb.className}DAO extends BaseMapper<$!{tbb.className}, $!{tbb.className}Query,Long>{
+public interface $!{tbb.className}Mapper extends BaseMapper<$!{tbb.className}, $!{tbb.className}Query,Long>{
 
 }

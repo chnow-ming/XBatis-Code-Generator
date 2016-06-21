@@ -2,11 +2,12 @@ package com.ct.dto;
 
                                                                             import java.util.*;
 import java.io.Serializable;
+import com.ct.Base.Page;
 /**
- *
+ *查询实体类
  * @author Wu shaoming(361726442@qq.com)
  */
-public class LotteryWinQuery implements Serializable {
+public class LotteryWinQuery extends Page implements Serializable {
 
  	/**
 	 *序列化ID

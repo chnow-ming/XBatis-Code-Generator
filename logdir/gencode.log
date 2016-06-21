@@ -3677,3 +3677,1014 @@ Was expecting one of:
 2016-06-21 17:02:18,434 INFO  daogen.Gen - sqltype:-5 -> typeName:BIGINT -> className:【无】
 2016-06-21 17:02:18,434 INFO  daogen.Gen - sqltype:12 -> typeName:VARCHAR -> className:【无】
 2016-06-21 17:02:18,434 INFO  daogen.Gen - 结束执行DAO代码生成===========================
+2016-06-21 17:07:03,704 INFO  daogen.Gen - 开始执行DAO代码生成===========================
+2016-06-21 17:07:03,706 INFO  daogen.Settings - 开始初始化数据库环境,路径为【/C:/Users/Administrator/git/XBatis-Code-Generator/target/classes/dao/】
+2016-06-21 17:07:03,710 INFO  daogen.Settings - 找到DB属性配置文件,文件名为【/C:/Users/Administrator/git/XBatis-Code-Generator/target/classes/dao/db.properties】
+2016-06-21 17:07:03,712 WARN  daogen.Settings - DAO模版未指定，使用默认模版：dao/ibatisdao
+2016-06-21 17:07:03,712 WARN  daogen.Settings - 代码生成输出路径未指定，使用默认路径：C:\Users\Administrator\git\XBatis-Code-Generator/gendir/
+2016-06-21 17:07:03,713 INFO  daogen.Settings - 数据库DAO代码生成环境配置信息如下：
+2016-06-21 17:07:03,713 INFO  daogen.Settings - DB_USER=root
+2016-06-21 17:07:03,713 INFO  daogen.Settings - DB_PORT=3306
+2016-06-21 17:07:03,713 INFO  daogen.Settings - JAVA_PACKAGE=com.ct
+2016-06-21 17:07:03,713 INFO  daogen.Settings - DB_NAME=lottery
+2016-06-21 17:07:03,713 INFO  daogen.Settings - DB_PWD=root
+2016-06-21 17:07:03,713 INFO  daogen.Settings - DB_TYPE=Mysql
+2016-06-21 17:07:03,713 INFO  daogen.Settings - DB_SERVER=192.168.16.120
+2016-06-21 17:07:03,713 INFO  daogen.Settings - 结束初始化数据库DAO代码生成环境【/C:/Users/Administrator/git/XBatis-Code-Generator/target/classes/dao/db.properties】！
+2016-06-21 17:07:03,714 INFO  daogen.DbConn - 初始化数据库[lottery]连接！
+2016-06-21 17:07:03,887 INFO  daogen.DbConn - 初始化数据库[lottery]连接【OK】！
+2016-06-21 17:07:03,892 INFO  daogen.DbConn - ===============================数据库支持的数据类型:
+2016-06-21 17:07:03,893 INFO  daogen.DbConn - 类型名称【BIT                 】SqlType【-7   】最大精度【1         】
+2016-06-21 17:07:03,893 INFO  daogen.DbConn - 类型名称【BOOL                】SqlType【-7   】最大精度【1         】
+2016-06-21 17:07:03,893 INFO  daogen.DbConn - 类型名称【TINYINT             】SqlType【-6   】最大精度【3         】
+2016-06-21 17:07:03,893 INFO  daogen.DbConn - 类型名称【TINYINT UNSIGNED    】SqlType【-6   】最大精度【3         】
+2016-06-21 17:07:03,893 INFO  daogen.DbConn - 类型名称【BIGINT              】SqlType【-5   】最大精度【19        】
+2016-06-21 17:07:03,893 INFO  daogen.DbConn - 类型名称【BIGINT UNSIGNED     】SqlType【-5   】最大精度【20        】
+2016-06-21 17:07:03,893 INFO  daogen.DbConn - 类型名称【LONG VARBINARY      】SqlType【-4   】最大精度【16777215  】
+2016-06-21 17:07:03,893 INFO  daogen.DbConn - 类型名称【MEDIUMBLOB          】SqlType【-4   】最大精度【16777215  】
+2016-06-21 17:07:03,894 INFO  daogen.DbConn - 类型名称【LONGBLOB            】SqlType【-4   】最大精度【2147483647】
+2016-06-21 17:07:03,894 INFO  daogen.DbConn - 类型名称【BLOB                】SqlType【-4   】最大精度【65535     】
+2016-06-21 17:07:03,894 INFO  daogen.DbConn - 类型名称【TINYBLOB            】SqlType【-4   】最大精度【255       】
+2016-06-21 17:07:03,894 INFO  daogen.DbConn - 类型名称【VARBINARY           】SqlType【-3   】最大精度【255       】
+2016-06-21 17:07:03,894 INFO  daogen.DbConn - 类型名称【BINARY              】SqlType【-2   】最大精度【255       】
+2016-06-21 17:07:03,894 INFO  daogen.DbConn - 类型名称【LONG VARCHAR        】SqlType【-1   】最大精度【16777215  】
+2016-06-21 17:07:03,895 INFO  daogen.DbConn - 类型名称【MEDIUMTEXT          】SqlType【-1   】最大精度【16777215  】
+2016-06-21 17:07:03,895 INFO  daogen.DbConn - 类型名称【LONGTEXT            】SqlType【-1   】最大精度【2147483647】
+2016-06-21 17:07:03,895 INFO  daogen.DbConn - 类型名称【TEXT                】SqlType【-1   】最大精度【65535     】
+2016-06-21 17:07:03,895 INFO  daogen.DbConn - 类型名称【TINYTEXT            】SqlType【-1   】最大精度【255       】
+2016-06-21 17:07:03,895 INFO  daogen.DbConn - 类型名称【CHAR                】SqlType【1    】最大精度【255       】
+2016-06-21 17:07:03,895 INFO  daogen.DbConn - 类型名称【NUMERIC             】SqlType【2    】最大精度【65        】
+2016-06-21 17:07:03,895 INFO  daogen.DbConn - 类型名称【DECIMAL             】SqlType【3    】最大精度【65        】
+2016-06-21 17:07:03,895 INFO  daogen.DbConn - 类型名称【INTEGER             】SqlType【4    】最大精度【10        】
+2016-06-21 17:07:03,895 INFO  daogen.DbConn - 类型名称【INTEGER UNSIGNED    】SqlType【4    】最大精度【10        】
+2016-06-21 17:07:03,895 INFO  daogen.DbConn - 类型名称【INT                 】SqlType【4    】最大精度【10        】
+2016-06-21 17:07:03,896 INFO  daogen.DbConn - 类型名称【INT UNSIGNED        】SqlType【4    】最大精度【10        】
+2016-06-21 17:07:03,896 INFO  daogen.DbConn - 类型名称【MEDIUMINT           】SqlType【4    】最大精度【7         】
+2016-06-21 17:07:03,896 INFO  daogen.DbConn - 类型名称【MEDIUMINT UNSIGNED  】SqlType【4    】最大精度【8         】
+2016-06-21 17:07:03,896 INFO  daogen.DbConn - 类型名称【SMALLINT            】SqlType【5    】最大精度【5         】
+2016-06-21 17:07:03,896 INFO  daogen.DbConn - 类型名称【SMALLINT UNSIGNED   】SqlType【5    】最大精度【5         】
+2016-06-21 17:07:03,896 INFO  daogen.DbConn - 类型名称【FLOAT               】SqlType【7    】最大精度【10        】
+2016-06-21 17:07:03,896 INFO  daogen.DbConn - 类型名称【DOUBLE              】SqlType【8    】最大精度【17        】
+2016-06-21 17:07:03,896 INFO  daogen.DbConn - 类型名称【DOUBLE PRECISION    】SqlType【8    】最大精度【17        】
+2016-06-21 17:07:03,896 INFO  daogen.DbConn - 类型名称【REAL                】SqlType【8    】最大精度【17        】
+2016-06-21 17:07:03,897 INFO  daogen.DbConn - 类型名称【VARCHAR             】SqlType【12   】最大精度【255       】
+2016-06-21 17:07:03,897 INFO  daogen.DbConn - 类型名称【ENUM                】SqlType【12   】最大精度【65535     】
+2016-06-21 17:07:03,897 INFO  daogen.DbConn - 类型名称【SET                 】SqlType【12   】最大精度【64        】
+2016-06-21 17:07:03,897 INFO  daogen.DbConn - 类型名称【DATE                】SqlType【91   】最大精度【0         】
+2016-06-21 17:07:03,897 INFO  daogen.DbConn - 类型名称【TIME                】SqlType【92   】最大精度【0         】
+2016-06-21 17:07:03,897 INFO  daogen.DbConn - 类型名称【DATETIME            】SqlType【93   】最大精度【0         】
+2016-06-21 17:07:03,897 INFO  daogen.DbConn - 类型名称【TIMESTAMP           】SqlType【93   】最大精度【0         】
+2016-06-21 17:07:03,897 INFO  daogen.DbConn - 数据库类型【MySQL】数据库版本【5.7.12】数据库驱动名称【MySQL Connector Java】数据库驱动程序版本【mysql-connector-java-5.1.34 ( Revision: jess.balint@oracle.com-20141014163213-wqbwpf1ok2kvo1om )】
+2016-06-21 17:07:03,903 INFO  daogen.GenTable - ============================获取所有表结构信息：
+2016-06-21 17:07:03,903 INFO  daogen.GenTable - Schema名【lottery   】表名【lottery_active           】表类型【TABLE     】表注释【                              】
+2016-06-21 17:07:03,903 INFO  daogen.GenTable - Schema名【lottery   】表名【lottery_prize            】表类型【TABLE     】表注释【                              】
+2016-06-21 17:07:03,904 INFO  daogen.GenTable - Schema名【lottery   】表名【lottery_win              】表类型【TABLE     】表注释【                              】
+2016-06-21 17:07:03,904 INFO  daogen.GenTable - ============================从索引获取主键:
+2016-06-21 17:07:03,934 INFO  daogen.Gen - 共有1个表需要生成数据访问层.
+2016-06-21 17:07:03,934 INFO  daogen.Gen - 第1个表[lottery_win]数据访问层正在生成中...
+2016-06-21 17:07:03,934 INFO  daogen.GenTable - 开始生成表对象，表名：lottery_win
+2016-06-21 17:07:03,946 INFO  daogen.GenTable - 表名【lottery_win              】列名【USERNAME       】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【中奖用户名称  】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:07:03,947 INFO  daogen.GenTable - 表名【lottery_win              】列名【WINAID         】列sqltype【-5 】列typename【BIGINT    】列precision【19   】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【中奖纪录ID      】列defaultValue【     】列isAutocrement【YES  】
+2016-06-21 17:07:03,948 INFO  daogen.GenTable - 表名【lottery_win              】列名【USERID         】列sqltype【-5 】列typename【BIGINT    】列precision【19   】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【中奖用户ID      】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:07:03,948 INFO  daogen.GenTable - 表名【lottery_win              】列名【LOTTERYNAME    】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【奖品名称        】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:07:03,948 INFO  daogen.GenTable - 表名【lottery_win              】列名【PID            】列sqltype【-5 】列typename【BIGINT    】列precision【19   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【奖品Id            】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:07:03,948 INFO  daogen.GenTable - 表名【lottery_win              】列名【USERPHONE      】列sqltype【12 】列typename【VARCHAR   】列precision【20   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【中奖人手机号码】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:07:03,949 INFO  daogen.GenTable - 表名【lottery_win              】列名【WINORFAILURE   】列sqltype【1  】列typename【CHAR      】列precision【1    】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【是否中奖（0 为未中奖 1为中奖）】列defaultValue【0    】列isAutocrement【NO   】
+2016-06-21 17:07:03,949 INFO  daogen.GenTable - 表名【lottery_win              】列名【WINDATE        】列sqltype【93 】列typename【DATETIME  】列precision【19   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【中奖时间        】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:07:03,949 INFO  daogen.GenTable - 表名【lottery_win              】列名【CHECKOUT       】列sqltype【4  】列typename【INT       】列precision【10   】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【奖品是否发出（0奖品未送出 1奖品已送出】列defaultValue【0    】列isAutocrement【NO   】
+2016-06-21 17:07:03,950 INFO  daogen.GenTable - 表名【lottery_win              】列名【PHONEINT       】列sqltype【12 】列typename【VARCHAR   】列precision【20   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【接受人_联系电话】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:07:03,950 INFO  daogen.GenTable - 表名【lottery_win              】列名【RECEIVE_NAME   】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【接收人_姓名    】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:07:03,950 INFO  daogen.GenTable - 表名【lottery_win              】列名【SENDADDRESS    】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【接收人_邮寄地址】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:07:03,950 INFO  daogen.GenTable - 表名【lottery_win              】列名【REAL_NAME      】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【中奖人真实姓名】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:07:03,951 INFO  daogen.GenTable - 表名【lottery_win              】列名【SEND_POST      】列sqltype【12 】列typename【VARCHAR   】列precision【20   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【接受人_邮政编码】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:07:03,952 INFO  daogen.GenTable - 表名【lottery_win              】列名【STATE          】列sqltype【1  】列typename【CHAR      】列precision【1    】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【是否取消状态（0为正常 1为取消）】列defaultValue【0    】列isAutocrement【NO   】
+2016-06-21 17:07:03,952 INFO  daogen.GenTable - 表名【lottery_win              】列名【ALIPAY         】列sqltype【12 】列typename【VARCHAR   】列precision【20   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【支付宝账号     】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:07:03,952 INFO  daogen.GenTable - 表名【lottery_win              】列名【PAYSEQNUM      】列sqltype【12 】列typename【VARCHAR   】列precision【30   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【支付流水号     】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:07:03,953 INFO  daogen.GenTable - 表名【lottery_win              】列名【COMMENTS       】列sqltype【12 】列typename【VARCHAR   】列precision【200  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【备注              】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:07:03,953 INFO  daogen.GenTable - 表名【lottery_win              】列名【ACTIVITY_ID    】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【活动id            】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:07:03,954 INFO  daogen.GenTable - 生成表对象成功，表名：lottery_win
+2016-06-21 17:07:04,025 INFO  util.VelocityTemplate - 初始化Velocity成功，配置路径为：/C:/Users/Administrator/git/XBatis-Code-Generator/target/classes/velocity.properties
+2016-06-21 17:07:04,054 INFO  daogen.Gen - LotteryWinDAO.java
+2016-06-21 17:07:04,063 INFO  daogen.Gen - LotteryWin.java
+2016-06-21 17:07:04,080 INFO  daogen.Gen - LotteryWinQuery.java
+2016-06-21 17:07:04,086 INFO  daogen.Gen - LotteryWinService.java
+2016-06-21 17:07:04,093 INFO  daogen.Gen - LotteryWinServiceImpl.java
+2016-06-21 17:07:04,119 INFO  daogen.Gen - 实际生成1个表的数据访问层！
+2016-06-21 17:07:04,120 INFO  daogen.Gen - 所映射的字段有：
+2016-06-21 17:07:04,120 INFO  daogen.Gen - sqltype:1 -> typeName:CHAR -> className:【无】
+2016-06-21 17:07:04,120 INFO  daogen.Gen - sqltype:4 -> typeName:INT -> className:【无】
+2016-06-21 17:07:04,121 INFO  daogen.Gen - sqltype:93 -> typeName:DATETIME -> className:【无】
+2016-06-21 17:07:04,121 INFO  daogen.Gen - sqltype:-5 -> typeName:BIGINT -> className:【无】
+2016-06-21 17:07:04,121 INFO  daogen.Gen - sqltype:12 -> typeName:VARCHAR -> className:【无】
+2016-06-21 17:07:04,121 INFO  daogen.Gen - 结束执行DAO代码生成===========================
+2016-06-21 17:24:15,247 INFO  daogen.Gen - 开始执行DAO代码生成===========================
+2016-06-21 17:24:15,248 INFO  daogen.Settings - 开始初始化数据库环境,路径为【/C:/Users/Administrator/git/XBatis-Code-Generator/target/classes/dao/】
+2016-06-21 17:24:15,254 INFO  daogen.Settings - 找到DB属性配置文件,文件名为【/C:/Users/Administrator/git/XBatis-Code-Generator/target/classes/dao/db.properties】
+2016-06-21 17:24:15,256 WARN  daogen.Settings - DAO模版未指定，使用默认模版：dao/ibatisdao
+2016-06-21 17:24:15,257 WARN  daogen.Settings - 代码生成输出路径未指定，使用默认路径：C:\Users\Administrator\git\XBatis-Code-Generator/gendir/
+2016-06-21 17:24:15,257 INFO  daogen.Settings - 数据库DAO代码生成环境配置信息如下：
+2016-06-21 17:24:15,257 INFO  daogen.Settings - DB_USER=root
+2016-06-21 17:24:15,257 INFO  daogen.Settings - DB_PORT=3306
+2016-06-21 17:24:15,257 INFO  daogen.Settings - JAVA_PACKAGE=com.ct
+2016-06-21 17:24:15,257 INFO  daogen.Settings - DB_NAME=lottery
+2016-06-21 17:24:15,257 INFO  daogen.Settings - DB_PWD=root
+2016-06-21 17:24:15,257 INFO  daogen.Settings - DB_TYPE=Mysql
+2016-06-21 17:24:15,257 INFO  daogen.Settings - DB_SERVER=192.168.16.120
+2016-06-21 17:24:15,257 INFO  daogen.Settings - 结束初始化数据库DAO代码生成环境【/C:/Users/Administrator/git/XBatis-Code-Generator/target/classes/dao/db.properties】！
+2016-06-21 17:24:15,258 INFO  daogen.DbConn - 初始化数据库[lottery]连接！
+2016-06-21 17:24:15,432 INFO  daogen.DbConn - 初始化数据库[lottery]连接【OK】！
+2016-06-21 17:24:15,437 INFO  daogen.DbConn - ===============================数据库支持的数据类型:
+2016-06-21 17:24:15,438 INFO  daogen.DbConn - 类型名称【BIT                 】SqlType【-7   】最大精度【1         】
+2016-06-21 17:24:15,438 INFO  daogen.DbConn - 类型名称【BOOL                】SqlType【-7   】最大精度【1         】
+2016-06-21 17:24:15,438 INFO  daogen.DbConn - 类型名称【TINYINT             】SqlType【-6   】最大精度【3         】
+2016-06-21 17:24:15,438 INFO  daogen.DbConn - 类型名称【TINYINT UNSIGNED    】SqlType【-6   】最大精度【3         】
+2016-06-21 17:24:15,438 INFO  daogen.DbConn - 类型名称【BIGINT              】SqlType【-5   】最大精度【19        】
+2016-06-21 17:24:15,438 INFO  daogen.DbConn - 类型名称【BIGINT UNSIGNED     】SqlType【-5   】最大精度【20        】
+2016-06-21 17:24:15,439 INFO  daogen.DbConn - 类型名称【LONG VARBINARY      】SqlType【-4   】最大精度【16777215  】
+2016-06-21 17:24:15,439 INFO  daogen.DbConn - 类型名称【MEDIUMBLOB          】SqlType【-4   】最大精度【16777215  】
+2016-06-21 17:24:15,439 INFO  daogen.DbConn - 类型名称【LONGBLOB            】SqlType【-4   】最大精度【2147483647】
+2016-06-21 17:24:15,439 INFO  daogen.DbConn - 类型名称【BLOB                】SqlType【-4   】最大精度【65535     】
+2016-06-21 17:24:15,439 INFO  daogen.DbConn - 类型名称【TINYBLOB            】SqlType【-4   】最大精度【255       】
+2016-06-21 17:24:15,439 INFO  daogen.DbConn - 类型名称【VARBINARY           】SqlType【-3   】最大精度【255       】
+2016-06-21 17:24:15,439 INFO  daogen.DbConn - 类型名称【BINARY              】SqlType【-2   】最大精度【255       】
+2016-06-21 17:24:15,439 INFO  daogen.DbConn - 类型名称【LONG VARCHAR        】SqlType【-1   】最大精度【16777215  】
+2016-06-21 17:24:15,439 INFO  daogen.DbConn - 类型名称【MEDIUMTEXT          】SqlType【-1   】最大精度【16777215  】
+2016-06-21 17:24:15,439 INFO  daogen.DbConn - 类型名称【LONGTEXT            】SqlType【-1   】最大精度【2147483647】
+2016-06-21 17:24:15,439 INFO  daogen.DbConn - 类型名称【TEXT                】SqlType【-1   】最大精度【65535     】
+2016-06-21 17:24:15,440 INFO  daogen.DbConn - 类型名称【TINYTEXT            】SqlType【-1   】最大精度【255       】
+2016-06-21 17:24:15,440 INFO  daogen.DbConn - 类型名称【CHAR                】SqlType【1    】最大精度【255       】
+2016-06-21 17:24:15,440 INFO  daogen.DbConn - 类型名称【NUMERIC             】SqlType【2    】最大精度【65        】
+2016-06-21 17:24:15,440 INFO  daogen.DbConn - 类型名称【DECIMAL             】SqlType【3    】最大精度【65        】
+2016-06-21 17:24:15,440 INFO  daogen.DbConn - 类型名称【INTEGER             】SqlType【4    】最大精度【10        】
+2016-06-21 17:24:15,440 INFO  daogen.DbConn - 类型名称【INTEGER UNSIGNED    】SqlType【4    】最大精度【10        】
+2016-06-21 17:24:15,440 INFO  daogen.DbConn - 类型名称【INT                 】SqlType【4    】最大精度【10        】
+2016-06-21 17:24:15,440 INFO  daogen.DbConn - 类型名称【INT UNSIGNED        】SqlType【4    】最大精度【10        】
+2016-06-21 17:24:15,440 INFO  daogen.DbConn - 类型名称【MEDIUMINT           】SqlType【4    】最大精度【7         】
+2016-06-21 17:24:15,440 INFO  daogen.DbConn - 类型名称【MEDIUMINT UNSIGNED  】SqlType【4    】最大精度【8         】
+2016-06-21 17:24:15,441 INFO  daogen.DbConn - 类型名称【SMALLINT            】SqlType【5    】最大精度【5         】
+2016-06-21 17:24:15,441 INFO  daogen.DbConn - 类型名称【SMALLINT UNSIGNED   】SqlType【5    】最大精度【5         】
+2016-06-21 17:24:15,441 INFO  daogen.DbConn - 类型名称【FLOAT               】SqlType【7    】最大精度【10        】
+2016-06-21 17:24:15,441 INFO  daogen.DbConn - 类型名称【DOUBLE              】SqlType【8    】最大精度【17        】
+2016-06-21 17:24:15,441 INFO  daogen.DbConn - 类型名称【DOUBLE PRECISION    】SqlType【8    】最大精度【17        】
+2016-06-21 17:24:15,441 INFO  daogen.DbConn - 类型名称【REAL                】SqlType【8    】最大精度【17        】
+2016-06-21 17:24:15,441 INFO  daogen.DbConn - 类型名称【VARCHAR             】SqlType【12   】最大精度【255       】
+2016-06-21 17:24:15,441 INFO  daogen.DbConn - 类型名称【ENUM                】SqlType【12   】最大精度【65535     】
+2016-06-21 17:24:15,441 INFO  daogen.DbConn - 类型名称【SET                 】SqlType【12   】最大精度【64        】
+2016-06-21 17:24:15,441 INFO  daogen.DbConn - 类型名称【DATE                】SqlType【91   】最大精度【0         】
+2016-06-21 17:24:15,441 INFO  daogen.DbConn - 类型名称【TIME                】SqlType【92   】最大精度【0         】
+2016-06-21 17:24:15,442 INFO  daogen.DbConn - 类型名称【DATETIME            】SqlType【93   】最大精度【0         】
+2016-06-21 17:24:15,442 INFO  daogen.DbConn - 类型名称【TIMESTAMP           】SqlType【93   】最大精度【0         】
+2016-06-21 17:24:15,442 INFO  daogen.DbConn - 数据库类型【MySQL】数据库版本【5.7.12】数据库驱动名称【MySQL Connector Java】数据库驱动程序版本【mysql-connector-java-5.1.34 ( Revision: jess.balint@oracle.com-20141014163213-wqbwpf1ok2kvo1om )】
+2016-06-21 17:24:15,448 INFO  daogen.GenTable - ============================获取所有表结构信息：
+2016-06-21 17:24:15,448 INFO  daogen.GenTable - Schema名【lottery   】表名【lottery_active           】表类型【TABLE     】表注释【                              】
+2016-06-21 17:24:15,448 INFO  daogen.GenTable - Schema名【lottery   】表名【lottery_prize            】表类型【TABLE     】表注释【                              】
+2016-06-21 17:24:15,448 INFO  daogen.GenTable - Schema名【lottery   】表名【lottery_win              】表类型【TABLE     】表注释【                              】
+2016-06-21 17:24:15,449 INFO  daogen.GenTable - ============================从索引获取主键:
+2016-06-21 17:24:15,480 INFO  daogen.Gen - 共有1个表需要生成数据访问层.
+2016-06-21 17:24:15,481 INFO  daogen.Gen - 第1个表[lottery_win]数据访问层正在生成中...
+2016-06-21 17:24:15,481 INFO  daogen.GenTable - 开始生成表对象，表名：lottery_win
+2016-06-21 17:24:15,493 INFO  daogen.GenTable - 表名【lottery_win              】列名【USERNAME       】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【中奖用户名称  】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:24:15,495 INFO  daogen.GenTable - 表名【lottery_win              】列名【WINAID         】列sqltype【-5 】列typename【BIGINT    】列precision【19   】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【中奖纪录ID      】列defaultValue【     】列isAutocrement【YES  】
+2016-06-21 17:24:15,495 INFO  daogen.GenTable - 表名【lottery_win              】列名【USERID         】列sqltype【-5 】列typename【BIGINT    】列precision【19   】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【中奖用户ID      】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:24:15,496 INFO  daogen.GenTable - 表名【lottery_win              】列名【LOTTERYNAME    】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【奖品名称        】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:24:15,496 INFO  daogen.GenTable - 表名【lottery_win              】列名【PID            】列sqltype【-5 】列typename【BIGINT    】列precision【19   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【奖品Id            】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:24:15,496 INFO  daogen.GenTable - 表名【lottery_win              】列名【USERPHONE      】列sqltype【12 】列typename【VARCHAR   】列precision【20   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【中奖人手机号码】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:24:15,496 INFO  daogen.GenTable - 表名【lottery_win              】列名【WINORFAILURE   】列sqltype【1  】列typename【CHAR      】列precision【1    】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【是否中奖（0 为未中奖 1为中奖）】列defaultValue【0    】列isAutocrement【NO   】
+2016-06-21 17:24:15,497 INFO  daogen.GenTable - 表名【lottery_win              】列名【WINDATE        】列sqltype【93 】列typename【DATETIME  】列precision【19   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【中奖时间        】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:24:15,497 INFO  daogen.GenTable - 表名【lottery_win              】列名【CHECKOUT       】列sqltype【4  】列typename【INT       】列precision【10   】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【奖品是否发出（0奖品未送出 1奖品已送出】列defaultValue【0    】列isAutocrement【NO   】
+2016-06-21 17:24:15,497 INFO  daogen.GenTable - 表名【lottery_win              】列名【PHONEINT       】列sqltype【12 】列typename【VARCHAR   】列precision【20   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【接受人_联系电话】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:24:15,497 INFO  daogen.GenTable - 表名【lottery_win              】列名【RECEIVE_NAME   】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【接收人_姓名    】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:24:15,498 INFO  daogen.GenTable - 表名【lottery_win              】列名【SENDADDRESS    】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【接收人_邮寄地址】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:24:15,498 INFO  daogen.GenTable - 表名【lottery_win              】列名【REAL_NAME      】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【中奖人真实姓名】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:24:15,498 INFO  daogen.GenTable - 表名【lottery_win              】列名【SEND_POST      】列sqltype【12 】列typename【VARCHAR   】列precision【20   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【接受人_邮政编码】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:24:15,499 INFO  daogen.GenTable - 表名【lottery_win              】列名【STATE          】列sqltype【1  】列typename【CHAR      】列precision【1    】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【是否取消状态（0为正常 1为取消）】列defaultValue【0    】列isAutocrement【NO   】
+2016-06-21 17:24:15,499 INFO  daogen.GenTable - 表名【lottery_win              】列名【ALIPAY         】列sqltype【12 】列typename【VARCHAR   】列precision【20   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【支付宝账号     】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:24:15,499 INFO  daogen.GenTable - 表名【lottery_win              】列名【PAYSEQNUM      】列sqltype【12 】列typename【VARCHAR   】列precision【30   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【支付流水号     】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:24:15,499 INFO  daogen.GenTable - 表名【lottery_win              】列名【COMMENTS       】列sqltype【12 】列typename【VARCHAR   】列precision【200  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【备注              】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:24:15,500 INFO  daogen.GenTable - 表名【lottery_win              】列名【ACTIVITY_ID    】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【活动id            】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:24:15,501 INFO  daogen.GenTable - 生成表对象成功，表名：lottery_win
+2016-06-21 17:24:15,582 INFO  util.VelocityTemplate - 初始化Velocity成功，配置路径为：/C:/Users/Administrator/git/XBatis-Code-Generator/target/classes/velocity.properties
+2016-06-21 17:24:15,611 INFO  daogen.Gen - LotteryWinDAO.java
+2016-06-21 17:24:15,619 INFO  daogen.Gen - LotteryWin.java
+2016-06-21 17:24:15,641 INFO  daogen.Gen - LotteryWinQuery.java
+2016-06-21 17:24:15,647 INFO  daogen.Gen - LotteryWinService.java
+2016-06-21 17:24:15,656 INFO  daogen.Gen - LotteryWinServiceImpl.java
+2016-06-21 17:24:15,671 ERROR util.VelocityTemplate - mergeTemplate[C:\Users\Administrator\git\XBatis-Code-Generator/gendir/dao/ibatisdao/src/main/resources/mappers/LotteryWinMapper.xml] error in template dao/ibatisdao/src/main/resources/sqlmap/-sqlmap.xml.vm:java.io.FileNotFoundException: C:\Users\Administrator\git\XBatis-Code-Generator\gendir\dao\ibatisdao\src\main\resources\mappers\LotteryWinMapper.xml (系统找不到指定的路径。)
+2016-06-21 17:24:15,672 INFO  daogen.Gen - 实际生成1个表的数据访问层！
+2016-06-21 17:24:15,674 INFO  daogen.Gen - 所映射的字段有：
+2016-06-21 17:24:15,674 INFO  daogen.Gen - sqltype:1 -> typeName:CHAR -> className:【无】
+2016-06-21 17:24:15,674 INFO  daogen.Gen - sqltype:4 -> typeName:INT -> className:【无】
+2016-06-21 17:24:15,675 INFO  daogen.Gen - sqltype:93 -> typeName:DATETIME -> className:【无】
+2016-06-21 17:24:15,675 INFO  daogen.Gen - sqltype:-5 -> typeName:BIGINT -> className:【无】
+2016-06-21 17:24:15,675 INFO  daogen.Gen - sqltype:12 -> typeName:VARCHAR -> className:【无】
+2016-06-21 17:24:15,675 INFO  daogen.Gen - 结束执行DAO代码生成===========================
+2016-06-21 17:34:26,771 INFO  daogen.Gen - 开始执行DAO代码生成===========================
+2016-06-21 17:34:26,773 INFO  daogen.Settings - 开始初始化数据库环境,路径为【/C:/Users/Administrator/git/XBatis-Code-Generator/target/classes/dao/】
+2016-06-21 17:34:26,777 INFO  daogen.Settings - 找到DB属性配置文件,文件名为【/C:/Users/Administrator/git/XBatis-Code-Generator/target/classes/dao/db.properties】
+2016-06-21 17:34:26,781 WARN  daogen.Settings - DAO模版未指定，使用默认模版：dao/ibatisdao
+2016-06-21 17:34:26,781 WARN  daogen.Settings - 代码生成输出路径未指定，使用默认路径：C:\Users\Administrator\git\XBatis-Code-Generator/gendir/
+2016-06-21 17:34:26,781 INFO  daogen.Settings - 数据库DAO代码生成环境配置信息如下：
+2016-06-21 17:34:26,782 INFO  daogen.Settings - DB_USER=root
+2016-06-21 17:34:26,782 INFO  daogen.Settings - DB_PORT=3306
+2016-06-21 17:34:26,782 INFO  daogen.Settings - JAVA_PACKAGE=com.ct
+2016-06-21 17:34:26,782 INFO  daogen.Settings - DB_NAME=lottery
+2016-06-21 17:34:26,782 INFO  daogen.Settings - DB_PWD=root
+2016-06-21 17:34:26,782 INFO  daogen.Settings - DB_TYPE=Mysql
+2016-06-21 17:34:26,783 INFO  daogen.Settings - DB_SERVER=192.168.16.120
+2016-06-21 17:34:26,783 INFO  daogen.Settings - 结束初始化数据库DAO代码生成环境【/C:/Users/Administrator/git/XBatis-Code-Generator/target/classes/dao/db.properties】！
+2016-06-21 17:34:26,784 INFO  daogen.DbConn - 初始化数据库[lottery]连接！
+2016-06-21 17:34:26,962 INFO  daogen.DbConn - 初始化数据库[lottery]连接【OK】！
+2016-06-21 17:34:26,967 INFO  daogen.DbConn - ===============================数据库支持的数据类型:
+2016-06-21 17:34:26,968 INFO  daogen.DbConn - 类型名称【BIT                 】SqlType【-7   】最大精度【1         】
+2016-06-21 17:34:26,968 INFO  daogen.DbConn - 类型名称【BOOL                】SqlType【-7   】最大精度【1         】
+2016-06-21 17:34:26,968 INFO  daogen.DbConn - 类型名称【TINYINT             】SqlType【-6   】最大精度【3         】
+2016-06-21 17:34:26,968 INFO  daogen.DbConn - 类型名称【TINYINT UNSIGNED    】SqlType【-6   】最大精度【3         】
+2016-06-21 17:34:26,968 INFO  daogen.DbConn - 类型名称【BIGINT              】SqlType【-5   】最大精度【19        】
+2016-06-21 17:34:26,969 INFO  daogen.DbConn - 类型名称【BIGINT UNSIGNED     】SqlType【-5   】最大精度【20        】
+2016-06-21 17:34:26,969 INFO  daogen.DbConn - 类型名称【LONG VARBINARY      】SqlType【-4   】最大精度【16777215  】
+2016-06-21 17:34:26,969 INFO  daogen.DbConn - 类型名称【MEDIUMBLOB          】SqlType【-4   】最大精度【16777215  】
+2016-06-21 17:34:26,969 INFO  daogen.DbConn - 类型名称【LONGBLOB            】SqlType【-4   】最大精度【2147483647】
+2016-06-21 17:34:26,969 INFO  daogen.DbConn - 类型名称【BLOB                】SqlType【-4   】最大精度【65535     】
+2016-06-21 17:34:26,969 INFO  daogen.DbConn - 类型名称【TINYBLOB            】SqlType【-4   】最大精度【255       】
+2016-06-21 17:34:26,969 INFO  daogen.DbConn - 类型名称【VARBINARY           】SqlType【-3   】最大精度【255       】
+2016-06-21 17:34:26,969 INFO  daogen.DbConn - 类型名称【BINARY              】SqlType【-2   】最大精度【255       】
+2016-06-21 17:34:26,970 INFO  daogen.DbConn - 类型名称【LONG VARCHAR        】SqlType【-1   】最大精度【16777215  】
+2016-06-21 17:34:26,970 INFO  daogen.DbConn - 类型名称【MEDIUMTEXT          】SqlType【-1   】最大精度【16777215  】
+2016-06-21 17:34:26,970 INFO  daogen.DbConn - 类型名称【LONGTEXT            】SqlType【-1   】最大精度【2147483647】
+2016-06-21 17:34:26,970 INFO  daogen.DbConn - 类型名称【TEXT                】SqlType【-1   】最大精度【65535     】
+2016-06-21 17:34:26,970 INFO  daogen.DbConn - 类型名称【TINYTEXT            】SqlType【-1   】最大精度【255       】
+2016-06-21 17:34:26,970 INFO  daogen.DbConn - 类型名称【CHAR                】SqlType【1    】最大精度【255       】
+2016-06-21 17:34:26,970 INFO  daogen.DbConn - 类型名称【NUMERIC             】SqlType【2    】最大精度【65        】
+2016-06-21 17:34:26,970 INFO  daogen.DbConn - 类型名称【DECIMAL             】SqlType【3    】最大精度【65        】
+2016-06-21 17:34:26,970 INFO  daogen.DbConn - 类型名称【INTEGER             】SqlType【4    】最大精度【10        】
+2016-06-21 17:34:26,970 INFO  daogen.DbConn - 类型名称【INTEGER UNSIGNED    】SqlType【4    】最大精度【10        】
+2016-06-21 17:34:26,971 INFO  daogen.DbConn - 类型名称【INT                 】SqlType【4    】最大精度【10        】
+2016-06-21 17:34:26,971 INFO  daogen.DbConn - 类型名称【INT UNSIGNED        】SqlType【4    】最大精度【10        】
+2016-06-21 17:34:26,971 INFO  daogen.DbConn - 类型名称【MEDIUMINT           】SqlType【4    】最大精度【7         】
+2016-06-21 17:34:26,971 INFO  daogen.DbConn - 类型名称【MEDIUMINT UNSIGNED  】SqlType【4    】最大精度【8         】
+2016-06-21 17:34:26,971 INFO  daogen.DbConn - 类型名称【SMALLINT            】SqlType【5    】最大精度【5         】
+2016-06-21 17:34:26,971 INFO  daogen.DbConn - 类型名称【SMALLINT UNSIGNED   】SqlType【5    】最大精度【5         】
+2016-06-21 17:34:26,971 INFO  daogen.DbConn - 类型名称【FLOAT               】SqlType【7    】最大精度【10        】
+2016-06-21 17:34:26,971 INFO  daogen.DbConn - 类型名称【DOUBLE              】SqlType【8    】最大精度【17        】
+2016-06-21 17:34:26,971 INFO  daogen.DbConn - 类型名称【DOUBLE PRECISION    】SqlType【8    】最大精度【17        】
+2016-06-21 17:34:26,971 INFO  daogen.DbConn - 类型名称【REAL                】SqlType【8    】最大精度【17        】
+2016-06-21 17:34:26,971 INFO  daogen.DbConn - 类型名称【VARCHAR             】SqlType【12   】最大精度【255       】
+2016-06-21 17:34:26,972 INFO  daogen.DbConn - 类型名称【ENUM                】SqlType【12   】最大精度【65535     】
+2016-06-21 17:34:26,972 INFO  daogen.DbConn - 类型名称【SET                 】SqlType【12   】最大精度【64        】
+2016-06-21 17:34:26,972 INFO  daogen.DbConn - 类型名称【DATE                】SqlType【91   】最大精度【0         】
+2016-06-21 17:34:26,972 INFO  daogen.DbConn - 类型名称【TIME                】SqlType【92   】最大精度【0         】
+2016-06-21 17:34:26,972 INFO  daogen.DbConn - 类型名称【DATETIME            】SqlType【93   】最大精度【0         】
+2016-06-21 17:34:26,972 INFO  daogen.DbConn - 类型名称【TIMESTAMP           】SqlType【93   】最大精度【0         】
+2016-06-21 17:34:26,972 INFO  daogen.DbConn - 数据库类型【MySQL】数据库版本【5.7.12】数据库驱动名称【MySQL Connector Java】数据库驱动程序版本【mysql-connector-java-5.1.34 ( Revision: jess.balint@oracle.com-20141014163213-wqbwpf1ok2kvo1om )】
+2016-06-21 17:34:26,979 INFO  daogen.GenTable - ============================获取所有表结构信息：
+2016-06-21 17:34:26,979 INFO  daogen.GenTable - Schema名【lottery   】表名【lottery_active           】表类型【TABLE     】表注释【                              】
+2016-06-21 17:34:26,980 INFO  daogen.GenTable - Schema名【lottery   】表名【lottery_prize            】表类型【TABLE     】表注释【                              】
+2016-06-21 17:34:26,980 INFO  daogen.GenTable - Schema名【lottery   】表名【lottery_win              】表类型【TABLE     】表注释【                              】
+2016-06-21 17:34:26,980 INFO  daogen.GenTable - ============================从索引获取主键:
+2016-06-21 17:34:27,013 INFO  daogen.Gen - 共有1个表需要生成数据访问层.
+2016-06-21 17:34:27,013 INFO  daogen.Gen - 第1个表[lottery_win]数据访问层正在生成中...
+2016-06-21 17:34:27,014 INFO  daogen.GenTable - 开始生成表对象，表名：lottery_win
+2016-06-21 17:34:27,026 INFO  daogen.GenTable - 表名【lottery_win              】列名【USERNAME       】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【中奖用户名称  】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:34:27,029 INFO  daogen.GenTable - 表名【lottery_win              】列名【WINAID         】列sqltype【-5 】列typename【BIGINT    】列precision【19   】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【中奖纪录ID      】列defaultValue【     】列isAutocrement【YES  】
+2016-06-21 17:34:27,030 INFO  daogen.GenTable - 表名【lottery_win              】列名【USERID         】列sqltype【-5 】列typename【BIGINT    】列precision【19   】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【中奖用户ID      】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:34:27,030 INFO  daogen.GenTable - 表名【lottery_win              】列名【LOTTERYNAME    】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【奖品名称        】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:34:27,031 INFO  daogen.GenTable - 表名【lottery_win              】列名【PID            】列sqltype【-5 】列typename【BIGINT    】列precision【19   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【奖品Id            】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:34:27,031 INFO  daogen.GenTable - 表名【lottery_win              】列名【USERPHONE      】列sqltype【12 】列typename【VARCHAR   】列precision【20   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【中奖人手机号码】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:34:27,031 INFO  daogen.GenTable - 表名【lottery_win              】列名【WINORFAILURE   】列sqltype【1  】列typename【CHAR      】列precision【1    】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【是否中奖（0 为未中奖 1为中奖）】列defaultValue【0    】列isAutocrement【NO   】
+2016-06-21 17:34:27,032 INFO  daogen.GenTable - 表名【lottery_win              】列名【WINDATE        】列sqltype【93 】列typename【DATETIME  】列precision【19   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【中奖时间        】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:34:27,032 INFO  daogen.GenTable - 表名【lottery_win              】列名【CHECKOUT       】列sqltype【4  】列typename【INT       】列precision【10   】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【奖品是否发出（0奖品未送出 1奖品已送出】列defaultValue【0    】列isAutocrement【NO   】
+2016-06-21 17:34:27,032 INFO  daogen.GenTable - 表名【lottery_win              】列名【PHONEINT       】列sqltype【12 】列typename【VARCHAR   】列precision【20   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【接受人_联系电话】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:34:27,033 INFO  daogen.GenTable - 表名【lottery_win              】列名【RECEIVE_NAME   】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【接收人_姓名    】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:34:27,033 INFO  daogen.GenTable - 表名【lottery_win              】列名【SENDADDRESS    】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【接收人_邮寄地址】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:34:27,033 INFO  daogen.GenTable - 表名【lottery_win              】列名【REAL_NAME      】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【中奖人真实姓名】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:34:27,033 INFO  daogen.GenTable - 表名【lottery_win              】列名【SEND_POST      】列sqltype【12 】列typename【VARCHAR   】列precision【20   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【接受人_邮政编码】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:34:27,034 INFO  daogen.GenTable - 表名【lottery_win              】列名【STATE          】列sqltype【1  】列typename【CHAR      】列precision【1    】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【是否取消状态（0为正常 1为取消）】列defaultValue【0    】列isAutocrement【NO   】
+2016-06-21 17:34:27,034 INFO  daogen.GenTable - 表名【lottery_win              】列名【ALIPAY         】列sqltype【12 】列typename【VARCHAR   】列precision【20   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【支付宝账号     】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:34:27,034 INFO  daogen.GenTable - 表名【lottery_win              】列名【PAYSEQNUM      】列sqltype【12 】列typename【VARCHAR   】列precision【30   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【支付流水号     】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:34:27,035 INFO  daogen.GenTable - 表名【lottery_win              】列名【COMMENTS       】列sqltype【12 】列typename【VARCHAR   】列precision【200  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【备注              】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:34:27,035 INFO  daogen.GenTable - 表名【lottery_win              】列名【ACTIVITY_ID    】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【活动id            】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:34:27,036 INFO  daogen.GenTable - 生成表对象成功，表名：lottery_win
+2016-06-21 17:34:27,118 INFO  util.VelocityTemplate - 初始化Velocity成功，配置路径为：/C:/Users/Administrator/git/XBatis-Code-Generator/target/classes/velocity.properties
+2016-06-21 17:34:27,149 INFO  daogen.Gen - LotteryWin.java
+2016-06-21 17:34:27,159 INFO  daogen.Gen - LotteryWinMapper.java
+2016-06-21 17:34:27,180 INFO  daogen.Gen - LotteryWinQuery.java
+2016-06-21 17:34:27,187 INFO  daogen.Gen - LotteryWinService.java
+2016-06-21 17:34:27,196 INFO  daogen.Gen - LotteryWinServiceImpl.java
+2016-06-21 17:34:27,211 ERROR util.VelocityTemplate - mergeTemplate[C:\Users\Administrator\git\XBatis-Code-Generator/gendir/dao/ibatisdao/src/main/resources/mappers/LotteryWinMapper.xml] error in template dao/ibatisdao/src/main/resources/sqlmap/-sqlmap.xml.vm:java.io.FileNotFoundException: C:\Users\Administrator\git\XBatis-Code-Generator\gendir\dao\ibatisdao\src\main\resources\mappers\LotteryWinMapper.xml (系统找不到指定的路径。)
+2016-06-21 17:34:27,211 INFO  daogen.Gen - 实际生成1个表的数据访问层！
+2016-06-21 17:34:27,213 INFO  daogen.Gen - 所映射的字段有：
+2016-06-21 17:34:27,213 INFO  daogen.Gen - sqltype:1 -> typeName:CHAR -> className:【无】
+2016-06-21 17:34:27,213 INFO  daogen.Gen - sqltype:4 -> typeName:INT -> className:【无】
+2016-06-21 17:34:27,213 INFO  daogen.Gen - sqltype:93 -> typeName:DATETIME -> className:【无】
+2016-06-21 17:34:27,213 INFO  daogen.Gen - sqltype:-5 -> typeName:BIGINT -> className:【无】
+2016-06-21 17:34:27,213 INFO  daogen.Gen - sqltype:12 -> typeName:VARCHAR -> className:【无】
+2016-06-21 17:34:27,213 INFO  daogen.Gen - 结束执行DAO代码生成===========================
+2016-06-21 17:38:35,999 INFO  daogen.Gen - 开始执行DAO代码生成===========================
+2016-06-21 17:38:36,000 INFO  daogen.Settings - 开始初始化数据库环境,路径为【/C:/Users/Administrator/git/XBatis-Code-Generator/target/classes/dao/】
+2016-06-21 17:38:36,004 INFO  daogen.Settings - 找到DB属性配置文件,文件名为【/C:/Users/Administrator/git/XBatis-Code-Generator/target/classes/dao/db.properties】
+2016-06-21 17:38:36,007 WARN  daogen.Settings - DAO模版未指定，使用默认模版：dao/ibatisdao
+2016-06-21 17:38:36,007 WARN  daogen.Settings - 代码生成输出路径未指定，使用默认路径：C:\Users\Administrator\git\XBatis-Code-Generator/gendir/
+2016-06-21 17:38:36,007 INFO  daogen.Settings - 数据库DAO代码生成环境配置信息如下：
+2016-06-21 17:38:36,007 INFO  daogen.Settings - DB_USER=root
+2016-06-21 17:38:36,007 INFO  daogen.Settings - DB_PORT=3306
+2016-06-21 17:38:36,008 INFO  daogen.Settings - JAVA_PACKAGE=com.ct
+2016-06-21 17:38:36,008 INFO  daogen.Settings - DB_NAME=lottery
+2016-06-21 17:38:36,008 INFO  daogen.Settings - DB_PWD=root
+2016-06-21 17:38:36,008 INFO  daogen.Settings - DB_TYPE=Mysql
+2016-06-21 17:38:36,008 INFO  daogen.Settings - DB_SERVER=192.168.16.120
+2016-06-21 17:38:36,008 INFO  daogen.Settings - 结束初始化数据库DAO代码生成环境【/C:/Users/Administrator/git/XBatis-Code-Generator/target/classes/dao/db.properties】！
+2016-06-21 17:38:36,009 INFO  daogen.DbConn - 初始化数据库[lottery]连接！
+2016-06-21 17:38:36,181 INFO  daogen.DbConn - 初始化数据库[lottery]连接【OK】！
+2016-06-21 17:38:36,186 INFO  daogen.DbConn - ===============================数据库支持的数据类型:
+2016-06-21 17:38:36,187 INFO  daogen.DbConn - 类型名称【BIT                 】SqlType【-7   】最大精度【1         】
+2016-06-21 17:38:36,187 INFO  daogen.DbConn - 类型名称【BOOL                】SqlType【-7   】最大精度【1         】
+2016-06-21 17:38:36,187 INFO  daogen.DbConn - 类型名称【TINYINT             】SqlType【-6   】最大精度【3         】
+2016-06-21 17:38:36,187 INFO  daogen.DbConn - 类型名称【TINYINT UNSIGNED    】SqlType【-6   】最大精度【3         】
+2016-06-21 17:38:36,187 INFO  daogen.DbConn - 类型名称【BIGINT              】SqlType【-5   】最大精度【19        】
+2016-06-21 17:38:36,187 INFO  daogen.DbConn - 类型名称【BIGINT UNSIGNED     】SqlType【-5   】最大精度【20        】
+2016-06-21 17:38:36,187 INFO  daogen.DbConn - 类型名称【LONG VARBINARY      】SqlType【-4   】最大精度【16777215  】
+2016-06-21 17:38:36,188 INFO  daogen.DbConn - 类型名称【MEDIUMBLOB          】SqlType【-4   】最大精度【16777215  】
+2016-06-21 17:38:36,188 INFO  daogen.DbConn - 类型名称【LONGBLOB            】SqlType【-4   】最大精度【2147483647】
+2016-06-21 17:38:36,188 INFO  daogen.DbConn - 类型名称【BLOB                】SqlType【-4   】最大精度【65535     】
+2016-06-21 17:38:36,188 INFO  daogen.DbConn - 类型名称【TINYBLOB            】SqlType【-4   】最大精度【255       】
+2016-06-21 17:38:36,188 INFO  daogen.DbConn - 类型名称【VARBINARY           】SqlType【-3   】最大精度【255       】
+2016-06-21 17:38:36,188 INFO  daogen.DbConn - 类型名称【BINARY              】SqlType【-2   】最大精度【255       】
+2016-06-21 17:38:36,188 INFO  daogen.DbConn - 类型名称【LONG VARCHAR        】SqlType【-1   】最大精度【16777215  】
+2016-06-21 17:38:36,188 INFO  daogen.DbConn - 类型名称【MEDIUMTEXT          】SqlType【-1   】最大精度【16777215  】
+2016-06-21 17:38:36,188 INFO  daogen.DbConn - 类型名称【LONGTEXT            】SqlType【-1   】最大精度【2147483647】
+2016-06-21 17:38:36,188 INFO  daogen.DbConn - 类型名称【TEXT                】SqlType【-1   】最大精度【65535     】
+2016-06-21 17:38:36,188 INFO  daogen.DbConn - 类型名称【TINYTEXT            】SqlType【-1   】最大精度【255       】
+2016-06-21 17:38:36,189 INFO  daogen.DbConn - 类型名称【CHAR                】SqlType【1    】最大精度【255       】
+2016-06-21 17:38:36,189 INFO  daogen.DbConn - 类型名称【NUMERIC             】SqlType【2    】最大精度【65        】
+2016-06-21 17:38:36,189 INFO  daogen.DbConn - 类型名称【DECIMAL             】SqlType【3    】最大精度【65        】
+2016-06-21 17:38:36,189 INFO  daogen.DbConn - 类型名称【INTEGER             】SqlType【4    】最大精度【10        】
+2016-06-21 17:38:36,189 INFO  daogen.DbConn - 类型名称【INTEGER UNSIGNED    】SqlType【4    】最大精度【10        】
+2016-06-21 17:38:36,189 INFO  daogen.DbConn - 类型名称【INT                 】SqlType【4    】最大精度【10        】
+2016-06-21 17:38:36,189 INFO  daogen.DbConn - 类型名称【INT UNSIGNED        】SqlType【4    】最大精度【10        】
+2016-06-21 17:38:36,189 INFO  daogen.DbConn - 类型名称【MEDIUMINT           】SqlType【4    】最大精度【7         】
+2016-06-21 17:38:36,189 INFO  daogen.DbConn - 类型名称【MEDIUMINT UNSIGNED  】SqlType【4    】最大精度【8         】
+2016-06-21 17:38:36,189 INFO  daogen.DbConn - 类型名称【SMALLINT            】SqlType【5    】最大精度【5         】
+2016-06-21 17:38:36,190 INFO  daogen.DbConn - 类型名称【SMALLINT UNSIGNED   】SqlType【5    】最大精度【5         】
+2016-06-21 17:38:36,190 INFO  daogen.DbConn - 类型名称【FLOAT               】SqlType【7    】最大精度【10        】
+2016-06-21 17:38:36,190 INFO  daogen.DbConn - 类型名称【DOUBLE              】SqlType【8    】最大精度【17        】
+2016-06-21 17:38:36,190 INFO  daogen.DbConn - 类型名称【DOUBLE PRECISION    】SqlType【8    】最大精度【17        】
+2016-06-21 17:38:36,190 INFO  daogen.DbConn - 类型名称【REAL                】SqlType【8    】最大精度【17        】
+2016-06-21 17:38:36,190 INFO  daogen.DbConn - 类型名称【VARCHAR             】SqlType【12   】最大精度【255       】
+2016-06-21 17:38:36,190 INFO  daogen.DbConn - 类型名称【ENUM                】SqlType【12   】最大精度【65535     】
+2016-06-21 17:38:36,190 INFO  daogen.DbConn - 类型名称【SET                 】SqlType【12   】最大精度【64        】
+2016-06-21 17:38:36,190 INFO  daogen.DbConn - 类型名称【DATE                】SqlType【91   】最大精度【0         】
+2016-06-21 17:38:36,190 INFO  daogen.DbConn - 类型名称【TIME                】SqlType【92   】最大精度【0         】
+2016-06-21 17:38:36,191 INFO  daogen.DbConn - 类型名称【DATETIME            】SqlType【93   】最大精度【0         】
+2016-06-21 17:38:36,191 INFO  daogen.DbConn - 类型名称【TIMESTAMP           】SqlType【93   】最大精度【0         】
+2016-06-21 17:38:36,191 INFO  daogen.DbConn - 数据库类型【MySQL】数据库版本【5.7.12】数据库驱动名称【MySQL Connector Java】数据库驱动程序版本【mysql-connector-java-5.1.34 ( Revision: jess.balint@oracle.com-20141014163213-wqbwpf1ok2kvo1om )】
+2016-06-21 17:38:36,196 INFO  daogen.GenTable - ============================获取所有表结构信息：
+2016-06-21 17:38:36,197 INFO  daogen.GenTable - Schema名【lottery   】表名【lottery_active           】表类型【TABLE     】表注释【                              】
+2016-06-21 17:38:36,197 INFO  daogen.GenTable - Schema名【lottery   】表名【lottery_prize            】表类型【TABLE     】表注释【                              】
+2016-06-21 17:38:36,197 INFO  daogen.GenTable - Schema名【lottery   】表名【lottery_win              】表类型【TABLE     】表注释【                              】
+2016-06-21 17:38:36,197 INFO  daogen.GenTable - ============================从索引获取主键:
+2016-06-21 17:38:36,228 INFO  daogen.Gen - 共有1个表需要生成数据访问层.
+2016-06-21 17:38:36,228 INFO  daogen.Gen - 第1个表[lottery_win]数据访问层正在生成中...
+2016-06-21 17:38:36,228 INFO  daogen.GenTable - 开始生成表对象，表名：lottery_win
+2016-06-21 17:38:36,239 INFO  daogen.GenTable - 表名【lottery_win              】列名【USERNAME       】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【中奖用户名称  】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:38:36,241 INFO  daogen.GenTable - 表名【lottery_win              】列名【WINAID         】列sqltype【-5 】列typename【BIGINT    】列precision【19   】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【中奖纪录ID      】列defaultValue【     】列isAutocrement【YES  】
+2016-06-21 17:38:36,241 INFO  daogen.GenTable - 表名【lottery_win              】列名【USERID         】列sqltype【-5 】列typename【BIGINT    】列precision【19   】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【中奖用户ID      】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:38:36,241 INFO  daogen.GenTable - 表名【lottery_win              】列名【LOTTERYNAME    】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【奖品名称        】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:38:36,242 INFO  daogen.GenTable - 表名【lottery_win              】列名【PID            】列sqltype【-5 】列typename【BIGINT    】列precision【19   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【奖品Id            】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:38:36,242 INFO  daogen.GenTable - 表名【lottery_win              】列名【USERPHONE      】列sqltype【12 】列typename【VARCHAR   】列precision【20   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【中奖人手机号码】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:38:36,242 INFO  daogen.GenTable - 表名【lottery_win              】列名【WINORFAILURE   】列sqltype【1  】列typename【CHAR      】列precision【1    】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【是否中奖（0 为未中奖 1为中奖）】列defaultValue【0    】列isAutocrement【NO   】
+2016-06-21 17:38:36,242 INFO  daogen.GenTable - 表名【lottery_win              】列名【WINDATE        】列sqltype【93 】列typename【DATETIME  】列precision【19   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【中奖时间        】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:38:36,243 INFO  daogen.GenTable - 表名【lottery_win              】列名【CHECKOUT       】列sqltype【4  】列typename【INT       】列precision【10   】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【奖品是否发出（0奖品未送出 1奖品已送出】列defaultValue【0    】列isAutocrement【NO   】
+2016-06-21 17:38:36,243 INFO  daogen.GenTable - 表名【lottery_win              】列名【PHONEINT       】列sqltype【12 】列typename【VARCHAR   】列precision【20   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【接受人_联系电话】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:38:36,243 INFO  daogen.GenTable - 表名【lottery_win              】列名【RECEIVE_NAME   】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【接收人_姓名    】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:38:36,243 INFO  daogen.GenTable - 表名【lottery_win              】列名【SENDADDRESS    】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【接收人_邮寄地址】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:38:36,244 INFO  daogen.GenTable - 表名【lottery_win              】列名【REAL_NAME      】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【中奖人真实姓名】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:38:36,244 INFO  daogen.GenTable - 表名【lottery_win              】列名【SEND_POST      】列sqltype【12 】列typename【VARCHAR   】列precision【20   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【接受人_邮政编码】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:38:36,244 INFO  daogen.GenTable - 表名【lottery_win              】列名【STATE          】列sqltype【1  】列typename【CHAR      】列precision【1    】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【是否取消状态（0为正常 1为取消）】列defaultValue【0    】列isAutocrement【NO   】
+2016-06-21 17:38:36,245 INFO  daogen.GenTable - 表名【lottery_win              】列名【ALIPAY         】列sqltype【12 】列typename【VARCHAR   】列precision【20   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【支付宝账号     】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:38:36,245 INFO  daogen.GenTable - 表名【lottery_win              】列名【PAYSEQNUM      】列sqltype【12 】列typename【VARCHAR   】列precision【30   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【支付流水号     】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:38:36,245 INFO  daogen.GenTable - 表名【lottery_win              】列名【COMMENTS       】列sqltype【12 】列typename【VARCHAR   】列precision【200  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【备注              】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:38:36,245 INFO  daogen.GenTable - 表名【lottery_win              】列名【ACTIVITY_ID    】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【活动id            】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:38:36,246 INFO  daogen.GenTable - 生成表对象成功，表名：lottery_win
+2016-06-21 17:38:36,320 INFO  util.VelocityTemplate - 初始化Velocity成功，配置路径为：/C:/Users/Administrator/git/XBatis-Code-Generator/target/classes/velocity.properties
+2016-06-21 17:38:36,350 INFO  daogen.Gen - LotteryWin.java
+2016-06-21 17:38:36,359 INFO  daogen.Gen - LotteryWinMapper.java
+2016-06-21 17:38:36,377 INFO  daogen.Gen - LotteryWinQuery.java
+2016-06-21 17:38:36,382 INFO  daogen.Gen - LotteryWinService.java
+2016-06-21 17:38:36,389 INFO  daogen.Gen - LotteryWinServiceImpl.java
+2016-06-21 17:38:36,389 ERROR util.FileUtil - 文件不存在或不是文件！
+2016-06-21 17:38:36,402 ERROR util.VelocityTemplate - mergeTemplate[C:\Users\Administrator\git\XBatis-Code-Generator/gendir/dao/ibatisdao/src/main/resources/com/ct/service/implLotteryWinMapper.xml] error in template dao/ibatisdao/src/main/resources/sqlmap/-sqlmap.xml.vm:java.io.FileNotFoundException: C:\Users\Administrator\git\XBatis-Code-Generator\gendir\dao\ibatisdao\src\main\resources\com\ct\service\implLotteryWinMapper.xml (系统找不到指定的路径。)
+2016-06-21 17:38:36,402 INFO  daogen.Gen - 实际生成1个表的数据访问层！
+2016-06-21 17:38:36,404 INFO  daogen.Gen - 所映射的字段有：
+2016-06-21 17:38:36,404 INFO  daogen.Gen - sqltype:1 -> typeName:CHAR -> className:【无】
+2016-06-21 17:38:36,404 INFO  daogen.Gen - sqltype:4 -> typeName:INT -> className:【无】
+2016-06-21 17:38:36,404 INFO  daogen.Gen - sqltype:93 -> typeName:DATETIME -> className:【无】
+2016-06-21 17:38:36,404 INFO  daogen.Gen - sqltype:-5 -> typeName:BIGINT -> className:【无】
+2016-06-21 17:38:36,404 INFO  daogen.Gen - sqltype:12 -> typeName:VARCHAR -> className:【无】
+2016-06-21 17:38:36,404 INFO  daogen.Gen - 结束执行DAO代码生成===========================
+2016-06-21 17:38:50,395 INFO  daogen.Gen - 开始执行DAO代码生成===========================
+2016-06-21 17:38:50,396 INFO  daogen.Settings - 开始初始化数据库环境,路径为【/C:/Users/Administrator/git/XBatis-Code-Generator/target/classes/dao/】
+2016-06-21 17:38:50,401 INFO  daogen.Settings - 找到DB属性配置文件,文件名为【/C:/Users/Administrator/git/XBatis-Code-Generator/target/classes/dao/db.properties】
+2016-06-21 17:38:50,404 WARN  daogen.Settings - DAO模版未指定，使用默认模版：dao/ibatisdao
+2016-06-21 17:38:50,404 WARN  daogen.Settings - 代码生成输出路径未指定，使用默认路径：C:\Users\Administrator\git\XBatis-Code-Generator/gendir/
+2016-06-21 17:38:50,404 INFO  daogen.Settings - 数据库DAO代码生成环境配置信息如下：
+2016-06-21 17:38:50,404 INFO  daogen.Settings - DB_USER=root
+2016-06-21 17:38:50,404 INFO  daogen.Settings - DB_PORT=3306
+2016-06-21 17:38:50,404 INFO  daogen.Settings - JAVA_PACKAGE=com.ct
+2016-06-21 17:38:50,404 INFO  daogen.Settings - DB_NAME=lottery
+2016-06-21 17:38:50,404 INFO  daogen.Settings - DB_PWD=root
+2016-06-21 17:38:50,404 INFO  daogen.Settings - DB_TYPE=Mysql
+2016-06-21 17:38:50,404 INFO  daogen.Settings - DB_SERVER=192.168.16.120
+2016-06-21 17:38:50,404 INFO  daogen.Settings - 结束初始化数据库DAO代码生成环境【/C:/Users/Administrator/git/XBatis-Code-Generator/target/classes/dao/db.properties】！
+2016-06-21 17:38:50,406 INFO  daogen.DbConn - 初始化数据库[lottery]连接！
+2016-06-21 17:38:50,581 INFO  daogen.DbConn - 初始化数据库[lottery]连接【OK】！
+2016-06-21 17:38:50,586 INFO  daogen.DbConn - ===============================数据库支持的数据类型:
+2016-06-21 17:38:50,587 INFO  daogen.DbConn - 类型名称【BIT                 】SqlType【-7   】最大精度【1         】
+2016-06-21 17:38:50,587 INFO  daogen.DbConn - 类型名称【BOOL                】SqlType【-7   】最大精度【1         】
+2016-06-21 17:38:50,587 INFO  daogen.DbConn - 类型名称【TINYINT             】SqlType【-6   】最大精度【3         】
+2016-06-21 17:38:50,587 INFO  daogen.DbConn - 类型名称【TINYINT UNSIGNED    】SqlType【-6   】最大精度【3         】
+2016-06-21 17:38:50,587 INFO  daogen.DbConn - 类型名称【BIGINT              】SqlType【-5   】最大精度【19        】
+2016-06-21 17:38:50,588 INFO  daogen.DbConn - 类型名称【BIGINT UNSIGNED     】SqlType【-5   】最大精度【20        】
+2016-06-21 17:38:50,588 INFO  daogen.DbConn - 类型名称【LONG VARBINARY      】SqlType【-4   】最大精度【16777215  】
+2016-06-21 17:38:50,588 INFO  daogen.DbConn - 类型名称【MEDIUMBLOB          】SqlType【-4   】最大精度【16777215  】
+2016-06-21 17:38:50,588 INFO  daogen.DbConn - 类型名称【LONGBLOB            】SqlType【-4   】最大精度【2147483647】
+2016-06-21 17:38:50,588 INFO  daogen.DbConn - 类型名称【BLOB                】SqlType【-4   】最大精度【65535     】
+2016-06-21 17:38:50,588 INFO  daogen.DbConn - 类型名称【TINYBLOB            】SqlType【-4   】最大精度【255       】
+2016-06-21 17:38:50,588 INFO  daogen.DbConn - 类型名称【VARBINARY           】SqlType【-3   】最大精度【255       】
+2016-06-21 17:38:50,588 INFO  daogen.DbConn - 类型名称【BINARY              】SqlType【-2   】最大精度【255       】
+2016-06-21 17:38:50,588 INFO  daogen.DbConn - 类型名称【LONG VARCHAR        】SqlType【-1   】最大精度【16777215  】
+2016-06-21 17:38:50,588 INFO  daogen.DbConn - 类型名称【MEDIUMTEXT          】SqlType【-1   】最大精度【16777215  】
+2016-06-21 17:38:50,589 INFO  daogen.DbConn - 类型名称【LONGTEXT            】SqlType【-1   】最大精度【2147483647】
+2016-06-21 17:38:50,589 INFO  daogen.DbConn - 类型名称【TEXT                】SqlType【-1   】最大精度【65535     】
+2016-06-21 17:38:50,589 INFO  daogen.DbConn - 类型名称【TINYTEXT            】SqlType【-1   】最大精度【255       】
+2016-06-21 17:38:50,589 INFO  daogen.DbConn - 类型名称【CHAR                】SqlType【1    】最大精度【255       】
+2016-06-21 17:38:50,589 INFO  daogen.DbConn - 类型名称【NUMERIC             】SqlType【2    】最大精度【65        】
+2016-06-21 17:38:50,589 INFO  daogen.DbConn - 类型名称【DECIMAL             】SqlType【3    】最大精度【65        】
+2016-06-21 17:38:50,589 INFO  daogen.DbConn - 类型名称【INTEGER             】SqlType【4    】最大精度【10        】
+2016-06-21 17:38:50,589 INFO  daogen.DbConn - 类型名称【INTEGER UNSIGNED    】SqlType【4    】最大精度【10        】
+2016-06-21 17:38:50,589 INFO  daogen.DbConn - 类型名称【INT                 】SqlType【4    】最大精度【10        】
+2016-06-21 17:38:50,589 INFO  daogen.DbConn - 类型名称【INT UNSIGNED        】SqlType【4    】最大精度【10        】
+2016-06-21 17:38:50,590 INFO  daogen.DbConn - 类型名称【MEDIUMINT           】SqlType【4    】最大精度【7         】
+2016-06-21 17:38:50,590 INFO  daogen.DbConn - 类型名称【MEDIUMINT UNSIGNED  】SqlType【4    】最大精度【8         】
+2016-06-21 17:38:50,590 INFO  daogen.DbConn - 类型名称【SMALLINT            】SqlType【5    】最大精度【5         】
+2016-06-21 17:38:50,590 INFO  daogen.DbConn - 类型名称【SMALLINT UNSIGNED   】SqlType【5    】最大精度【5         】
+2016-06-21 17:38:50,590 INFO  daogen.DbConn - 类型名称【FLOAT               】SqlType【7    】最大精度【10        】
+2016-06-21 17:38:50,590 INFO  daogen.DbConn - 类型名称【DOUBLE              】SqlType【8    】最大精度【17        】
+2016-06-21 17:38:50,590 INFO  daogen.DbConn - 类型名称【DOUBLE PRECISION    】SqlType【8    】最大精度【17        】
+2016-06-21 17:38:50,590 INFO  daogen.DbConn - 类型名称【REAL                】SqlType【8    】最大精度【17        】
+2016-06-21 17:38:50,590 INFO  daogen.DbConn - 类型名称【VARCHAR             】SqlType【12   】最大精度【255       】
+2016-06-21 17:38:50,590 INFO  daogen.DbConn - 类型名称【ENUM                】SqlType【12   】最大精度【65535     】
+2016-06-21 17:38:50,590 INFO  daogen.DbConn - 类型名称【SET                 】SqlType【12   】最大精度【64        】
+2016-06-21 17:38:50,591 INFO  daogen.DbConn - 类型名称【DATE                】SqlType【91   】最大精度【0         】
+2016-06-21 17:38:50,592 INFO  daogen.DbConn - 类型名称【TIME                】SqlType【92   】最大精度【0         】
+2016-06-21 17:38:50,592 INFO  daogen.DbConn - 类型名称【DATETIME            】SqlType【93   】最大精度【0         】
+2016-06-21 17:38:50,592 INFO  daogen.DbConn - 类型名称【TIMESTAMP           】SqlType【93   】最大精度【0         】
+2016-06-21 17:38:50,592 INFO  daogen.DbConn - 数据库类型【MySQL】数据库版本【5.7.12】数据库驱动名称【MySQL Connector Java】数据库驱动程序版本【mysql-connector-java-5.1.34 ( Revision: jess.balint@oracle.com-20141014163213-wqbwpf1ok2kvo1om )】
+2016-06-21 17:38:50,598 INFO  daogen.GenTable - ============================获取所有表结构信息：
+2016-06-21 17:38:50,599 INFO  daogen.GenTable - Schema名【lottery   】表名【lottery_active           】表类型【TABLE     】表注释【                              】
+2016-06-21 17:38:50,599 INFO  daogen.GenTable - Schema名【lottery   】表名【lottery_prize            】表类型【TABLE     】表注释【                              】
+2016-06-21 17:38:50,599 INFO  daogen.GenTable - Schema名【lottery   】表名【lottery_win              】表类型【TABLE     】表注释【                              】
+2016-06-21 17:38:50,599 INFO  daogen.GenTable - ============================从索引获取主键:
+2016-06-21 17:38:50,630 INFO  daogen.Gen - 共有1个表需要生成数据访问层.
+2016-06-21 17:38:50,630 INFO  daogen.Gen - 第1个表[lottery_win]数据访问层正在生成中...
+2016-06-21 17:38:50,630 INFO  daogen.GenTable - 开始生成表对象，表名：lottery_win
+2016-06-21 17:38:50,641 INFO  daogen.GenTable - 表名【lottery_win              】列名【USERNAME       】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【中奖用户名称  】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:38:50,643 INFO  daogen.GenTable - 表名【lottery_win              】列名【WINAID         】列sqltype【-5 】列typename【BIGINT    】列precision【19   】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【中奖纪录ID      】列defaultValue【     】列isAutocrement【YES  】
+2016-06-21 17:38:50,644 INFO  daogen.GenTable - 表名【lottery_win              】列名【USERID         】列sqltype【-5 】列typename【BIGINT    】列precision【19   】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【中奖用户ID      】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:38:50,644 INFO  daogen.GenTable - 表名【lottery_win              】列名【LOTTERYNAME    】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【奖品名称        】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:38:50,644 INFO  daogen.GenTable - 表名【lottery_win              】列名【PID            】列sqltype【-5 】列typename【BIGINT    】列precision【19   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【奖品Id            】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:38:50,644 INFO  daogen.GenTable - 表名【lottery_win              】列名【USERPHONE      】列sqltype【12 】列typename【VARCHAR   】列precision【20   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【中奖人手机号码】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:38:50,645 INFO  daogen.GenTable - 表名【lottery_win              】列名【WINORFAILURE   】列sqltype【1  】列typename【CHAR      】列precision【1    】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【是否中奖（0 为未中奖 1为中奖）】列defaultValue【0    】列isAutocrement【NO   】
+2016-06-21 17:38:50,645 INFO  daogen.GenTable - 表名【lottery_win              】列名【WINDATE        】列sqltype【93 】列typename【DATETIME  】列precision【19   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【中奖时间        】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:38:50,645 INFO  daogen.GenTable - 表名【lottery_win              】列名【CHECKOUT       】列sqltype【4  】列typename【INT       】列precision【10   】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【奖品是否发出（0奖品未送出 1奖品已送出】列defaultValue【0    】列isAutocrement【NO   】
+2016-06-21 17:38:50,646 INFO  daogen.GenTable - 表名【lottery_win              】列名【PHONEINT       】列sqltype【12 】列typename【VARCHAR   】列precision【20   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【接受人_联系电话】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:38:50,646 INFO  daogen.GenTable - 表名【lottery_win              】列名【RECEIVE_NAME   】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【接收人_姓名    】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:38:50,646 INFO  daogen.GenTable - 表名【lottery_win              】列名【SENDADDRESS    】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【接收人_邮寄地址】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:38:50,647 INFO  daogen.GenTable - 表名【lottery_win              】列名【REAL_NAME      】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【中奖人真实姓名】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:38:50,647 INFO  daogen.GenTable - 表名【lottery_win              】列名【SEND_POST      】列sqltype【12 】列typename【VARCHAR   】列precision【20   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【接受人_邮政编码】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:38:50,647 INFO  daogen.GenTable - 表名【lottery_win              】列名【STATE          】列sqltype【1  】列typename【CHAR      】列precision【1    】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【是否取消状态（0为正常 1为取消）】列defaultValue【0    】列isAutocrement【NO   】
+2016-06-21 17:38:50,647 INFO  daogen.GenTable - 表名【lottery_win              】列名【ALIPAY         】列sqltype【12 】列typename【VARCHAR   】列precision【20   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【支付宝账号     】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:38:50,648 INFO  daogen.GenTable - 表名【lottery_win              】列名【PAYSEQNUM      】列sqltype【12 】列typename【VARCHAR   】列precision【30   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【支付流水号     】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:38:50,648 INFO  daogen.GenTable - 表名【lottery_win              】列名【COMMENTS       】列sqltype【12 】列typename【VARCHAR   】列precision【200  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【备注              】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:38:50,648 INFO  daogen.GenTable - 表名【lottery_win              】列名【ACTIVITY_ID    】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【活动id            】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:38:50,649 INFO  daogen.GenTable - 生成表对象成功，表名：lottery_win
+2016-06-21 17:38:50,725 INFO  util.VelocityTemplate - 初始化Velocity成功，配置路径为：/C:/Users/Administrator/git/XBatis-Code-Generator/target/classes/velocity.properties
+2016-06-21 17:38:50,755 INFO  daogen.Gen - LotteryWin.java
+2016-06-21 17:38:50,763 INFO  daogen.Gen - LotteryWinMapper.java
+2016-06-21 17:38:50,782 INFO  daogen.Gen - LotteryWinQuery.java
+2016-06-21 17:38:50,787 INFO  daogen.Gen - LotteryWinService.java
+2016-06-21 17:38:50,794 INFO  daogen.Gen - LotteryWinServiceImpl.java
+2016-06-21 17:38:50,794 ERROR util.FileUtil - 文件不存在或不是文件！
+2016-06-21 17:38:50,809 ERROR util.VelocityTemplate - mergeTemplate[C:\Users\Administrator\git\XBatis-Code-Generator/gendir/dao/ibatisdao/src/main/resources/com/ct/service/implLotteryWinMapper.xml] error in template dao/ibatisdao/src/main/resources/sqlmap/-sqlmap.xml.vm:java.io.FileNotFoundException: C:\Users\Administrator\git\XBatis-Code-Generator\gendir\dao\ibatisdao\src\main\resources\com\ct\service\implLotteryWinMapper.xml (系统找不到指定的路径。)
+2016-06-21 17:38:50,809 INFO  daogen.Gen - 实际生成1个表的数据访问层！
+2016-06-21 17:38:50,810 INFO  daogen.Gen - 所映射的字段有：
+2016-06-21 17:38:50,810 INFO  daogen.Gen - sqltype:1 -> typeName:CHAR -> className:【无】
+2016-06-21 17:38:50,810 INFO  daogen.Gen - sqltype:4 -> typeName:INT -> className:【无】
+2016-06-21 17:38:50,810 INFO  daogen.Gen - sqltype:93 -> typeName:DATETIME -> className:【无】
+2016-06-21 17:38:50,810 INFO  daogen.Gen - sqltype:-5 -> typeName:BIGINT -> className:【无】
+2016-06-21 17:38:50,811 INFO  daogen.Gen - sqltype:12 -> typeName:VARCHAR -> className:【无】
+2016-06-21 17:38:50,811 INFO  daogen.Gen - 结束执行DAO代码生成===========================
+2016-06-21 17:39:32,634 INFO  daogen.Gen - 开始执行DAO代码生成===========================
+2016-06-21 17:39:32,635 INFO  daogen.Settings - 开始初始化数据库环境,路径为【/C:/Users/Administrator/git/XBatis-Code-Generator/target/classes/dao/】
+2016-06-21 17:39:32,641 INFO  daogen.Settings - 找到DB属性配置文件,文件名为【/C:/Users/Administrator/git/XBatis-Code-Generator/target/classes/dao/db.properties】
+2016-06-21 17:39:32,643 WARN  daogen.Settings - DAO模版未指定，使用默认模版：dao/ibatisdao
+2016-06-21 17:39:32,643 WARN  daogen.Settings - 代码生成输出路径未指定，使用默认路径：C:\Users\Administrator\git\XBatis-Code-Generator/gendir/
+2016-06-21 17:39:32,644 INFO  daogen.Settings - 数据库DAO代码生成环境配置信息如下：
+2016-06-21 17:39:32,644 INFO  daogen.Settings - DB_USER=root
+2016-06-21 17:39:32,644 INFO  daogen.Settings - DB_PORT=3306
+2016-06-21 17:39:32,644 INFO  daogen.Settings - JAVA_PACKAGE=com.ct
+2016-06-21 17:39:32,644 INFO  daogen.Settings - DB_NAME=lottery
+2016-06-21 17:39:32,644 INFO  daogen.Settings - DB_PWD=root
+2016-06-21 17:39:32,644 INFO  daogen.Settings - DB_TYPE=Mysql
+2016-06-21 17:39:32,644 INFO  daogen.Settings - DB_SERVER=192.168.16.120
+2016-06-21 17:39:32,644 INFO  daogen.Settings - 结束初始化数据库DAO代码生成环境【/C:/Users/Administrator/git/XBatis-Code-Generator/target/classes/dao/db.properties】！
+2016-06-21 17:39:32,645 INFO  daogen.DbConn - 初始化数据库[lottery]连接！
+2016-06-21 17:39:32,817 INFO  daogen.DbConn - 初始化数据库[lottery]连接【OK】！
+2016-06-21 17:39:32,822 INFO  daogen.DbConn - ===============================数据库支持的数据类型:
+2016-06-21 17:39:32,822 INFO  daogen.DbConn - 类型名称【BIT                 】SqlType【-7   】最大精度【1         】
+2016-06-21 17:39:32,822 INFO  daogen.DbConn - 类型名称【BOOL                】SqlType【-7   】最大精度【1         】
+2016-06-21 17:39:32,822 INFO  daogen.DbConn - 类型名称【TINYINT             】SqlType【-6   】最大精度【3         】
+2016-06-21 17:39:32,823 INFO  daogen.DbConn - 类型名称【TINYINT UNSIGNED    】SqlType【-6   】最大精度【3         】
+2016-06-21 17:39:32,823 INFO  daogen.DbConn - 类型名称【BIGINT              】SqlType【-5   】最大精度【19        】
+2016-06-21 17:39:32,823 INFO  daogen.DbConn - 类型名称【BIGINT UNSIGNED     】SqlType【-5   】最大精度【20        】
+2016-06-21 17:39:32,823 INFO  daogen.DbConn - 类型名称【LONG VARBINARY      】SqlType【-4   】最大精度【16777215  】
+2016-06-21 17:39:32,823 INFO  daogen.DbConn - 类型名称【MEDIUMBLOB          】SqlType【-4   】最大精度【16777215  】
+2016-06-21 17:39:32,823 INFO  daogen.DbConn - 类型名称【LONGBLOB            】SqlType【-4   】最大精度【2147483647】
+2016-06-21 17:39:32,823 INFO  daogen.DbConn - 类型名称【BLOB                】SqlType【-4   】最大精度【65535     】
+2016-06-21 17:39:32,823 INFO  daogen.DbConn - 类型名称【TINYBLOB            】SqlType【-4   】最大精度【255       】
+2016-06-21 17:39:32,824 INFO  daogen.DbConn - 类型名称【VARBINARY           】SqlType【-3   】最大精度【255       】
+2016-06-21 17:39:32,824 INFO  daogen.DbConn - 类型名称【BINARY              】SqlType【-2   】最大精度【255       】
+2016-06-21 17:39:32,824 INFO  daogen.DbConn - 类型名称【LONG VARCHAR        】SqlType【-1   】最大精度【16777215  】
+2016-06-21 17:39:32,824 INFO  daogen.DbConn - 类型名称【MEDIUMTEXT          】SqlType【-1   】最大精度【16777215  】
+2016-06-21 17:39:32,824 INFO  daogen.DbConn - 类型名称【LONGTEXT            】SqlType【-1   】最大精度【2147483647】
+2016-06-21 17:39:32,824 INFO  daogen.DbConn - 类型名称【TEXT                】SqlType【-1   】最大精度【65535     】
+2016-06-21 17:39:32,824 INFO  daogen.DbConn - 类型名称【TINYTEXT            】SqlType【-1   】最大精度【255       】
+2016-06-21 17:39:32,824 INFO  daogen.DbConn - 类型名称【CHAR                】SqlType【1    】最大精度【255       】
+2016-06-21 17:39:32,824 INFO  daogen.DbConn - 类型名称【NUMERIC             】SqlType【2    】最大精度【65        】
+2016-06-21 17:39:32,824 INFO  daogen.DbConn - 类型名称【DECIMAL             】SqlType【3    】最大精度【65        】
+2016-06-21 17:39:32,824 INFO  daogen.DbConn - 类型名称【INTEGER             】SqlType【4    】最大精度【10        】
+2016-06-21 17:39:32,825 INFO  daogen.DbConn - 类型名称【INTEGER UNSIGNED    】SqlType【4    】最大精度【10        】
+2016-06-21 17:39:32,825 INFO  daogen.DbConn - 类型名称【INT                 】SqlType【4    】最大精度【10        】
+2016-06-21 17:39:32,825 INFO  daogen.DbConn - 类型名称【INT UNSIGNED        】SqlType【4    】最大精度【10        】
+2016-06-21 17:39:32,825 INFO  daogen.DbConn - 类型名称【MEDIUMINT           】SqlType【4    】最大精度【7         】
+2016-06-21 17:39:32,825 INFO  daogen.DbConn - 类型名称【MEDIUMINT UNSIGNED  】SqlType【4    】最大精度【8         】
+2016-06-21 17:39:32,825 INFO  daogen.DbConn - 类型名称【SMALLINT            】SqlType【5    】最大精度【5         】
+2016-06-21 17:39:32,825 INFO  daogen.DbConn - 类型名称【SMALLINT UNSIGNED   】SqlType【5    】最大精度【5         】
+2016-06-21 17:39:32,825 INFO  daogen.DbConn - 类型名称【FLOAT               】SqlType【7    】最大精度【10        】
+2016-06-21 17:39:32,825 INFO  daogen.DbConn - 类型名称【DOUBLE              】SqlType【8    】最大精度【17        】
+2016-06-21 17:39:32,825 INFO  daogen.DbConn - 类型名称【DOUBLE PRECISION    】SqlType【8    】最大精度【17        】
+2016-06-21 17:39:32,825 INFO  daogen.DbConn - 类型名称【REAL                】SqlType【8    】最大精度【17        】
+2016-06-21 17:39:32,826 INFO  daogen.DbConn - 类型名称【VARCHAR             】SqlType【12   】最大精度【255       】
+2016-06-21 17:39:32,826 INFO  daogen.DbConn - 类型名称【ENUM                】SqlType【12   】最大精度【65535     】
+2016-06-21 17:39:32,826 INFO  daogen.DbConn - 类型名称【SET                 】SqlType【12   】最大精度【64        】
+2016-06-21 17:39:32,826 INFO  daogen.DbConn - 类型名称【DATE                】SqlType【91   】最大精度【0         】
+2016-06-21 17:39:32,826 INFO  daogen.DbConn - 类型名称【TIME                】SqlType【92   】最大精度【0         】
+2016-06-21 17:39:32,826 INFO  daogen.DbConn - 类型名称【DATETIME            】SqlType【93   】最大精度【0         】
+2016-06-21 17:39:32,826 INFO  daogen.DbConn - 类型名称【TIMESTAMP           】SqlType【93   】最大精度【0         】
+2016-06-21 17:39:32,826 INFO  daogen.DbConn - 数据库类型【MySQL】数据库版本【5.7.12】数据库驱动名称【MySQL Connector Java】数据库驱动程序版本【mysql-connector-java-5.1.34 ( Revision: jess.balint@oracle.com-20141014163213-wqbwpf1ok2kvo1om )】
+2016-06-21 17:39:32,832 INFO  daogen.GenTable - ============================获取所有表结构信息：
+2016-06-21 17:39:32,832 INFO  daogen.GenTable - Schema名【lottery   】表名【lottery_active           】表类型【TABLE     】表注释【                              】
+2016-06-21 17:39:32,833 INFO  daogen.GenTable - Schema名【lottery   】表名【lottery_prize            】表类型【TABLE     】表注释【                              】
+2016-06-21 17:39:32,833 INFO  daogen.GenTable - Schema名【lottery   】表名【lottery_win              】表类型【TABLE     】表注释【                              】
+2016-06-21 17:39:32,833 INFO  daogen.GenTable - ============================从索引获取主键:
+2016-06-21 17:39:32,861 INFO  daogen.Gen - 共有1个表需要生成数据访问层.
+2016-06-21 17:39:32,861 INFO  daogen.Gen - 第1个表[lottery_win]数据访问层正在生成中...
+2016-06-21 17:39:32,862 INFO  daogen.GenTable - 开始生成表对象，表名：lottery_win
+2016-06-21 17:39:32,873 INFO  daogen.GenTable - 表名【lottery_win              】列名【USERNAME       】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【中奖用户名称  】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:39:32,875 INFO  daogen.GenTable - 表名【lottery_win              】列名【WINAID         】列sqltype【-5 】列typename【BIGINT    】列precision【19   】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【中奖纪录ID      】列defaultValue【     】列isAutocrement【YES  】
+2016-06-21 17:39:32,875 INFO  daogen.GenTable - 表名【lottery_win              】列名【USERID         】列sqltype【-5 】列typename【BIGINT    】列precision【19   】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【中奖用户ID      】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:39:32,875 INFO  daogen.GenTable - 表名【lottery_win              】列名【LOTTERYNAME    】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【奖品名称        】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:39:32,875 INFO  daogen.GenTable - 表名【lottery_win              】列名【PID            】列sqltype【-5 】列typename【BIGINT    】列precision【19   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【奖品Id            】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:39:32,876 INFO  daogen.GenTable - 表名【lottery_win              】列名【USERPHONE      】列sqltype【12 】列typename【VARCHAR   】列precision【20   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【中奖人手机号码】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:39:32,876 INFO  daogen.GenTable - 表名【lottery_win              】列名【WINORFAILURE   】列sqltype【1  】列typename【CHAR      】列precision【1    】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【是否中奖（0 为未中奖 1为中奖）】列defaultValue【0    】列isAutocrement【NO   】
+2016-06-21 17:39:32,876 INFO  daogen.GenTable - 表名【lottery_win              】列名【WINDATE        】列sqltype【93 】列typename【DATETIME  】列precision【19   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【中奖时间        】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:39:32,876 INFO  daogen.GenTable - 表名【lottery_win              】列名【CHECKOUT       】列sqltype【4  】列typename【INT       】列precision【10   】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【奖品是否发出（0奖品未送出 1奖品已送出】列defaultValue【0    】列isAutocrement【NO   】
+2016-06-21 17:39:32,877 INFO  daogen.GenTable - 表名【lottery_win              】列名【PHONEINT       】列sqltype【12 】列typename【VARCHAR   】列precision【20   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【接受人_联系电话】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:39:32,877 INFO  daogen.GenTable - 表名【lottery_win              】列名【RECEIVE_NAME   】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【接收人_姓名    】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:39:32,877 INFO  daogen.GenTable - 表名【lottery_win              】列名【SENDADDRESS    】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【接收人_邮寄地址】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:39:32,877 INFO  daogen.GenTable - 表名【lottery_win              】列名【REAL_NAME      】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【中奖人真实姓名】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:39:32,878 INFO  daogen.GenTable - 表名【lottery_win              】列名【SEND_POST      】列sqltype【12 】列typename【VARCHAR   】列precision【20   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【接受人_邮政编码】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:39:32,878 INFO  daogen.GenTable - 表名【lottery_win              】列名【STATE          】列sqltype【1  】列typename【CHAR      】列precision【1    】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【是否取消状态（0为正常 1为取消）】列defaultValue【0    】列isAutocrement【NO   】
+2016-06-21 17:39:32,878 INFO  daogen.GenTable - 表名【lottery_win              】列名【ALIPAY         】列sqltype【12 】列typename【VARCHAR   】列precision【20   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【支付宝账号     】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:39:32,879 INFO  daogen.GenTable - 表名【lottery_win              】列名【PAYSEQNUM      】列sqltype【12 】列typename【VARCHAR   】列precision【30   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【支付流水号     】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:39:32,879 INFO  daogen.GenTable - 表名【lottery_win              】列名【COMMENTS       】列sqltype【12 】列typename【VARCHAR   】列precision【200  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【备注              】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:39:32,879 INFO  daogen.GenTable - 表名【lottery_win              】列名【ACTIVITY_ID    】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【活动id            】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:39:32,880 INFO  daogen.GenTable - 生成表对象成功，表名：lottery_win
+2016-06-21 17:39:32,951 INFO  util.VelocityTemplate - 初始化Velocity成功，配置路径为：/C:/Users/Administrator/git/XBatis-Code-Generator/target/classes/velocity.properties
+2016-06-21 17:39:32,980 INFO  daogen.Gen - LotteryWin.java
+2016-06-21 17:39:32,989 INFO  daogen.Gen - LotteryWinMapper.java
+2016-06-21 17:39:33,014 INFO  daogen.Gen - LotteryWinQuery.java
+2016-06-21 17:39:33,020 INFO  daogen.Gen - LotteryWinService.java
+2016-06-21 17:39:33,027 INFO  daogen.Gen - LotteryWinServiceImpl.java
+2016-06-21 17:39:33,027 ERROR util.FileUtil - 文件不存在或不是文件！
+2016-06-21 17:39:33,042 ERROR util.VelocityTemplate - mergeTemplate[C:\Users\Administrator\git\XBatis-Code-Generator/gendir/dao/ibatisdao/src/main/resources/com/ct/service/implLotteryWinMapper.xml] error in template dao/ibatisdao/src/main/resources/sqlmap/-sqlmap.xml.vm:java.io.FileNotFoundException: C:\Users\Administrator\git\XBatis-Code-Generator\gendir\dao\ibatisdao\src\main\resources\com\ct\service\implLotteryWinMapper.xml (系统找不到指定的路径。)
+2016-06-21 17:39:33,042 INFO  daogen.Gen - 实际生成1个表的数据访问层！
+2016-06-21 17:39:33,043 INFO  daogen.Gen - 所映射的字段有：
+2016-06-21 17:39:33,043 INFO  daogen.Gen - sqltype:1 -> typeName:CHAR -> className:【无】
+2016-06-21 17:39:33,043 INFO  daogen.Gen - sqltype:4 -> typeName:INT -> className:【无】
+2016-06-21 17:39:33,043 INFO  daogen.Gen - sqltype:93 -> typeName:DATETIME -> className:【无】
+2016-06-21 17:39:33,044 INFO  daogen.Gen - sqltype:-5 -> typeName:BIGINT -> className:【无】
+2016-06-21 17:39:33,044 INFO  daogen.Gen - sqltype:12 -> typeName:VARCHAR -> className:【无】
+2016-06-21 17:39:33,044 INFO  daogen.Gen - 结束执行DAO代码生成===========================
+2016-06-21 17:41:57,463 INFO  daogen.Gen - 开始执行DAO代码生成===========================
+2016-06-21 17:41:57,465 INFO  daogen.Settings - 开始初始化数据库环境,路径为【/C:/Users/Administrator/git/XBatis-Code-Generator/target/classes/dao/】
+2016-06-21 17:41:57,471 INFO  daogen.Settings - 找到DB属性配置文件,文件名为【/C:/Users/Administrator/git/XBatis-Code-Generator/target/classes/dao/db.properties】
+2016-06-21 17:41:57,473 WARN  daogen.Settings - DAO模版未指定，使用默认模版：dao/ibatisdao
+2016-06-21 17:41:57,473 WARN  daogen.Settings - 代码生成输出路径未指定，使用默认路径：C:\Users\Administrator\git\XBatis-Code-Generator/gendir/
+2016-06-21 17:41:57,473 INFO  daogen.Settings - 数据库DAO代码生成环境配置信息如下：
+2016-06-21 17:41:57,474 INFO  daogen.Settings - DB_USER=root
+2016-06-21 17:41:57,474 INFO  daogen.Settings - DB_PORT=3306
+2016-06-21 17:41:57,474 INFO  daogen.Settings - JAVA_PACKAGE=com.ct
+2016-06-21 17:41:57,474 INFO  daogen.Settings - DB_NAME=lottery
+2016-06-21 17:41:57,474 INFO  daogen.Settings - DB_PWD=root
+2016-06-21 17:41:57,474 INFO  daogen.Settings - DB_TYPE=Mysql
+2016-06-21 17:41:57,474 INFO  daogen.Settings - DB_SERVER=192.168.16.120
+2016-06-21 17:41:57,474 INFO  daogen.Settings - 结束初始化数据库DAO代码生成环境【/C:/Users/Administrator/git/XBatis-Code-Generator/target/classes/dao/db.properties】！
+2016-06-21 17:41:57,475 INFO  daogen.DbConn - 初始化数据库[lottery]连接！
+2016-06-21 17:41:57,647 INFO  daogen.DbConn - 初始化数据库[lottery]连接【OK】！
+2016-06-21 17:41:57,652 INFO  daogen.DbConn - ===============================数据库支持的数据类型:
+2016-06-21 17:41:57,653 INFO  daogen.DbConn - 类型名称【BIT                 】SqlType【-7   】最大精度【1         】
+2016-06-21 17:41:57,653 INFO  daogen.DbConn - 类型名称【BOOL                】SqlType【-7   】最大精度【1         】
+2016-06-21 17:41:57,653 INFO  daogen.DbConn - 类型名称【TINYINT             】SqlType【-6   】最大精度【3         】
+2016-06-21 17:41:57,653 INFO  daogen.DbConn - 类型名称【TINYINT UNSIGNED    】SqlType【-6   】最大精度【3         】
+2016-06-21 17:41:57,654 INFO  daogen.DbConn - 类型名称【BIGINT              】SqlType【-5   】最大精度【19        】
+2016-06-21 17:41:57,654 INFO  daogen.DbConn - 类型名称【BIGINT UNSIGNED     】SqlType【-5   】最大精度【20        】
+2016-06-21 17:41:57,654 INFO  daogen.DbConn - 类型名称【LONG VARBINARY      】SqlType【-4   】最大精度【16777215  】
+2016-06-21 17:41:57,654 INFO  daogen.DbConn - 类型名称【MEDIUMBLOB          】SqlType【-4   】最大精度【16777215  】
+2016-06-21 17:41:57,654 INFO  daogen.DbConn - 类型名称【LONGBLOB            】SqlType【-4   】最大精度【2147483647】
+2016-06-21 17:41:57,654 INFO  daogen.DbConn - 类型名称【BLOB                】SqlType【-4   】最大精度【65535     】
+2016-06-21 17:41:57,654 INFO  daogen.DbConn - 类型名称【TINYBLOB            】SqlType【-4   】最大精度【255       】
+2016-06-21 17:41:57,654 INFO  daogen.DbConn - 类型名称【VARBINARY           】SqlType【-3   】最大精度【255       】
+2016-06-21 17:41:57,654 INFO  daogen.DbConn - 类型名称【BINARY              】SqlType【-2   】最大精度【255       】
+2016-06-21 17:41:57,654 INFO  daogen.DbConn - 类型名称【LONG VARCHAR        】SqlType【-1   】最大精度【16777215  】
+2016-06-21 17:41:57,654 INFO  daogen.DbConn - 类型名称【MEDIUMTEXT          】SqlType【-1   】最大精度【16777215  】
+2016-06-21 17:41:57,655 INFO  daogen.DbConn - 类型名称【LONGTEXT            】SqlType【-1   】最大精度【2147483647】
+2016-06-21 17:41:57,655 INFO  daogen.DbConn - 类型名称【TEXT                】SqlType【-1   】最大精度【65535     】
+2016-06-21 17:41:57,655 INFO  daogen.DbConn - 类型名称【TINYTEXT            】SqlType【-1   】最大精度【255       】
+2016-06-21 17:41:57,655 INFO  daogen.DbConn - 类型名称【CHAR                】SqlType【1    】最大精度【255       】
+2016-06-21 17:41:57,655 INFO  daogen.DbConn - 类型名称【NUMERIC             】SqlType【2    】最大精度【65        】
+2016-06-21 17:41:57,655 INFO  daogen.DbConn - 类型名称【DECIMAL             】SqlType【3    】最大精度【65        】
+2016-06-21 17:41:57,655 INFO  daogen.DbConn - 类型名称【INTEGER             】SqlType【4    】最大精度【10        】
+2016-06-21 17:41:57,655 INFO  daogen.DbConn - 类型名称【INTEGER UNSIGNED    】SqlType【4    】最大精度【10        】
+2016-06-21 17:41:57,655 INFO  daogen.DbConn - 类型名称【INT                 】SqlType【4    】最大精度【10        】
+2016-06-21 17:41:57,656 INFO  daogen.DbConn - 类型名称【INT UNSIGNED        】SqlType【4    】最大精度【10        】
+2016-06-21 17:41:57,656 INFO  daogen.DbConn - 类型名称【MEDIUMINT           】SqlType【4    】最大精度【7         】
+2016-06-21 17:41:57,656 INFO  daogen.DbConn - 类型名称【MEDIUMINT UNSIGNED  】SqlType【4    】最大精度【8         】
+2016-06-21 17:41:57,656 INFO  daogen.DbConn - 类型名称【SMALLINT            】SqlType【5    】最大精度【5         】
+2016-06-21 17:41:57,656 INFO  daogen.DbConn - 类型名称【SMALLINT UNSIGNED   】SqlType【5    】最大精度【5         】
+2016-06-21 17:41:57,656 INFO  daogen.DbConn - 类型名称【FLOAT               】SqlType【7    】最大精度【10        】
+2016-06-21 17:41:57,656 INFO  daogen.DbConn - 类型名称【DOUBLE              】SqlType【8    】最大精度【17        】
+2016-06-21 17:41:57,656 INFO  daogen.DbConn - 类型名称【DOUBLE PRECISION    】SqlType【8    】最大精度【17        】
+2016-06-21 17:41:57,656 INFO  daogen.DbConn - 类型名称【REAL                】SqlType【8    】最大精度【17        】
+2016-06-21 17:41:57,657 INFO  daogen.DbConn - 类型名称【VARCHAR             】SqlType【12   】最大精度【255       】
+2016-06-21 17:41:57,657 INFO  daogen.DbConn - 类型名称【ENUM                】SqlType【12   】最大精度【65535     】
+2016-06-21 17:41:57,657 INFO  daogen.DbConn - 类型名称【SET                 】SqlType【12   】最大精度【64        】
+2016-06-21 17:41:57,657 INFO  daogen.DbConn - 类型名称【DATE                】SqlType【91   】最大精度【0         】
+2016-06-21 17:41:57,657 INFO  daogen.DbConn - 类型名称【TIME                】SqlType【92   】最大精度【0         】
+2016-06-21 17:41:57,657 INFO  daogen.DbConn - 类型名称【DATETIME            】SqlType【93   】最大精度【0         】
+2016-06-21 17:41:57,657 INFO  daogen.DbConn - 类型名称【TIMESTAMP           】SqlType【93   】最大精度【0         】
+2016-06-21 17:41:57,657 INFO  daogen.DbConn - 数据库类型【MySQL】数据库版本【5.7.12】数据库驱动名称【MySQL Connector Java】数据库驱动程序版本【mysql-connector-java-5.1.34 ( Revision: jess.balint@oracle.com-20141014163213-wqbwpf1ok2kvo1om )】
+2016-06-21 17:41:57,663 INFO  daogen.GenTable - ============================获取所有表结构信息：
+2016-06-21 17:41:57,663 INFO  daogen.GenTable - Schema名【lottery   】表名【lottery_active           】表类型【TABLE     】表注释【                              】
+2016-06-21 17:41:57,663 INFO  daogen.GenTable - Schema名【lottery   】表名【lottery_prize            】表类型【TABLE     】表注释【                              】
+2016-06-21 17:41:57,663 INFO  daogen.GenTable - Schema名【lottery   】表名【lottery_win              】表类型【TABLE     】表注释【                              】
+2016-06-21 17:41:57,664 INFO  daogen.GenTable - ============================从索引获取主键:
+2016-06-21 17:41:57,693 INFO  daogen.Gen - 共有1个表需要生成数据访问层.
+2016-06-21 17:41:57,694 INFO  daogen.Gen - 第1个表[lottery_win]数据访问层正在生成中...
+2016-06-21 17:41:57,694 INFO  daogen.GenTable - 开始生成表对象，表名：lottery_win
+2016-06-21 17:41:57,706 INFO  daogen.GenTable - 表名【lottery_win              】列名【USERNAME       】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【中奖用户名称  】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:41:57,708 INFO  daogen.GenTable - 表名【lottery_win              】列名【WINAID         】列sqltype【-5 】列typename【BIGINT    】列precision【19   】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【中奖纪录ID      】列defaultValue【     】列isAutocrement【YES  】
+2016-06-21 17:41:57,708 INFO  daogen.GenTable - 表名【lottery_win              】列名【USERID         】列sqltype【-5 】列typename【BIGINT    】列precision【19   】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【中奖用户ID      】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:41:57,708 INFO  daogen.GenTable - 表名【lottery_win              】列名【LOTTERYNAME    】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【奖品名称        】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:41:57,709 INFO  daogen.GenTable - 表名【lottery_win              】列名【PID            】列sqltype【-5 】列typename【BIGINT    】列precision【19   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【奖品Id            】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:41:57,709 INFO  daogen.GenTable - 表名【lottery_win              】列名【USERPHONE      】列sqltype【12 】列typename【VARCHAR   】列precision【20   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【中奖人手机号码】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:41:57,709 INFO  daogen.GenTable - 表名【lottery_win              】列名【WINORFAILURE   】列sqltype【1  】列typename【CHAR      】列precision【1    】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【是否中奖（0 为未中奖 1为中奖）】列defaultValue【0    】列isAutocrement【NO   】
+2016-06-21 17:41:57,709 INFO  daogen.GenTable - 表名【lottery_win              】列名【WINDATE        】列sqltype【93 】列typename【DATETIME  】列precision【19   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【中奖时间        】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:41:57,710 INFO  daogen.GenTable - 表名【lottery_win              】列名【CHECKOUT       】列sqltype【4  】列typename【INT       】列precision【10   】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【奖品是否发出（0奖品未送出 1奖品已送出】列defaultValue【0    】列isAutocrement【NO   】
+2016-06-21 17:41:57,710 INFO  daogen.GenTable - 表名【lottery_win              】列名【PHONEINT       】列sqltype【12 】列typename【VARCHAR   】列precision【20   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【接受人_联系电话】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:41:57,710 INFO  daogen.GenTable - 表名【lottery_win              】列名【RECEIVE_NAME   】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【接收人_姓名    】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:41:57,710 INFO  daogen.GenTable - 表名【lottery_win              】列名【SENDADDRESS    】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【接收人_邮寄地址】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:41:57,711 INFO  daogen.GenTable - 表名【lottery_win              】列名【REAL_NAME      】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【中奖人真实姓名】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:41:57,711 INFO  daogen.GenTable - 表名【lottery_win              】列名【SEND_POST      】列sqltype【12 】列typename【VARCHAR   】列precision【20   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【接受人_邮政编码】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:41:57,711 INFO  daogen.GenTable - 表名【lottery_win              】列名【STATE          】列sqltype【1  】列typename【CHAR      】列precision【1    】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【是否取消状态（0为正常 1为取消）】列defaultValue【0    】列isAutocrement【NO   】
+2016-06-21 17:41:57,711 INFO  daogen.GenTable - 表名【lottery_win              】列名【ALIPAY         】列sqltype【12 】列typename【VARCHAR   】列precision【20   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【支付宝账号     】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:41:57,712 INFO  daogen.GenTable - 表名【lottery_win              】列名【PAYSEQNUM      】列sqltype【12 】列typename【VARCHAR   】列precision【30   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【支付流水号     】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:41:57,712 INFO  daogen.GenTable - 表名【lottery_win              】列名【COMMENTS       】列sqltype【12 】列typename【VARCHAR   】列precision【200  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【备注              】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:41:57,712 INFO  daogen.GenTable - 表名【lottery_win              】列名【ACTIVITY_ID    】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【活动id            】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:41:57,713 INFO  daogen.GenTable - 生成表对象成功，表名：lottery_win
+2016-06-21 17:41:57,784 INFO  util.VelocityTemplate - 初始化Velocity成功，配置路径为：/C:/Users/Administrator/git/XBatis-Code-Generator/target/classes/velocity.properties
+2016-06-21 17:41:57,813 INFO  daogen.Gen - LotteryWin.java
+2016-06-21 17:41:57,822 INFO  daogen.Gen - LotteryWinMapper.java
+2016-06-21 17:41:57,839 INFO  daogen.Gen - LotteryWinQuery.java
+2016-06-21 17:41:57,845 INFO  daogen.Gen - LotteryWinService.java
+2016-06-21 17:41:57,851 INFO  daogen.Gen - LotteryWinServiceImpl.java
+2016-06-21 17:41:57,865 ERROR util.VelocityTemplate - mergeTemplate[C:\Users\Administrator\git\XBatis-Code-Generator/gendir/dao/ibatisdao/src/main/resources//C:/Users/Administrator/git/XBatis-Code-Generator/target/classes/dao/ibatisdao/src/main/java/mapper/LotteryWinMapper.xml] error in template dao/ibatisdao/src/main/resources/sqlmap/-sqlmap.xml.vm:java.io.FileNotFoundException: C:\Users\Administrator\git\XBatis-Code-Generator\gendir\dao\ibatisdao\src\main\resources\C:\Users\Administrator\git\XBatis-Code-Generator\target\classes\dao\ibatisdao\src\main\java\mapper\LotteryWinMapper.xml (文件名、目录名或卷标语法不正确。)
+2016-06-21 17:41:57,865 INFO  daogen.Gen - 实际生成1个表的数据访问层！
+2016-06-21 17:41:57,866 INFO  daogen.Gen - 所映射的字段有：
+2016-06-21 17:41:57,866 INFO  daogen.Gen - sqltype:1 -> typeName:CHAR -> className:【无】
+2016-06-21 17:41:57,867 INFO  daogen.Gen - sqltype:4 -> typeName:INT -> className:【无】
+2016-06-21 17:41:57,867 INFO  daogen.Gen - sqltype:93 -> typeName:DATETIME -> className:【无】
+2016-06-21 17:41:57,867 INFO  daogen.Gen - sqltype:-5 -> typeName:BIGINT -> className:【无】
+2016-06-21 17:41:57,867 INFO  daogen.Gen - sqltype:12 -> typeName:VARCHAR -> className:【无】
+2016-06-21 17:41:57,867 INFO  daogen.Gen - 结束执行DAO代码生成===========================
+2016-06-21 17:47:57,948 INFO  daogen.Gen - 开始执行DAO代码生成===========================
+2016-06-21 17:47:57,949 INFO  daogen.Settings - 开始初始化数据库环境,路径为【/C:/Users/Administrator/git/XBatis-Code-Generator/target/classes/dao/】
+2016-06-21 17:47:57,954 INFO  daogen.Settings - 找到DB属性配置文件,文件名为【/C:/Users/Administrator/git/XBatis-Code-Generator/target/classes/dao/db.properties】
+2016-06-21 17:47:57,956 WARN  daogen.Settings - DAO模版未指定，使用默认模版：dao/ibatisdao
+2016-06-21 17:47:57,956 WARN  daogen.Settings - 代码生成输出路径未指定，使用默认路径：C:\Users\Administrator\git\XBatis-Code-Generator/gendir/
+2016-06-21 17:47:57,956 INFO  daogen.Settings - 数据库DAO代码生成环境配置信息如下：
+2016-06-21 17:47:57,957 INFO  daogen.Settings - DB_USER=root
+2016-06-21 17:47:57,957 INFO  daogen.Settings - DB_PORT=3306
+2016-06-21 17:47:57,957 INFO  daogen.Settings - JAVA_PACKAGE=com.ct
+2016-06-21 17:47:57,957 INFO  daogen.Settings - DB_NAME=lottery
+2016-06-21 17:47:57,957 INFO  daogen.Settings - DB_PWD=root
+2016-06-21 17:47:57,957 INFO  daogen.Settings - DB_TYPE=Mysql
+2016-06-21 17:47:57,957 INFO  daogen.Settings - DB_SERVER=192.168.16.120
+2016-06-21 17:47:57,957 INFO  daogen.Settings - 结束初始化数据库DAO代码生成环境【/C:/Users/Administrator/git/XBatis-Code-Generator/target/classes/dao/db.properties】！
+2016-06-21 17:47:57,958 INFO  daogen.DbConn - 初始化数据库[lottery]连接！
+2016-06-21 17:47:58,141 INFO  daogen.DbConn - 初始化数据库[lottery]连接【OK】！
+2016-06-21 17:47:58,146 INFO  daogen.DbConn - ===============================数据库支持的数据类型:
+2016-06-21 17:47:58,147 INFO  daogen.DbConn - 类型名称【BIT                 】SqlType【-7   】最大精度【1         】
+2016-06-21 17:47:58,147 INFO  daogen.DbConn - 类型名称【BOOL                】SqlType【-7   】最大精度【1         】
+2016-06-21 17:47:58,147 INFO  daogen.DbConn - 类型名称【TINYINT             】SqlType【-6   】最大精度【3         】
+2016-06-21 17:47:58,147 INFO  daogen.DbConn - 类型名称【TINYINT UNSIGNED    】SqlType【-6   】最大精度【3         】
+2016-06-21 17:47:58,147 INFO  daogen.DbConn - 类型名称【BIGINT              】SqlType【-5   】最大精度【19        】
+2016-06-21 17:47:58,148 INFO  daogen.DbConn - 类型名称【BIGINT UNSIGNED     】SqlType【-5   】最大精度【20        】
+2016-06-21 17:47:58,148 INFO  daogen.DbConn - 类型名称【LONG VARBINARY      】SqlType【-4   】最大精度【16777215  】
+2016-06-21 17:47:58,148 INFO  daogen.DbConn - 类型名称【MEDIUMBLOB          】SqlType【-4   】最大精度【16777215  】
+2016-06-21 17:47:58,148 INFO  daogen.DbConn - 类型名称【LONGBLOB            】SqlType【-4   】最大精度【2147483647】
+2016-06-21 17:47:58,148 INFO  daogen.DbConn - 类型名称【BLOB                】SqlType【-4   】最大精度【65535     】
+2016-06-21 17:47:58,148 INFO  daogen.DbConn - 类型名称【TINYBLOB            】SqlType【-4   】最大精度【255       】
+2016-06-21 17:47:58,148 INFO  daogen.DbConn - 类型名称【VARBINARY           】SqlType【-3   】最大精度【255       】
+2016-06-21 17:47:58,148 INFO  daogen.DbConn - 类型名称【BINARY              】SqlType【-2   】最大精度【255       】
+2016-06-21 17:47:58,148 INFO  daogen.DbConn - 类型名称【LONG VARCHAR        】SqlType【-1   】最大精度【16777215  】
+2016-06-21 17:47:58,148 INFO  daogen.DbConn - 类型名称【MEDIUMTEXT          】SqlType【-1   】最大精度【16777215  】
+2016-06-21 17:47:58,148 INFO  daogen.DbConn - 类型名称【LONGTEXT            】SqlType【-1   】最大精度【2147483647】
+2016-06-21 17:47:58,149 INFO  daogen.DbConn - 类型名称【TEXT                】SqlType【-1   】最大精度【65535     】
+2016-06-21 17:47:58,149 INFO  daogen.DbConn - 类型名称【TINYTEXT            】SqlType【-1   】最大精度【255       】
+2016-06-21 17:47:58,149 INFO  daogen.DbConn - 类型名称【CHAR                】SqlType【1    】最大精度【255       】
+2016-06-21 17:47:58,149 INFO  daogen.DbConn - 类型名称【NUMERIC             】SqlType【2    】最大精度【65        】
+2016-06-21 17:47:58,149 INFO  daogen.DbConn - 类型名称【DECIMAL             】SqlType【3    】最大精度【65        】
+2016-06-21 17:47:58,149 INFO  daogen.DbConn - 类型名称【INTEGER             】SqlType【4    】最大精度【10        】
+2016-06-21 17:47:58,149 INFO  daogen.DbConn - 类型名称【INTEGER UNSIGNED    】SqlType【4    】最大精度【10        】
+2016-06-21 17:47:58,149 INFO  daogen.DbConn - 类型名称【INT                 】SqlType【4    】最大精度【10        】
+2016-06-21 17:47:58,149 INFO  daogen.DbConn - 类型名称【INT UNSIGNED        】SqlType【4    】最大精度【10        】
+2016-06-21 17:47:58,149 INFO  daogen.DbConn - 类型名称【MEDIUMINT           】SqlType【4    】最大精度【7         】
+2016-06-21 17:47:58,149 INFO  daogen.DbConn - 类型名称【MEDIUMINT UNSIGNED  】SqlType【4    】最大精度【8         】
+2016-06-21 17:47:58,150 INFO  daogen.DbConn - 类型名称【SMALLINT            】SqlType【5    】最大精度【5         】
+2016-06-21 17:47:58,150 INFO  daogen.DbConn - 类型名称【SMALLINT UNSIGNED   】SqlType【5    】最大精度【5         】
+2016-06-21 17:47:58,150 INFO  daogen.DbConn - 类型名称【FLOAT               】SqlType【7    】最大精度【10        】
+2016-06-21 17:47:58,150 INFO  daogen.DbConn - 类型名称【DOUBLE              】SqlType【8    】最大精度【17        】
+2016-06-21 17:47:58,150 INFO  daogen.DbConn - 类型名称【DOUBLE PRECISION    】SqlType【8    】最大精度【17        】
+2016-06-21 17:47:58,150 INFO  daogen.DbConn - 类型名称【REAL                】SqlType【8    】最大精度【17        】
+2016-06-21 17:47:58,150 INFO  daogen.DbConn - 类型名称【VARCHAR             】SqlType【12   】最大精度【255       】
+2016-06-21 17:47:58,150 INFO  daogen.DbConn - 类型名称【ENUM                】SqlType【12   】最大精度【65535     】
+2016-06-21 17:47:58,150 INFO  daogen.DbConn - 类型名称【SET                 】SqlType【12   】最大精度【64        】
+2016-06-21 17:47:58,150 INFO  daogen.DbConn - 类型名称【DATE                】SqlType【91   】最大精度【0         】
+2016-06-21 17:47:58,151 INFO  daogen.DbConn - 类型名称【TIME                】SqlType【92   】最大精度【0         】
+2016-06-21 17:47:58,151 INFO  daogen.DbConn - 类型名称【DATETIME            】SqlType【93   】最大精度【0         】
+2016-06-21 17:47:58,151 INFO  daogen.DbConn - 类型名称【TIMESTAMP           】SqlType【93   】最大精度【0         】
+2016-06-21 17:47:58,151 INFO  daogen.DbConn - 数据库类型【MySQL】数据库版本【5.7.12】数据库驱动名称【MySQL Connector Java】数据库驱动程序版本【mysql-connector-java-5.1.34 ( Revision: jess.balint@oracle.com-20141014163213-wqbwpf1ok2kvo1om )】
+2016-06-21 17:47:58,157 INFO  daogen.GenTable - ============================获取所有表结构信息：
+2016-06-21 17:47:58,158 INFO  daogen.GenTable - Schema名【lottery   】表名【lottery_active           】表类型【TABLE     】表注释【                              】
+2016-06-21 17:47:58,158 INFO  daogen.GenTable - Schema名【lottery   】表名【lottery_prize            】表类型【TABLE     】表注释【                              】
+2016-06-21 17:47:58,158 INFO  daogen.GenTable - Schema名【lottery   】表名【lottery_win              】表类型【TABLE     】表注释【                              】
+2016-06-21 17:47:58,158 INFO  daogen.GenTable - ============================从索引获取主键:
+2016-06-21 17:47:58,189 INFO  daogen.Gen - 共有1个表需要生成数据访问层.
+2016-06-21 17:47:58,189 INFO  daogen.Gen - 第1个表[lottery_win]数据访问层正在生成中...
+2016-06-21 17:47:58,190 INFO  daogen.GenTable - 开始生成表对象，表名：lottery_win
+2016-06-21 17:47:58,201 INFO  daogen.GenTable - 表名【lottery_win              】列名【USERNAME       】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【中奖用户名称  】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:47:58,203 INFO  daogen.GenTable - 表名【lottery_win              】列名【WINAID         】列sqltype【-5 】列typename【BIGINT    】列precision【19   】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【中奖纪录ID      】列defaultValue【     】列isAutocrement【YES  】
+2016-06-21 17:47:58,204 INFO  daogen.GenTable - 表名【lottery_win              】列名【USERID         】列sqltype【-5 】列typename【BIGINT    】列precision【19   】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【中奖用户ID      】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:47:58,204 INFO  daogen.GenTable - 表名【lottery_win              】列名【LOTTERYNAME    】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【奖品名称        】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:47:58,204 INFO  daogen.GenTable - 表名【lottery_win              】列名【PID            】列sqltype【-5 】列typename【BIGINT    】列precision【19   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【奖品Id            】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:47:58,205 INFO  daogen.GenTable - 表名【lottery_win              】列名【USERPHONE      】列sqltype【12 】列typename【VARCHAR   】列precision【20   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【中奖人手机号码】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:47:58,205 INFO  daogen.GenTable - 表名【lottery_win              】列名【WINORFAILURE   】列sqltype【1  】列typename【CHAR      】列precision【1    】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【是否中奖（0 为未中奖 1为中奖）】列defaultValue【0    】列isAutocrement【NO   】
+2016-06-21 17:47:58,205 INFO  daogen.GenTable - 表名【lottery_win              】列名【WINDATE        】列sqltype【93 】列typename【DATETIME  】列precision【19   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【中奖时间        】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:47:58,205 INFO  daogen.GenTable - 表名【lottery_win              】列名【CHECKOUT       】列sqltype【4  】列typename【INT       】列precision【10   】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【奖品是否发出（0奖品未送出 1奖品已送出】列defaultValue【0    】列isAutocrement【NO   】
+2016-06-21 17:47:58,206 INFO  daogen.GenTable - 表名【lottery_win              】列名【PHONEINT       】列sqltype【12 】列typename【VARCHAR   】列precision【20   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【接受人_联系电话】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:47:58,206 INFO  daogen.GenTable - 表名【lottery_win              】列名【RECEIVE_NAME   】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【接收人_姓名    】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:47:58,206 INFO  daogen.GenTable - 表名【lottery_win              】列名【SENDADDRESS    】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【接收人_邮寄地址】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:47:58,206 INFO  daogen.GenTable - 表名【lottery_win              】列名【REAL_NAME      】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【中奖人真实姓名】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:47:58,207 INFO  daogen.GenTable - 表名【lottery_win              】列名【SEND_POST      】列sqltype【12 】列typename【VARCHAR   】列precision【20   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【接受人_邮政编码】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:47:58,207 INFO  daogen.GenTable - 表名【lottery_win              】列名【STATE          】列sqltype【1  】列typename【CHAR      】列precision【1    】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【是否取消状态（0为正常 1为取消）】列defaultValue【0    】列isAutocrement【NO   】
+2016-06-21 17:47:58,207 INFO  daogen.GenTable - 表名【lottery_win              】列名【ALIPAY         】列sqltype【12 】列typename【VARCHAR   】列precision【20   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【支付宝账号     】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:47:58,208 INFO  daogen.GenTable - 表名【lottery_win              】列名【PAYSEQNUM      】列sqltype【12 】列typename【VARCHAR   】列precision【30   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【支付流水号     】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:47:58,208 INFO  daogen.GenTable - 表名【lottery_win              】列名【COMMENTS       】列sqltype【12 】列typename【VARCHAR   】列precision【200  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【备注              】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:47:58,208 INFO  daogen.GenTable - 表名【lottery_win              】列名【ACTIVITY_ID    】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【活动id            】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:47:58,209 INFO  daogen.GenTable - 生成表对象成功，表名：lottery_win
+2016-06-21 17:47:58,288 INFO  util.VelocityTemplate - 初始化Velocity成功，配置路径为：/C:/Users/Administrator/git/XBatis-Code-Generator/target/classes/velocity.properties
+2016-06-21 17:47:58,320 INFO  daogen.Gen - LotteryWin.java
+2016-06-21 17:47:58,330 INFO  daogen.Gen - LotteryWinMapper.java
+2016-06-21 17:47:58,349 INFO  daogen.Gen - LotteryWinQuery.java
+2016-06-21 17:47:58,354 INFO  daogen.Gen - LotteryWinService.java
+2016-06-21 17:47:58,361 INFO  daogen.Gen - LotteryWinServiceImpl.java
+2016-06-21 17:47:58,375 ERROR util.VelocityTemplate - mergeTemplate[C:\Users\Administrator\git\XBatis-Code-Generator/gendir/dao/ibatisdao/src/main/resources/com/ctmapper/LotteryWinMapper.xml] error in template dao/ibatisdao/src/main/resources/sqlmap/-sqlmap.xml.vm:java.io.FileNotFoundException: C:\Users\Administrator\git\XBatis-Code-Generator\gendir\dao\ibatisdao\src\main\resources\com\ctmapper\LotteryWinMapper.xml (系统找不到指定的路径。)
+2016-06-21 17:47:58,375 INFO  daogen.Gen - 实际生成1个表的数据访问层！
+2016-06-21 17:47:58,377 INFO  daogen.Gen - 所映射的字段有：
+2016-06-21 17:47:58,377 INFO  daogen.Gen - sqltype:1 -> typeName:CHAR -> className:【无】
+2016-06-21 17:47:58,377 INFO  daogen.Gen - sqltype:4 -> typeName:INT -> className:【无】
+2016-06-21 17:47:58,378 INFO  daogen.Gen - sqltype:93 -> typeName:DATETIME -> className:【无】
+2016-06-21 17:47:58,378 INFO  daogen.Gen - sqltype:-5 -> typeName:BIGINT -> className:【无】
+2016-06-21 17:47:58,378 INFO  daogen.Gen - sqltype:12 -> typeName:VARCHAR -> className:【无】
+2016-06-21 17:47:58,378 INFO  daogen.Gen - 结束执行DAO代码生成===========================
+2016-06-21 17:48:45,667 INFO  daogen.Gen - 开始执行DAO代码生成===========================
+2016-06-21 17:48:45,669 INFO  daogen.Settings - 开始初始化数据库环境,路径为【/C:/Users/Administrator/git/XBatis-Code-Generator/target/classes/dao/】
+2016-06-21 17:48:45,674 INFO  daogen.Settings - 找到DB属性配置文件,文件名为【/C:/Users/Administrator/git/XBatis-Code-Generator/target/classes/dao/db.properties】
+2016-06-21 17:48:45,677 WARN  daogen.Settings - DAO模版未指定，使用默认模版：dao/ibatisdao
+2016-06-21 17:48:45,677 WARN  daogen.Settings - 代码生成输出路径未指定，使用默认路径：C:\Users\Administrator\git\XBatis-Code-Generator/gendir/
+2016-06-21 17:48:45,677 INFO  daogen.Settings - 数据库DAO代码生成环境配置信息如下：
+2016-06-21 17:48:45,677 INFO  daogen.Settings - DB_USER=root
+2016-06-21 17:48:45,677 INFO  daogen.Settings - DB_PORT=3306
+2016-06-21 17:48:45,677 INFO  daogen.Settings - JAVA_PACKAGE=com.ct
+2016-06-21 17:48:45,677 INFO  daogen.Settings - DB_NAME=lottery
+2016-06-21 17:48:45,677 INFO  daogen.Settings - DB_PWD=root
+2016-06-21 17:48:45,677 INFO  daogen.Settings - DB_TYPE=Mysql
+2016-06-21 17:48:45,677 INFO  daogen.Settings - DB_SERVER=192.168.16.120
+2016-06-21 17:48:45,677 INFO  daogen.Settings - 结束初始化数据库DAO代码生成环境【/C:/Users/Administrator/git/XBatis-Code-Generator/target/classes/dao/db.properties】！
+2016-06-21 17:48:45,678 INFO  daogen.DbConn - 初始化数据库[lottery]连接！
+2016-06-21 17:48:45,847 INFO  daogen.DbConn - 初始化数据库[lottery]连接【OK】！
+2016-06-21 17:48:45,852 INFO  daogen.DbConn - ===============================数据库支持的数据类型:
+2016-06-21 17:48:45,853 INFO  daogen.DbConn - 类型名称【BIT                 】SqlType【-7   】最大精度【1         】
+2016-06-21 17:48:45,853 INFO  daogen.DbConn - 类型名称【BOOL                】SqlType【-7   】最大精度【1         】
+2016-06-21 17:48:45,853 INFO  daogen.DbConn - 类型名称【TINYINT             】SqlType【-6   】最大精度【3         】
+2016-06-21 17:48:45,853 INFO  daogen.DbConn - 类型名称【TINYINT UNSIGNED    】SqlType【-6   】最大精度【3         】
+2016-06-21 17:48:45,853 INFO  daogen.DbConn - 类型名称【BIGINT              】SqlType【-5   】最大精度【19        】
+2016-06-21 17:48:45,853 INFO  daogen.DbConn - 类型名称【BIGINT UNSIGNED     】SqlType【-5   】最大精度【20        】
+2016-06-21 17:48:45,853 INFO  daogen.DbConn - 类型名称【LONG VARBINARY      】SqlType【-4   】最大精度【16777215  】
+2016-06-21 17:48:45,853 INFO  daogen.DbConn - 类型名称【MEDIUMBLOB          】SqlType【-4   】最大精度【16777215  】
+2016-06-21 17:48:45,853 INFO  daogen.DbConn - 类型名称【LONGBLOB            】SqlType【-4   】最大精度【2147483647】
+2016-06-21 17:48:45,853 INFO  daogen.DbConn - 类型名称【BLOB                】SqlType【-4   】最大精度【65535     】
+2016-06-21 17:48:45,854 INFO  daogen.DbConn - 类型名称【TINYBLOB            】SqlType【-4   】最大精度【255       】
+2016-06-21 17:48:45,854 INFO  daogen.DbConn - 类型名称【VARBINARY           】SqlType【-3   】最大精度【255       】
+2016-06-21 17:48:45,854 INFO  daogen.DbConn - 类型名称【BINARY              】SqlType【-2   】最大精度【255       】
+2016-06-21 17:48:45,854 INFO  daogen.DbConn - 类型名称【LONG VARCHAR        】SqlType【-1   】最大精度【16777215  】
+2016-06-21 17:48:45,854 INFO  daogen.DbConn - 类型名称【MEDIUMTEXT          】SqlType【-1   】最大精度【16777215  】
+2016-06-21 17:48:45,854 INFO  daogen.DbConn - 类型名称【LONGTEXT            】SqlType【-1   】最大精度【2147483647】
+2016-06-21 17:48:45,854 INFO  daogen.DbConn - 类型名称【TEXT                】SqlType【-1   】最大精度【65535     】
+2016-06-21 17:48:45,854 INFO  daogen.DbConn - 类型名称【TINYTEXT            】SqlType【-1   】最大精度【255       】
+2016-06-21 17:48:45,854 INFO  daogen.DbConn - 类型名称【CHAR                】SqlType【1    】最大精度【255       】
+2016-06-21 17:48:45,854 INFO  daogen.DbConn - 类型名称【NUMERIC             】SqlType【2    】最大精度【65        】
+2016-06-21 17:48:45,855 INFO  daogen.DbConn - 类型名称【DECIMAL             】SqlType【3    】最大精度【65        】
+2016-06-21 17:48:45,855 INFO  daogen.DbConn - 类型名称【INTEGER             】SqlType【4    】最大精度【10        】
+2016-06-21 17:48:45,855 INFO  daogen.DbConn - 类型名称【INTEGER UNSIGNED    】SqlType【4    】最大精度【10        】
+2016-06-21 17:48:45,855 INFO  daogen.DbConn - 类型名称【INT                 】SqlType【4    】最大精度【10        】
+2016-06-21 17:48:45,855 INFO  daogen.DbConn - 类型名称【INT UNSIGNED        】SqlType【4    】最大精度【10        】
+2016-06-21 17:48:45,855 INFO  daogen.DbConn - 类型名称【MEDIUMINT           】SqlType【4    】最大精度【7         】
+2016-06-21 17:48:45,855 INFO  daogen.DbConn - 类型名称【MEDIUMINT UNSIGNED  】SqlType【4    】最大精度【8         】
+2016-06-21 17:48:45,855 INFO  daogen.DbConn - 类型名称【SMALLINT            】SqlType【5    】最大精度【5         】
+2016-06-21 17:48:45,855 INFO  daogen.DbConn - 类型名称【SMALLINT UNSIGNED   】SqlType【5    】最大精度【5         】
+2016-06-21 17:48:45,856 INFO  daogen.DbConn - 类型名称【FLOAT               】SqlType【7    】最大精度【10        】
+2016-06-21 17:48:45,856 INFO  daogen.DbConn - 类型名称【DOUBLE              】SqlType【8    】最大精度【17        】
+2016-06-21 17:48:45,856 INFO  daogen.DbConn - 类型名称【DOUBLE PRECISION    】SqlType【8    】最大精度【17        】
+2016-06-21 17:48:45,856 INFO  daogen.DbConn - 类型名称【REAL                】SqlType【8    】最大精度【17        】
+2016-06-21 17:48:45,856 INFO  daogen.DbConn - 类型名称【VARCHAR             】SqlType【12   】最大精度【255       】
+2016-06-21 17:48:45,856 INFO  daogen.DbConn - 类型名称【ENUM                】SqlType【12   】最大精度【65535     】
+2016-06-21 17:48:45,856 INFO  daogen.DbConn - 类型名称【SET                 】SqlType【12   】最大精度【64        】
+2016-06-21 17:48:45,856 INFO  daogen.DbConn - 类型名称【DATE                】SqlType【91   】最大精度【0         】
+2016-06-21 17:48:45,856 INFO  daogen.DbConn - 类型名称【TIME                】SqlType【92   】最大精度【0         】
+2016-06-21 17:48:45,856 INFO  daogen.DbConn - 类型名称【DATETIME            】SqlType【93   】最大精度【0         】
+2016-06-21 17:48:45,857 INFO  daogen.DbConn - 类型名称【TIMESTAMP           】SqlType【93   】最大精度【0         】
+2016-06-21 17:48:45,857 INFO  daogen.DbConn - 数据库类型【MySQL】数据库版本【5.7.12】数据库驱动名称【MySQL Connector Java】数据库驱动程序版本【mysql-connector-java-5.1.34 ( Revision: jess.balint@oracle.com-20141014163213-wqbwpf1ok2kvo1om )】
+2016-06-21 17:48:45,862 INFO  daogen.GenTable - ============================获取所有表结构信息：
+2016-06-21 17:48:45,863 INFO  daogen.GenTable - Schema名【lottery   】表名【lottery_active           】表类型【TABLE     】表注释【                              】
+2016-06-21 17:48:45,863 INFO  daogen.GenTable - Schema名【lottery   】表名【lottery_prize            】表类型【TABLE     】表注释【                              】
+2016-06-21 17:48:45,863 INFO  daogen.GenTable - Schema名【lottery   】表名【lottery_win              】表类型【TABLE     】表注释【                              】
+2016-06-21 17:48:45,863 INFO  daogen.GenTable - ============================从索引获取主键:
+2016-06-21 17:48:45,923 INFO  daogen.Gen - 共有1个表需要生成数据访问层.
+2016-06-21 17:48:45,923 INFO  daogen.Gen - 第1个表[lottery_win]数据访问层正在生成中...
+2016-06-21 17:48:45,923 INFO  daogen.GenTable - 开始生成表对象，表名：lottery_win
+2016-06-21 17:48:45,936 INFO  daogen.GenTable - 表名【lottery_win              】列名【USERNAME       】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【中奖用户名称  】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:48:45,938 INFO  daogen.GenTable - 表名【lottery_win              】列名【WINAID         】列sqltype【-5 】列typename【BIGINT    】列precision【19   】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【中奖纪录ID      】列defaultValue【     】列isAutocrement【YES  】
+2016-06-21 17:48:45,938 INFO  daogen.GenTable - 表名【lottery_win              】列名【USERID         】列sqltype【-5 】列typename【BIGINT    】列precision【19   】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【中奖用户ID      】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:48:45,938 INFO  daogen.GenTable - 表名【lottery_win              】列名【LOTTERYNAME    】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【奖品名称        】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:48:45,939 INFO  daogen.GenTable - 表名【lottery_win              】列名【PID            】列sqltype【-5 】列typename【BIGINT    】列precision【19   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【奖品Id            】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:48:45,939 INFO  daogen.GenTable - 表名【lottery_win              】列名【USERPHONE      】列sqltype【12 】列typename【VARCHAR   】列precision【20   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【中奖人手机号码】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:48:45,939 INFO  daogen.GenTable - 表名【lottery_win              】列名【WINORFAILURE   】列sqltype【1  】列typename【CHAR      】列precision【1    】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【是否中奖（0 为未中奖 1为中奖）】列defaultValue【0    】列isAutocrement【NO   】
+2016-06-21 17:48:45,939 INFO  daogen.GenTable - 表名【lottery_win              】列名【WINDATE        】列sqltype【93 】列typename【DATETIME  】列precision【19   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【中奖时间        】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:48:45,940 INFO  daogen.GenTable - 表名【lottery_win              】列名【CHECKOUT       】列sqltype【4  】列typename【INT       】列precision【10   】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【奖品是否发出（0奖品未送出 1奖品已送出】列defaultValue【0    】列isAutocrement【NO   】
+2016-06-21 17:48:45,940 INFO  daogen.GenTable - 表名【lottery_win              】列名【PHONEINT       】列sqltype【12 】列typename【VARCHAR   】列precision【20   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【接受人_联系电话】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:48:45,940 INFO  daogen.GenTable - 表名【lottery_win              】列名【RECEIVE_NAME   】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【接收人_姓名    】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:48:45,940 INFO  daogen.GenTable - 表名【lottery_win              】列名【SENDADDRESS    】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【接收人_邮寄地址】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:48:45,941 INFO  daogen.GenTable - 表名【lottery_win              】列名【REAL_NAME      】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【中奖人真实姓名】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:48:45,941 INFO  daogen.GenTable - 表名【lottery_win              】列名【SEND_POST      】列sqltype【12 】列typename【VARCHAR   】列precision【20   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【接受人_邮政编码】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:48:45,941 INFO  daogen.GenTable - 表名【lottery_win              】列名【STATE          】列sqltype【1  】列typename【CHAR      】列precision【1    】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【是否取消状态（0为正常 1为取消）】列defaultValue【0    】列isAutocrement【NO   】
+2016-06-21 17:48:45,942 INFO  daogen.GenTable - 表名【lottery_win              】列名【ALIPAY         】列sqltype【12 】列typename【VARCHAR   】列precision【20   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【支付宝账号     】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:48:45,942 INFO  daogen.GenTable - 表名【lottery_win              】列名【PAYSEQNUM      】列sqltype【12 】列typename【VARCHAR   】列precision【30   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【支付流水号     】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:48:45,942 INFO  daogen.GenTable - 表名【lottery_win              】列名【COMMENTS       】列sqltype【12 】列typename【VARCHAR   】列precision【200  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【备注              】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:48:45,942 INFO  daogen.GenTable - 表名【lottery_win              】列名【ACTIVITY_ID    】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【活动id            】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:48:45,943 INFO  daogen.GenTable - 生成表对象成功，表名：lottery_win
+2016-06-21 17:48:46,016 INFO  util.VelocityTemplate - 初始化Velocity成功，配置路径为：/C:/Users/Administrator/git/XBatis-Code-Generator/target/classes/velocity.properties
+2016-06-21 17:48:46,048 INFO  daogen.Gen - LotteryWin.java
+2016-06-21 17:48:46,056 INFO  daogen.Gen - LotteryWinMapper.java
+2016-06-21 17:48:46,073 INFO  daogen.Gen - LotteryWinQuery.java
+2016-06-21 17:48:46,079 INFO  daogen.Gen - LotteryWinService.java
+2016-06-21 17:48:46,085 INFO  daogen.Gen - LotteryWinServiceImpl.java
+2016-06-21 17:48:46,099 ERROR util.VelocityTemplate - mergeTemplate[C:\Users\Administrator\git\XBatis-Code-Generator/gendir/dao/ibatisdao/src/main/resources/com/ctmapper/LotteryWinMapper.xml] error in template dao/ibatisdao/src/main/resources/sqlmap/-sqlmap.xml.vm:java.io.FileNotFoundException: C:\Users\Administrator\git\XBatis-Code-Generator\gendir\dao\ibatisdao\src\main\resources\com\ctmapper\LotteryWinMapper.xml (系统找不到指定的路径。)
+2016-06-21 17:48:46,099 INFO  daogen.Gen - 实际生成1个表的数据访问层！
+2016-06-21 17:48:46,101 INFO  daogen.Gen - 所映射的字段有：
+2016-06-21 17:48:46,101 INFO  daogen.Gen - sqltype:1 -> typeName:CHAR -> className:【无】
+2016-06-21 17:48:46,101 INFO  daogen.Gen - sqltype:4 -> typeName:INT -> className:【无】
+2016-06-21 17:48:46,101 INFO  daogen.Gen - sqltype:93 -> typeName:DATETIME -> className:【无】
+2016-06-21 17:48:46,101 INFO  daogen.Gen - sqltype:-5 -> typeName:BIGINT -> className:【无】
+2016-06-21 17:48:46,101 INFO  daogen.Gen - sqltype:12 -> typeName:VARCHAR -> className:【无】
+2016-06-21 17:48:46,101 INFO  daogen.Gen - 结束执行DAO代码生成===========================
+2016-06-21 17:49:38,054 INFO  daogen.Gen - 开始执行DAO代码生成===========================
+2016-06-21 17:49:38,055 INFO  daogen.Settings - 开始初始化数据库环境,路径为【/C:/Users/Administrator/git/XBatis-Code-Generator/target/classes/dao/】
+2016-06-21 17:49:38,063 INFO  daogen.Settings - 找到DB属性配置文件,文件名为【/C:/Users/Administrator/git/XBatis-Code-Generator/target/classes/dao/db.properties】
+2016-06-21 17:49:38,065 WARN  daogen.Settings - DAO模版未指定，使用默认模版：dao/ibatisdao
+2016-06-21 17:49:38,066 WARN  daogen.Settings - 代码生成输出路径未指定，使用默认路径：C:\Users\Administrator\git\XBatis-Code-Generator/gendir/
+2016-06-21 17:49:38,066 INFO  daogen.Settings - 数据库DAO代码生成环境配置信息如下：
+2016-06-21 17:49:38,066 INFO  daogen.Settings - DB_USER=root
+2016-06-21 17:49:38,066 INFO  daogen.Settings - DB_PORT=3306
+2016-06-21 17:49:38,066 INFO  daogen.Settings - JAVA_PACKAGE=com.ct
+2016-06-21 17:49:38,066 INFO  daogen.Settings - DB_NAME=lottery
+2016-06-21 17:49:38,066 INFO  daogen.Settings - DB_PWD=root
+2016-06-21 17:49:38,066 INFO  daogen.Settings - DB_TYPE=Mysql
+2016-06-21 17:49:38,066 INFO  daogen.Settings - DB_SERVER=192.168.16.120
+2016-06-21 17:49:38,066 INFO  daogen.Settings - 结束初始化数据库DAO代码生成环境【/C:/Users/Administrator/git/XBatis-Code-Generator/target/classes/dao/db.properties】！
+2016-06-21 17:49:38,067 INFO  daogen.DbConn - 初始化数据库[lottery]连接！
+2016-06-21 17:49:38,251 INFO  daogen.DbConn - 初始化数据库[lottery]连接【OK】！
+2016-06-21 17:49:38,256 INFO  daogen.DbConn - ===============================数据库支持的数据类型:
+2016-06-21 17:49:38,256 INFO  daogen.DbConn - 类型名称【BIT                 】SqlType【-7   】最大精度【1         】
+2016-06-21 17:49:38,256 INFO  daogen.DbConn - 类型名称【BOOL                】SqlType【-7   】最大精度【1         】
+2016-06-21 17:49:38,257 INFO  daogen.DbConn - 类型名称【TINYINT             】SqlType【-6   】最大精度【3         】
+2016-06-21 17:49:38,257 INFO  daogen.DbConn - 类型名称【TINYINT UNSIGNED    】SqlType【-6   】最大精度【3         】
+2016-06-21 17:49:38,257 INFO  daogen.DbConn - 类型名称【BIGINT              】SqlType【-5   】最大精度【19        】
+2016-06-21 17:49:38,257 INFO  daogen.DbConn - 类型名称【BIGINT UNSIGNED     】SqlType【-5   】最大精度【20        】
+2016-06-21 17:49:38,257 INFO  daogen.DbConn - 类型名称【LONG VARBINARY      】SqlType【-4   】最大精度【16777215  】
+2016-06-21 17:49:38,257 INFO  daogen.DbConn - 类型名称【MEDIUMBLOB          】SqlType【-4   】最大精度【16777215  】
+2016-06-21 17:49:38,257 INFO  daogen.DbConn - 类型名称【LONGBLOB            】SqlType【-4   】最大精度【2147483647】
+2016-06-21 17:49:38,257 INFO  daogen.DbConn - 类型名称【BLOB                】SqlType【-4   】最大精度【65535     】
+2016-06-21 17:49:38,257 INFO  daogen.DbConn - 类型名称【TINYBLOB            】SqlType【-4   】最大精度【255       】
+2016-06-21 17:49:38,257 INFO  daogen.DbConn - 类型名称【VARBINARY           】SqlType【-3   】最大精度【255       】
+2016-06-21 17:49:38,258 INFO  daogen.DbConn - 类型名称【BINARY              】SqlType【-2   】最大精度【255       】
+2016-06-21 17:49:38,258 INFO  daogen.DbConn - 类型名称【LONG VARCHAR        】SqlType【-1   】最大精度【16777215  】
+2016-06-21 17:49:38,258 INFO  daogen.DbConn - 类型名称【MEDIUMTEXT          】SqlType【-1   】最大精度【16777215  】
+2016-06-21 17:49:38,258 INFO  daogen.DbConn - 类型名称【LONGTEXT            】SqlType【-1   】最大精度【2147483647】
+2016-06-21 17:49:38,258 INFO  daogen.DbConn - 类型名称【TEXT                】SqlType【-1   】最大精度【65535     】
+2016-06-21 17:49:38,258 INFO  daogen.DbConn - 类型名称【TINYTEXT            】SqlType【-1   】最大精度【255       】
+2016-06-21 17:49:38,258 INFO  daogen.DbConn - 类型名称【CHAR                】SqlType【1    】最大精度【255       】
+2016-06-21 17:49:38,258 INFO  daogen.DbConn - 类型名称【NUMERIC             】SqlType【2    】最大精度【65        】
+2016-06-21 17:49:38,259 INFO  daogen.DbConn - 类型名称【DECIMAL             】SqlType【3    】最大精度【65        】
+2016-06-21 17:49:38,259 INFO  daogen.DbConn - 类型名称【INTEGER             】SqlType【4    】最大精度【10        】
+2016-06-21 17:49:38,259 INFO  daogen.DbConn - 类型名称【INTEGER UNSIGNED    】SqlType【4    】最大精度【10        】
+2016-06-21 17:49:38,259 INFO  daogen.DbConn - 类型名称【INT                 】SqlType【4    】最大精度【10        】
+2016-06-21 17:49:38,259 INFO  daogen.DbConn - 类型名称【INT UNSIGNED        】SqlType【4    】最大精度【10        】
+2016-06-21 17:49:38,259 INFO  daogen.DbConn - 类型名称【MEDIUMINT           】SqlType【4    】最大精度【7         】
+2016-06-21 17:49:38,259 INFO  daogen.DbConn - 类型名称【MEDIUMINT UNSIGNED  】SqlType【4    】最大精度【8         】
+2016-06-21 17:49:38,259 INFO  daogen.DbConn - 类型名称【SMALLINT            】SqlType【5    】最大精度【5         】
+2016-06-21 17:49:38,259 INFO  daogen.DbConn - 类型名称【SMALLINT UNSIGNED   】SqlType【5    】最大精度【5         】
+2016-06-21 17:49:38,259 INFO  daogen.DbConn - 类型名称【FLOAT               】SqlType【7    】最大精度【10        】
+2016-06-21 17:49:38,260 INFO  daogen.DbConn - 类型名称【DOUBLE              】SqlType【8    】最大精度【17        】
+2016-06-21 17:49:38,260 INFO  daogen.DbConn - 类型名称【DOUBLE PRECISION    】SqlType【8    】最大精度【17        】
+2016-06-21 17:49:38,260 INFO  daogen.DbConn - 类型名称【REAL                】SqlType【8    】最大精度【17        】
+2016-06-21 17:49:38,260 INFO  daogen.DbConn - 类型名称【VARCHAR             】SqlType【12   】最大精度【255       】
+2016-06-21 17:49:38,260 INFO  daogen.DbConn - 类型名称【ENUM                】SqlType【12   】最大精度【65535     】
+2016-06-21 17:49:38,260 INFO  daogen.DbConn - 类型名称【SET                 】SqlType【12   】最大精度【64        】
+2016-06-21 17:49:38,260 INFO  daogen.DbConn - 类型名称【DATE                】SqlType【91   】最大精度【0         】
+2016-06-21 17:49:38,260 INFO  daogen.DbConn - 类型名称【TIME                】SqlType【92   】最大精度【0         】
+2016-06-21 17:49:38,260 INFO  daogen.DbConn - 类型名称【DATETIME            】SqlType【93   】最大精度【0         】
+2016-06-21 17:49:38,260 INFO  daogen.DbConn - 类型名称【TIMESTAMP           】SqlType【93   】最大精度【0         】
+2016-06-21 17:49:38,260 INFO  daogen.DbConn - 数据库类型【MySQL】数据库版本【5.7.12】数据库驱动名称【MySQL Connector Java】数据库驱动程序版本【mysql-connector-java-5.1.34 ( Revision: jess.balint@oracle.com-20141014163213-wqbwpf1ok2kvo1om )】
+2016-06-21 17:49:38,266 INFO  daogen.GenTable - ============================获取所有表结构信息：
+2016-06-21 17:49:38,267 INFO  daogen.GenTable - Schema名【lottery   】表名【lottery_active           】表类型【TABLE     】表注释【                              】
+2016-06-21 17:49:38,267 INFO  daogen.GenTable - Schema名【lottery   】表名【lottery_prize            】表类型【TABLE     】表注释【                              】
+2016-06-21 17:49:38,267 INFO  daogen.GenTable - Schema名【lottery   】表名【lottery_win              】表类型【TABLE     】表注释【                              】
+2016-06-21 17:49:38,267 INFO  daogen.GenTable - ============================从索引获取主键:
+2016-06-21 17:49:38,298 INFO  daogen.Gen - 共有1个表需要生成数据访问层.
+2016-06-21 17:49:38,298 INFO  daogen.Gen - 第1个表[lottery_win]数据访问层正在生成中...
+2016-06-21 17:49:38,298 INFO  daogen.GenTable - 开始生成表对象，表名：lottery_win
+2016-06-21 17:49:38,308 INFO  daogen.GenTable - 表名【lottery_win              】列名【USERNAME       】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【中奖用户名称  】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:49:38,310 INFO  daogen.GenTable - 表名【lottery_win              】列名【WINAID         】列sqltype【-5 】列typename【BIGINT    】列precision【19   】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【中奖纪录ID      】列defaultValue【     】列isAutocrement【YES  】
+2016-06-21 17:49:38,310 INFO  daogen.GenTable - 表名【lottery_win              】列名【USERID         】列sqltype【-5 】列typename【BIGINT    】列precision【19   】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【中奖用户ID      】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:49:38,311 INFO  daogen.GenTable - 表名【lottery_win              】列名【LOTTERYNAME    】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【奖品名称        】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:49:38,311 INFO  daogen.GenTable - 表名【lottery_win              】列名【PID            】列sqltype【-5 】列typename【BIGINT    】列precision【19   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【奖品Id            】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:49:38,311 INFO  daogen.GenTable - 表名【lottery_win              】列名【USERPHONE      】列sqltype【12 】列typename【VARCHAR   】列precision【20   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【中奖人手机号码】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:49:38,311 INFO  daogen.GenTable - 表名【lottery_win              】列名【WINORFAILURE   】列sqltype【1  】列typename【CHAR      】列precision【1    】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【是否中奖（0 为未中奖 1为中奖）】列defaultValue【0    】列isAutocrement【NO   】
+2016-06-21 17:49:38,312 INFO  daogen.GenTable - 表名【lottery_win              】列名【WINDATE        】列sqltype【93 】列typename【DATETIME  】列precision【19   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【中奖时间        】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:49:38,312 INFO  daogen.GenTable - 表名【lottery_win              】列名【CHECKOUT       】列sqltype【4  】列typename【INT       】列precision【10   】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【奖品是否发出（0奖品未送出 1奖品已送出】列defaultValue【0    】列isAutocrement【NO   】
+2016-06-21 17:49:38,313 INFO  daogen.GenTable - 表名【lottery_win              】列名【PHONEINT       】列sqltype【12 】列typename【VARCHAR   】列precision【20   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【接受人_联系电话】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:49:38,313 INFO  daogen.GenTable - 表名【lottery_win              】列名【RECEIVE_NAME   】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【接收人_姓名    】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:49:38,314 INFO  daogen.GenTable - 表名【lottery_win              】列名【SENDADDRESS    】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【接收人_邮寄地址】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:49:38,314 INFO  daogen.GenTable - 表名【lottery_win              】列名【REAL_NAME      】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【中奖人真实姓名】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:49:38,314 INFO  daogen.GenTable - 表名【lottery_win              】列名【SEND_POST      】列sqltype【12 】列typename【VARCHAR   】列precision【20   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【接受人_邮政编码】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:49:38,314 INFO  daogen.GenTable - 表名【lottery_win              】列名【STATE          】列sqltype【1  】列typename【CHAR      】列precision【1    】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【是否取消状态（0为正常 1为取消）】列defaultValue【0    】列isAutocrement【NO   】
+2016-06-21 17:49:38,315 INFO  daogen.GenTable - 表名【lottery_win              】列名【ALIPAY         】列sqltype【12 】列typename【VARCHAR   】列precision【20   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【支付宝账号     】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:49:38,315 INFO  daogen.GenTable - 表名【lottery_win              】列名【PAYSEQNUM      】列sqltype【12 】列typename【VARCHAR   】列precision【30   】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【支付流水号     】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:49:38,315 INFO  daogen.GenTable - 表名【lottery_win              】列名【COMMENTS       】列sqltype【12 】列typename【VARCHAR   】列precision【200  】列scale【0    】列isNullable【1 】列isNullable2【YES】列comment【备注              】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:49:38,316 INFO  daogen.GenTable - 表名【lottery_win              】列名【ACTIVITY_ID    】列sqltype【12 】列typename【VARCHAR   】列precision【100  】列scale【0    】列isNullable【0 】列isNullable2【NO 】列comment【活动id            】列defaultValue【     】列isAutocrement【NO   】
+2016-06-21 17:49:38,317 INFO  daogen.GenTable - 生成表对象成功，表名：lottery_win
+2016-06-21 17:49:38,387 INFO  util.VelocityTemplate - 初始化Velocity成功，配置路径为：/C:/Users/Administrator/git/XBatis-Code-Generator/target/classes/velocity.properties
+2016-06-21 17:49:38,415 INFO  daogen.Gen - LotteryWin.java
+2016-06-21 17:49:38,424 INFO  daogen.Gen - LotteryWinMapper.java
+2016-06-21 17:49:38,441 INFO  daogen.Gen - LotteryWinQuery.java
+2016-06-21 17:49:38,447 INFO  daogen.Gen - LotteryWinService.java
+2016-06-21 17:49:38,454 INFO  daogen.Gen - LotteryWinServiceImpl.java
+2016-06-21 17:49:38,481 INFO  daogen.Gen - 实际生成1个表的数据访问层！
+2016-06-21 17:49:38,483 INFO  daogen.Gen - 所映射的字段有：
+2016-06-21 17:49:38,483 INFO  daogen.Gen - sqltype:1 -> typeName:CHAR -> className:【无】
+2016-06-21 17:49:38,483 INFO  daogen.Gen - sqltype:4 -> typeName:INT -> className:【无】
+2016-06-21 17:49:38,483 INFO  daogen.Gen - sqltype:93 -> typeName:DATETIME -> className:【无】
+2016-06-21 17:49:38,483 INFO  daogen.Gen - sqltype:-5 -> typeName:BIGINT -> className:【无】
+2016-06-21 17:49:38,483 INFO  daogen.Gen - sqltype:12 -> typeName:VARCHAR -> className:【无】
+2016-06-21 17:49:38,483 INFO  daogen.Gen - 结束执行DAO代码生成===========================
