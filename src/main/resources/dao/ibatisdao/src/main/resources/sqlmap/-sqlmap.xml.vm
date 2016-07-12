@@ -71,6 +71,7 @@ $type#end
     </sql>
     
     <sql id="selectParams">
+    <if test="page_object != null">
     <where>
      #foreach($cb in $tbb.colList)
       			#if($cb.propertyType !="Date" )
@@ -90,6 +91,7 @@ $type#end
                 #end
             #end
     </where>
+    </if>
     </sql>
 
     #if($conf.isGetByKey())
@@ -136,7 +138,7 @@ $type#end
         <!-- 根据主键更新 -->
         ##假设没有数据变化则不会产生io操作
         ##去除更新时间插入时间的字段,有数据变更，时间修改交给数据库执行
-        <update id="updateByPrimaryKeySelective" parameterType="${tbb.objectName}">
+        <update id="updateByPrimaryKeySelective" parameterType="$!{gb.packageName}.pojo.${tbb.className}${PO}">
             UPDATE ${tbb.tableName}
             <set >
                 #foreach($cb in $tbb.colList)
@@ -167,7 +169,7 @@ $type#end
 
     ##add代码
     <!--保存所有字段-->
-    <insert id="insert" parameterType="${tbb.objectName}">
+    <insert id="insert" parameterType="$!{gb.packageName}.pojo.${tbb.className}${PO}">
     INSERT INTO ${tbb.tableName}(
     #foreach($cb in $tbb.colList)
        $!{cb.colNameCheck} #if(!$foreach.last),#end
@@ -181,7 +183,7 @@ $type#end
     
     ##add代码
     <!--保存所有不为空的字段-->
-    <insert id="insertSelective" parameterType="${tbb.objectName}">
+    <insert id="insertSelective" parameterType="$!{gb.packageName}.pojo.${tbb.className}${PO}">
         INSERT INTO ${tbb.tableName}
        <trim prefix="(" suffix=")" suffixOverrides="," >
             ##循环所有字段
