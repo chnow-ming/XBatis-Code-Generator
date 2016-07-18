@@ -32,12 +32,15 @@ import java.math.BigDecimal;
 #end
 #end
 import java.io.Serializable;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  *
  * @author  $!{gb.userName}
  * @date    $!{gb.nowDate}
  */
+@ApiModel(value = "")
 public class $!{tbb.className}${PO} implements Serializable{
 
     /**
@@ -49,6 +52,7 @@ public class $!{tbb.className}${PO} implements Serializable{
 	/**
      * $!{cb.colComment}
      */
+    @ApiModelProperty(value = "$!{cb.colComment}")
     private $!{cb.propertyType} $!{cb.propertyName};
 #end
 

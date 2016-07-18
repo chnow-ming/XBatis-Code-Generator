@@ -45,7 +45,12 @@ public class Gen {
        // tconfig.put("lottery_prize", TableConfig.build("lottery_prize").setCustomField(false));
         //.setSplitTable(true).addQueryMethodAndCol("getTradeListByShopId", new String[] { "shop_id","buyer_nick" })
         //.addQueryMethodAndCol("getTradeByShopId", new String[] { "shop_id" }));;
-        tconfig.put("lottery_win", TableConfig.build("lottery_win"));
+//        tconfig.put("ls_game_role", TableConfig.build("ls_game_role"));
+//        tconfig.put("ls_game_roletype", TableConfig.build("ls_game_roletype"));
+        tconfig.put("ls_zone_goodjob", TableConfig.build("ls_zone_goodjob"));
+        tconfig.put("ls_zone_noread", TableConfig.build("ls_zone_noread"));
+        tconfig.put("ls_zone_publish", TableConfig.build("ls_zone_publish"));
+        tconfig.put("ls_zone_reply", TableConfig.build("ls_zone_reply"));
 //        tconfig.put("erp_user", TableConfig.build("erp_user").setTablePrefix("erp_").addQueryMethodAndCol("getUserByVisitorId", new String[] { "visitor_id" })
 //                                                             .addQueryMethodAndCol("getUserByUserId", new String[]{"user_id"})
 //                                                             .addQueryMethodAndCol("getUserByNickName", new String[]{"name"})
@@ -211,7 +216,8 @@ public class Gen {
             }
             // 生成SqlMap配置文件
             String sqlmapVm = settings.getTmplPath() + PATH_RESOURCES + "sqlmap/-sqlmap.xml.vm";
-            String sqlmapDir = settings.getGenPath() + settings.getTmplPath() + PATH_RESOURCES + globalBean.getPackageName().replace(".", "/")+"/mapper/";
+            //String sqlmapDir = settings.getGenPath() + settings.getTmplPath() + PATH_RESOURCES + globalBean.getPackageName().replace(".", "/")+"/mapper/";
+            String sqlmapDir = settings.getGenPath() + settings.getTmplPath() + PATH_RESOURCES +"/mapper/";
             FileUtil.mkDirs(sqlmapDir);
             System.out.println("新的路径："+sqlmapDir);
             VelocityTemplate.mergeTemplate(sqlmapVm, sqlmapDir + tableBean.getClassName() + "Mapper.xml", ctx);

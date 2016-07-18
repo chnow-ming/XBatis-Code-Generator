@@ -74,7 +74,7 @@ import java.sql.Clob;
 import $!{gb.packageName}.dto.$!{tbb.className}Query;
 #end
 import $!{gb.packageName}.pojo.$!{tbb.className}${PO};
-import com.ct.Base.BaseMapper;
+import com.cz.base.mapper.BaseMapper;
 
 /**
  * @author  $!{gb.userName}
@@ -82,6 +82,6 @@ import com.ct.Base.BaseMapper;
  */
 
 
-public interface $!{tbb.className}Mapper extends BaseMapper<$!{tbb.className}, Long>{
+public interface $!{tbb.className}Mapper extends BaseMapper<$!{tbb.className}, $!{tbb.className}Query,Long>{
 
 }
