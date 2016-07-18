@@ -70,7 +70,7 @@ $type#end
 	#allField( $tbb )
     </sql>
     
-    <sql id="selectParams">
+    <sql id="selectParamsForPage">
     <if test="page_object != null">
     <where>
      #foreach($cb in $tbb.colList)
@@ -92,6 +92,28 @@ $type#end
             #end
     </where>
     </if>
+    </sql>
+    
+    <sql id="selectParams">
+    <where>
+     #foreach($cb in $tbb.colList)
+      			#if($cb.propertyType !="Date" )
+      				<if test="$!{cb.propertyName} != null and $!{cb.propertyName} != ''" >
+     				AND  $cb.colNameCheck = #{$!{cb.propertyName},jdbcType=#validJT(${cb.colType})} 
+     				 </if>
+                #elseif(${cb.colName}!=${conf.addField} && ${cb.colName}!=${conf.updField})
+                    <if test="$!{cb.propertyName}Start != null" >
+                    AND <![CDATA[  $!{cb.colNameCheck} >= #{$!{cb.propertyName}Start,jdbcType=#validJT(${cb.colType})} ]]>
+                    </if>
+                    <if test="$!{cb.propertyName}End != null " >
+                     AND <![CDATA[  $!{cb.colNameCheck} <= #{$!{cb.propertyName}End,jdbcType=#validJT(${cb.colType})} ]]>
+                    </if>
+                    <if test="$!{cb.propertyName}Equal != null " >
+			             AND   <![CDATA[  $!{cb.colNameCheck} = #{$!{cb.propertyName}Equal,jdbcType=#validJT(${cb.colType})} ]]>
+                    </if>
+                #end
+            #end
+    </where>
     </sql>
 
     #if($conf.isGetByKey())
@@ -164,7 +186,7 @@ $type#end
     <!-- 搜索分页列表信息 -->
     <select id="selectListByNewPage" parameterType="map" resultMap="${tbb.objectName}">
     select <include refid="Base_Column_List" /> from ${tbb.tableName}
-    <include refid="selectParams" />
+    <include refid="selectParamsForPage" />
     </select>
 
     ##add代码
