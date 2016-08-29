@@ -69,31 +69,29 @@ $type#end
     <sql id="Base_Column_List">
 	#allField( $tbb )
     </sql>
-    
+    <!--分页（map分页）信息用的查询条件-->
     <sql id="selectParamsForPage">
-    <if test="page_object != null">
     <where>
      #foreach($cb in $tbb.colList)
       			#if($cb.propertyType !="Date" )
-      				<if test="page_object.$!{cb.propertyName} != null and page_object.$!{cb.propertyName} != ''" >
-     				AND  $cb.colNameCheck = #{page_object.$!{cb.propertyName},jdbcType=#validJT(${cb.colType})} 
+      				<if test="$!{cb.propertyName} != null and $!{cb.propertyName} != ''" >
+     				AND  $cb.colNameCheck = #{$!{cb.propertyName},jdbcType=#validJT(${cb.colType})} 
      				 </if>
                 #elseif(${cb.colName}!=${conf.addField} && ${cb.colName}!=${conf.updField})
-                    <if test="page_object.$!{cb.propertyName}Start != null" >
+                    <if test="$!{cb.propertyName}Start != null" >
                     AND <![CDATA[  $!{cb.colNameCheck} >= #{$!{cb.propertyName}Start,jdbcType=#validJT(${cb.colType})} ]]>
                     </if>
-                    <if test="page_object.$!{cb.propertyName}End != null " >
+                    <if test="$!{cb.propertyName}End != null " >
                      AND <![CDATA[  $!{cb.colNameCheck} <= #{$!{cb.propertyName}End,jdbcType=#validJT(${cb.colType})} ]]>
                     </if>
-                    <if test="page_object.$!{cb.propertyName}Equal != null " >
+                    <if test="$!{cb.propertyName}Equal != null " >
 			             AND   <![CDATA[  $!{cb.colNameCheck} = #{$!{cb.propertyName}Equal,jdbcType=#validJT(${cb.colType})} ]]>
                     </if>
                 #end
             #end
     </where>
-    </if>
     </sql>
-    
+    <!--不分页用的查询条件-->
     <sql id="selectParams">
     <where>
      #foreach($cb in $tbb.colList)
@@ -155,6 +153,34 @@ $type#end
         </where>
     </delete>
     #end
+    
+    #if($conf.isUpdateKey())
+        <!-- 根据主键更新（包括为空） -->
+        ##假设没有数据变化则不会产生io操作
+        ##去除更新时间插入时间的字段,有数据变更，时间修改交给数据库执行
+        <update id="updateByPrimaryKey" parameterType="$!{gb.packageName}.pojo.${tbb.className}${PO}">
+            UPDATE ${tbb.tableName}
+            <set >
+                #foreach($cb in $tbb.colList)
+                ##设置变量判断是否主键
+                	#set($fff=0)
+	                #foreach($pkb in $tbb.pkcol)
+	                #if(${cb.colName}!=${pkb.colName})
+	                 #set($fff=1)
+	                #break
+	                #end
+	                #end
+                #if(${cb.colName}!=${conf.addField} && ${cb.colName}!=${conf.updField}
+                && ${fff}!=0)
+                            $cb.colNameCheck = #{$!{cb.propertyName},jdbcType=#validJT(${cb.colType})},
+                #end
+            #end
+            </set>
+            <where>
+            #pklFieldAndValue( $tbb )
+            </where>
+        </update>
+    #end
 
     #if($conf.isUpdateKey())
         <!-- 根据主键更新 -->
@@ -164,7 +190,16 @@ $type#end
             UPDATE ${tbb.tableName}
             <set >
                 #foreach($cb in $tbb.colList)
-                #if(${cb.colName}!=${conf.addField} && ${cb.colName}!=${conf.updField})
+                ##设置变量判断是否主键
+                	#set($fff=0)
+	                #foreach($pkb in $tbb.pkcol)
+	                #if(${cb.colName}!=${pkb.colName})
+	                 #set($fff=1)
+	                #break
+	                #end
+	                #end
+                #if(${cb.colName}!=${conf.addField} && ${cb.colName}!=${conf.updField}
+                && ${fff}!=0)
                    <if test="$!{cb.propertyName} != null" >
                             $cb.colNameCheck = #{$!{cb.propertyName},jdbcType=#validJT(${cb.colType})},
                     </if>
@@ -176,6 +211,44 @@ $type#end
             </where>
         </update>
     #end
+    
+    
+     #if($conf.isUpdateKey())
+        <!-- 根据主键批量更新 -->
+        ##假设没有数据变化则不会产生io操作
+        ##去除更新时间插入时间的字段,有数据变更，时间修改交给数据库执行
+        <update id="batchUpdate" parameterType="java.util.List">
+            UPDATE ${tbb.tableName}
+            <set >
+                #foreach($cb in $tbb.colList)
+                ##设置变量判断是否主键
+                	#set($fff=0)
+	                #foreach($pkb in $tbb.pkcol)
+	                #if(${cb.colName}!=${pkb.colName})
+	                 #set($fff=1)
+	                #break
+	                #end
+	                #end
+                #if(${cb.colName}!=${conf.addField} && ${cb.colName}!=${conf.updField}
+                 && ${fff}!=0
+                )
+                 <trim prefix="$!{cb.isPK} $cb.colNameCheck =case" suffix="end,">
+	                <foreach collection="list" item="item" index="index">
+	                    <if test="item.$!{cb.propertyName} != null" >
+	                        when #pklFieldAndValue( $tbb ) then
+	                        #{item.$!{cb.propertyName}}
+	                    </if>
+	                </foreach>
+            	</trim>
+                #end
+            #end
+            </set>
+            <where>
+            		 #pklFieldAndValues($tbb)
+            </where>
+        </update>
+    #end
+    
    
     <!-- 搜索列表信息 -->
     <select id="selectList" parameterType="map" resultMap="${tbb.objectName}">
@@ -203,6 +276,24 @@ $type#end
     #end
     )
     </insert>
+    
+    <!--批量保存所有字段-->
+    <insert id="batchInsert" parameterType="java.util.List">
+    INSERT INTO ${tbb.tableName}(
+    #foreach($cb in $tbb.colList)
+       $!{cb.colNameCheck} #if(!$foreach.last),#end
+    #end
+    )
+    VALUES
+    <foreach collection="list" item="item" separator="," index = "index">
+            (
+            #foreach($cb in $tbb.colList)
+       			 #{item.$!{cb.propertyName},jdbcType=#validJT(${cb.colType})} #if(!$foreach.last),#end
+    		#end
+    		)
+    </foreach>
+    </insert>
+    
     
     ##add代码
     <!--保存所有不为空的字段-->

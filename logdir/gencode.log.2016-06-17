@@ -387,7 +387,7 @@
 2016-06-17 16:49:36,087 INFO  daogen.Settings - 数据库DAO代码生成环境配置信息如下：
 2016-06-17 16:49:36,088 INFO  daogen.Settings - DB_USER=root
 2016-06-17 16:49:36,088 INFO  daogen.Settings - DB_PORT=3306
-2016-06-17 16:49:36,088 INFO  daogen.Settings - JAVA_PACKAGE=com.cz.ming
+2016-06-17 16:49:36,088 INFO  daogen.Settings - JAVA_PACKAGE=com.lunjar.ming
 2016-06-17 16:49:36,088 INFO  daogen.Settings - DB_NAME=lottery
 2016-06-17 16:49:36,088 INFO  daogen.Settings - DB_PWD=root
 2016-06-17 16:49:36,088 INFO  daogen.Settings - DB_TYPE=Mysql
@@ -533,7 +533,7 @@
 2016-06-17 17:39:51,711 INFO  daogen.Settings - 数据库DAO代码生成环境配置信息如下：
 2016-06-17 17:39:51,711 INFO  daogen.Settings - DB_USER=root
 2016-06-17 17:39:51,711 INFO  daogen.Settings - DB_PORT=3306
-2016-06-17 17:39:51,711 INFO  daogen.Settings - JAVA_PACKAGE=com.cz.ming
+2016-06-17 17:39:51,711 INFO  daogen.Settings - JAVA_PACKAGE=com.lunjar.ming
 2016-06-17 17:39:51,711 INFO  daogen.Settings - DB_NAME=lottery
 2016-06-17 17:39:51,711 INFO  daogen.Settings - DB_PWD=root
 2016-06-17 17:39:51,711 INFO  daogen.Settings - DB_TYPE=Mysql
@@ -679,7 +679,7 @@
 2016-06-17 17:40:59,159 INFO  daogen.Settings - 数据库DAO代码生成环境配置信息如下：
 2016-06-17 17:40:59,159 INFO  daogen.Settings - DB_USER=root
 2016-06-17 17:40:59,159 INFO  daogen.Settings - DB_PORT=3306
-2016-06-17 17:40:59,159 INFO  daogen.Settings - JAVA_PACKAGE=com.cz.ming
+2016-06-17 17:40:59,159 INFO  daogen.Settings - JAVA_PACKAGE=com.lunjar.ming
 2016-06-17 17:40:59,159 INFO  daogen.Settings - DB_NAME=lottery
 2016-06-17 17:40:59,159 INFO  daogen.Settings - DB_PWD=root
 2016-06-17 17:40:59,159 INFO  daogen.Settings - DB_TYPE=Mysql

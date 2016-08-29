@@ -36,7 +36,7 @@ import java.math.BigDecimal;
 #end
 #end
 
-import com.cz.base.service.BaseService;
+import com.lunjar.base.service.BaseService;
 import $!{gb.packageName}.pojo.$!{tbb.className}${PO};
 import $!{gb.packageName}.dto.$!{tbb.className}Query;
 /**

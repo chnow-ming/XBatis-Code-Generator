@@ -59,7 +59,7 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Component;
 import $!{gb.packageName}.pojo.$!{tbb.className}${PO};
 import $!{gb.packageName}.dto.$!{tbb.className}Query;
-import com.cz.base.service.impl.BaseServiceImpl;
+import com.lunjar.base.service.impl.BaseServiceImpl;
 import $!{gb.packageName}.service.$!{tbb.className}Service;
 /**
  * @author $!{gb.userName}
