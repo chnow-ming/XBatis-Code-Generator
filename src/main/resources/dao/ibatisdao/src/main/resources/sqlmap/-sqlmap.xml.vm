@@ -28,6 +28,11 @@
         ${pkcol.colNameCheck}=#{${pkcol.propertyName}} #if(!$foreach.last) AND #end
     #end
 #end
+#macro(pklFieldAndValueitem $tbb)
+    #foreach($pkcol in $tbb.pkcol)
+        ${pkcol.colNameCheck}=#{item.${pkcol.propertyName}} #if(!$foreach.last) AND #end
+    #end
+#end
 ##jdbcType转换
 #macro(validJT $type)
 #if("DATETIME"==($type)) 
@@ -46,6 +51,19 @@ $type#end
                 <foreach item="item" index="index" collection="list" open="("
 			        separator="," close=")">
 			        #{item}
+			    </foreach>
+        #end
+    #end
+#end
+#macro(pklFieldAndValuesid $tbb)
+    #foreach($pkcol in $tbb.pkcol)
+        #if(!$foreach.last)
+            ${pkcol.colNameCheck}=#{${pkcol.propertyName}} AND
+        #else
+            ${pkcol.colNameCheck} in
+                <foreach item="item" index="index" collection="list" open="("
+			        separator="," close=")">
+			        #{item.id}
 			    </foreach>
         #end
     #end
@@ -235,7 +253,7 @@ $type#end
                  <trim prefix="$!{cb.isPK} $cb.colNameCheck =case" suffix="end,">
 	                <foreach collection="list" item="item" index="index">
 	                    <if test="item.$!{cb.propertyName} != null" >
-	                        when #pklFieldAndValue( $tbb ) then
+	                        when #pklFieldAndValueitem( $tbb ) then
 	                        #{item.$!{cb.propertyName}}
 	                    </if>
 	                </foreach>
@@ -244,7 +262,7 @@ $type#end
             #end
             </set>
             <where>
-            		 #pklFieldAndValues($tbb)
+            		 #pklFieldAndValuesid($tbb)
             </where>
         </update>
     #end
