@@ -275,7 +275,7 @@ $type#end
     </select>
     
     <!-- 搜索分页列表信息 -->
-    <select id="selectListByNewPage" parameterType="map" resultMap="${tbb.objectName}">
+    <select id="selectListByPage" parameterType="map" resultMap="${tbb.objectName}">
     select <include refid="Base_Column_List" /> from ${tbb.tableName}
     <include refid="selectParamsForPage" />
     </select>
@@ -315,7 +315,7 @@ $type#end
     
     ##add代码
     <!--保存所有不为空的字段-->
-    <insert id="insertSelective" parameterType="$!{gb.packageName}.pojo.${tbb.className}${PO}">
+    <insert id="insertSelective" parameterType="$!{gb.packageName}.pojo.${tbb.className}${PO}" useGeneratedKeys="true" keyProperty="id">
         INSERT INTO ${tbb.tableName}
        <trim prefix="(" suffix=")" suffixOverrides="," >
             ##循环所有字段
