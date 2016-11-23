@@ -32,9 +32,10 @@ import java.math.BigDecimal;
 #end
 #end
 import java.io.Serializable;
+import com.lunjar.util.ColumDesc;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-
+import org.hibernate.validator.constraints.Length;
 /**
  *
  * @author  $!{gb.userName}
@@ -52,7 +53,11 @@ public class $!{tbb.className}${PO} implements Serializable{
 	/**
      * $!{cb.colComment}
      */
+#if($cb.propertyType =="String" )
+    @Length(max=$!{cb.precision},message="$!{cb.colComment}长度不能超过$!{cb.precision}")
+#end
     @ApiModelProperty(value = "$!{cb.colComment}")
+    @ColumDesc(value = "$!{cb.colComment}")
     private $!{cb.propertyType} $!{cb.propertyName};
 #end
 

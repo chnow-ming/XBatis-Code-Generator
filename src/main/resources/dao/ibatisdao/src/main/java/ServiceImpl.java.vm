@@ -59,7 +59,7 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Component;
 import $!{gb.packageName}.pojo.$!{tbb.className}${PO};
 import $!{gb.packageName}.dto.$!{tbb.className}Query;
-import com.lunjar.base.service.impl.BaseServiceImpl;
+import com.lunjar.base.BaseServiceImpl;
 import $!{gb.packageName}.service.$!{tbb.className}Service;
 /**
  * @author $!{gb.userName}
@@ -68,5 +68,5 @@ import $!{gb.packageName}.service.$!{tbb.className}Service;
 @Component
 public class $!{tbb.className}ServiceImpl extends BaseServiceImpl<$!{tbb.className}, $!{tbb.className}Query, Long> implements $!{tbb.className}Service{
 	
-private static final Log log = LogFactory.getLog($!{tbb.className}ServiceImpl.class);
+	private static final Log log = LogFactory.getLog($!{tbb.className}ServiceImpl.class);
 }

@@ -74,7 +74,7 @@ import java.sql.Clob;
 import $!{gb.packageName}.dto.$!{tbb.className}Query;
 #end
 import $!{gb.packageName}.pojo.$!{tbb.className}${PO};
-import com.lunjar.base.mapper.BaseMapper;
+import com.lunjar.base.LotteryBaseMapper;
 
 /**
  * @author  $!{gb.userName}
@@ -82,6 +82,6 @@ import com.lunjar.base.mapper.BaseMapper;
  */
 
 
-public interface $!{tbb.className}Mapper extends BaseMapper<$!{tbb.className}, $!{tbb.className}Query,Long>{
+public interface $!{tbb.className}Mapper extends LotteryBaseMapper<$!{tbb.className}, $!{tbb.className}Query,Long>{
 
 }

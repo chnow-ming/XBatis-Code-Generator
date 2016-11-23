@@ -1,5 +1,6 @@
 package com.raycloud.util.daogen;
 
+import java.net.URLDecoder;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
@@ -264,5 +265,12 @@ public class DbConn {
 			logger.error("关闭Statement出错", e);
 		}
 		return;
+	}
+	
+	public static void main(String[] args) {
+		String a = "http%3A%2F%2Fq.qlogo.cn%2Fqqapp%2F100273020%2F00000000000000000000000007F3D6A7%2F40";
+		
+		;
+		System.out.println(URLDecoder.decode(a));
 	}
 }

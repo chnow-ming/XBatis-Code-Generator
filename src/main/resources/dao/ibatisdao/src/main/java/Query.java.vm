@@ -33,12 +33,13 @@ package $!{gb.packageName}.dto;
 
 import java.util.*;
 import java.io.Serializable;
+import com.lunjar.base.PageQuery;
 
 /**
  *查询实体类
  * @author $!{gb.userName}
  */
-public class $!{tbb.className}Query implements Serializable {
+public class $!{tbb.className}Query extends PageQuery implements Serializable {
 
  	/**
 	 *序列化ID
@@ -50,9 +51,11 @@ public class $!{tbb.className}Query implements Serializable {
 #if($!{cb.propertyType}!="Date")
 	/** $!{cb.colComment} **/
     private $!{cb.propertyType} $!{cb.propertyName};
+	
 	public $!{cb.propertyType} get$!{cb.methodName} () {
     	return $!{cb.propertyName};
    	}
+   	
     public $!{tbb.className}Query set$!{cb.methodName}($!{cb.propertyType} $!{cb.propertyName}) {
     	this.$!{cb.propertyName} = $!{cb.propertyName};
     	return this;
@@ -60,27 +63,33 @@ public class $!{tbb.className}Query implements Serializable {
 #elseif(${cb.colName}!=${conf.addField} && ${cb.colName}!=${conf.updField})
     /** $!{cb.colComment} **/
     private $!{cb.propertyType} $!{cb.propertyName}Start;
+    
     public $!{cb.propertyType} get$!{cb.methodName}Start () {
         return $!{cb.propertyName}Start;
     }
+    
     public $!{tbb.className}Query set$!{cb.methodName}Start($!{cb.propertyType} $!{cb.propertyName}) {
         this.$!{cb.propertyName}Start = $!{cb.propertyName};
         return this;
     }
 
     private $!{cb.propertyType} $!{cb.propertyName}End;
+    
     public $!{cb.propertyType} get$!{cb.methodName}End () {
         return $!{cb.propertyName}End;
     }
+    
     public $!{tbb.className}Query set$!{cb.methodName}End($!{cb.propertyType} $!{cb.propertyName}) {
         this.$!{cb.propertyName}End = $!{cb.propertyName};
         return this;
     }
 
     private $!{cb.propertyType} $!{cb.propertyName}Equal;
+    
     public $!{cb.propertyType} get$!{cb.methodName}Equal () {
         return $!{cb.propertyName}Equal;
     }
+    
     public $!{tbb.className}Query set$!{cb.methodName}Equal($!{cb.propertyType} $!{cb.propertyName}) {
         this.$!{cb.propertyName}Equal = $!{cb.propertyName};
         return this;

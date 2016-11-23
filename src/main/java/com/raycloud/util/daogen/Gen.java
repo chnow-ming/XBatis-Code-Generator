@@ -47,7 +47,38 @@ public class Gen {
         //.addQueryMethodAndCol("getTradeByShopId", new String[] { "shop_id" }));;
 //        tconfig.put("ls_game_role", TableConfig.build("ls_game_role"));
 //        tconfig.put("ls_game_roletype", TableConfig.build("ls_game_roletype"));
-        tconfig.put("test", TableConfig.build("test"));
+       // tconfig.put("common_jdsession", TableConfig.build("common_jdsession"));
+        //tconfig.put("lottery_activity", TableConfig.build("lottery_activity"));
+       // tconfig.put("template_picture", TableConfig.build("template_picture"));
+        //tconfig.put("comment_like", TableConfig.build("comment_like"));
+       // tconfig.put("login_history", TableConfig.build("login_history"));
+        tconfig.put("article", TableConfig.build("article"));
+        tconfig.put("article_type", TableConfig.build("article_type"));
+//        tconfig.put("lottery_history", TableConfig.build("lottery_history"));
+//        tconfig.put("lottery_prize", TableConfig.build("lottery_prize"));
+//        tconfig.put("lottery_record", TableConfig.build("lottery_record"));
+//        tconfig.put("lottery_win", TableConfig.build("lottery_win"));
+       // tconfig.put("lottery_act_comment", TableConfig.build("lottery_act_comment"));
+      //  tconfig.put("template_prototype", TableConfig.build("template_prototype"));
+        //tconfig.put("lottery_comment_activity", TableConfig.build("lottery_comment_activity"));
+       // tconfig.put("template_prototype_type", TableConfig.build("template_prototype_type"));
+    	 //tconfig.put("lottery_dynamic", TableConfig.build("lottery_dynamic"));
+    	 //tconfig.put("lottery_count", TableConfig.build("lottery_count"));
+    	// tconfig.put("lottery_visit", TableConfig.build("lottery_visit"));
+    	// tconfig.put("lottery_visit_history", TableConfig.build("lottery_visit_history"));
+//        tconfig.put("bean_plan", TableConfig.build("bean_plan"));
+//        tconfig.put("bean_plan_count", TableConfig.build("bean_plan_count"));
+      //  tconfig.put("login_history", TableConfig.build("login_history"));
+//        tconfig.put("model", TableConfig.build("model"));
+//        tconfig.put("model_type", TableConfig.build("model_type"));
+//        tconfig.put("poster", TableConfig.build("poster"));
+//        tconfig.put("poster_count", TableConfig.build("poster_count"));
+//        tconfig.put("poster_page", TableConfig.build("poster_page"));
+//        tconfig.put("poster_page_font", TableConfig.build("poster_page_font"));
+//        tconfig.put("poster_page_img", TableConfig.build("poster_page_img"));
+//        tconfig.put("poster_page_ware", TableConfig.build("poster_page_ware"));
+//        tconfig.put("poster_visit", TableConfig.build("poster_visit"));
+//        tconfig.put("poster_visit_history", TableConfig.build("poster_visit_history"));
 //        tconfig.put("erp_user", TableConfig.build("erp_user").setTablePrefix("erp_").addQueryMethodAndCol("getUserByVisitorId", new String[] { "visitor_id" })
 //                                                             .addQueryMethodAndCol("getUserByUserId", new String[]{"user_id"})
 //                                                             .addQueryMethodAndCol("getUserByNickName", new String[]{"name"})

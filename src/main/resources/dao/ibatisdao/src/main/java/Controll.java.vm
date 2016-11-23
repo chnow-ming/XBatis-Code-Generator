@@ -6,19 +6,38 @@
 ##$!{tbb.className}类名，如：UserInfo
 ##$!{tbb.objectName}对象名，如：userInfo
 ##宏定义,用于单一对象的删除与查找的参数
-#macro(primaryKey)
+#macro(primaryKey $tbb)
     #foreach($pkcol in $tbb.pkcol) $!{pkcol.propertyType} $!{pkcol.propertyName}  #if(!$foreach.last), #end #end
     #if($conf.isSplitTable()), String tableId#end
 #end
 ##宏定义,用于多对象的删除与查找的参数
 #macro( primaryKeys $tbb )
     #foreach($pkcol in $tbb.pkcol)#if($foreach.last)List<$!{pkcol.propertyType}> $!{pkcol.propertyName}List#else$!{pkcol.propertyType} $!{pkcol.propertyName},#end#end
-#if($conf.isSplitTable()), String tableId#end
+    #if($conf.isSplitTable()), String tableId#end
+#end
+##主键值
+#macro( primaryValue $tbb)
+    #foreach($pkcol in $tbb.pkcol)$!{pkcol.propertyName}  #if(!$foreach.last), #end #end
+    #if($conf.isSplitTable()), tableId #end
+#end
+##主键值
+#macro( primaryValues $tbb )
+    #foreach($pkcol in $tbb.pkcol)#if($foreach.last)$!{pkcol.propertyName}List#else $!{pkcol.propertyName},#end#end
+    #if($conf.isSplitTable()), tableId #end
+#end
+#macro( tableType $isSplitTable )
+    #if($isSplitTable), String tableId#end
+#end
+#macro( tableValue $isSplitTable )
+    #if($isSplitTable)
+        #if($isSplitTable), tableId#end
+    #end
 #end
 #set($conf=$!{tbb.conf})
 #set($PO = $!{gb.objSuffix})
 #set($clear = "")
-package $!{gb.packageName}.service;
+package $!{gb.packageName}.controll;
+
 
 #foreach($cb in $tbb.colList)
 #if($!{cb.propertyType}=="Clob"&&!$clob)
@@ -35,14 +54,19 @@ import java.math.BigDecimal;
 #set($bigDecimal=true)
 #end
 #end
-
-import com.lunjar.base.BaseService;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.springframework.stereotype.Component;
 import $!{gb.packageName}.pojo.$!{tbb.className}${PO};
 import $!{gb.packageName}.dto.$!{tbb.className}Query;
+import com.lunjar.base.BaseServiceImpl;
+import $!{gb.packageName}.service.$!{tbb.className}Service;
 /**
  * @author $!{gb.userName}
  * @since $!{gb.nowDate}
  */
-public interface $!{tbb.className}Service extends BaseService<$!{tbb.className}, $!{tbb.className}Query, Long>{
-  
+@Component
+public class $!{tbb.className}ServiceImpl extends BaseServiceImpl<$!{tbb.className}, $!{tbb.className}Query, Long> implements $!{tbb.className}Service{
+	
+private static final Log log = LogFactory.getLog($!{tbb.className}ServiceImpl.class);
 }

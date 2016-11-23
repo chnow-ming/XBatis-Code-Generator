@@ -1,0 +1,186 @@
+##DAO实现代码生成模版
+##使用到的变量有：
+##$!{gb.packageName}包名，如：net.letuu.order
+##$!{gb.userName}机器登录用户名，如：microboss
+##$!{gb.nowDate}当前日期，如：2013-05-02
+##$!{tbb.className}类名，如：UserInfo
+##$!{tbb.objectName}对象名，如：userInfo
+##宏定义,用于单一对象的删除与查找的参数
+#macro(primaryKey $tbb)
+    #foreach($pkcol in $tbb.pkcol) $!{pkcol.propertyType} $!{pkcol.propertyName}  #if(!$foreach.last), #end #end
+    #if($conf.isSplitTable()), String tableId#end
+#end
+##宏定义,用于多对象的删除与查找的参数
+#macro( primaryKeys $tbb )
+    #foreach($pkcol in $tbb.pkcol)#if($foreach.last)List<$!{pkcol.propertyType}> $!{pkcol.propertyName}List#else$!{pkcol.propertyType} $!{pkcol.propertyName},#end#end
+    #if($conf.isSplitTable()), String tableId#end
+#end
+##主键值
+#macro( primaryValue $tbb)
+    #foreach($pkcol in $tbb.pkcol)$!{pkcol.propertyName}  #if(!$foreach.last), #end #end
+    #if($conf.isSplitTable()), tableId #end
+#end
+##主键值
+#macro( primaryValues $tbb )
+    #foreach($pkcol in $tbb.pkcol)#if($foreach.last)$!{pkcol.propertyName}List#else $!{pkcol.propertyName},#end#end
+    #if($conf.isSplitTable()), tableId #end
+#end
+#macro( tableType $isSplitTable )
+    #if($isSplitTable), String tableId#end
+#end
+#macro( tableValue $isSplitTable )
+    #if($isSplitTable)
+        #if($isSplitTable), tableId#end
+    #end
+#end
+#set($conf=$!{tbb.conf})
+#set($PO = $!{gb.objSuffix})
+#set($clear = "")
+package $!{gb.packageName}.action;
+
+import com.github.pagehelper.PageInfo;
+import javax.servlet.http.HttpServletRequest;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+import $!{gb.packageName}.pojo.$!{tbb.className}${PO};
+import $!{gb.packageName}.dto.$!{tbb.className}Query;
+import $!{gb.packageName}.service.$!{tbb.className}Service;
+import $!{gb.packageName}.util.ISparams;
+import $!{gb.packageName}.util.PublicUtil;
+/**
+ * @author $!{gb.userName}
+ * @since $!{gb.nowDate}
+ */
+@Controller
+@RequestMapping("/manager/$!{tbb.objectName}/")
+public class $!{tbb.className}Action implements ISparams{
+	
+	private static final Log log = LogFactory.getLog($!{tbb.className}Action.class);
+	
+	@Autowired
+	private $!{tbb.className}Service $!{tbb.objectName}Service;
+	
+	/**
+	 * 跳转到新增页面
+	 * @param model
+	 * @param request
+	 * @return
+	 */
+	@RequestMapping(value="toAdd",method=RequestMethod.POST)
+	public ModelAndView toAdd(Model model,HttpServletRequest request){
+		ModelAndView mv = new ModelAndView("promotion/$!{tbb.objectName}/add");
+		mv.addObject(model);
+		return mv;
+	}
+	
+	/**
+	 * 新增
+	 * @param $!{tbb.objectName}
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping(value="add",method=RequestMethod.POST)
+	public ModelAndView add($!{tbb.className} $!{tbb.objectName},Model model,HttpServletRequest request){
+		ModelAndView mv = new ModelAndView("promotion/$!{tbb.objectName}/list");
+		int i = $!{tbb.objectName}Service.insertSelective($!{tbb.objectName});
+		if(i>0){
+			model.addAttribute("data", "添加成功");
+		}else{
+			throw new RuntimeException("添加失败");
+		}
+		model.addAttribute("type", $!{tbb.objectName});
+		mv.addObject(model);
+		return mv;
+	}
+	
+	
+	/**
+	 * 删除
+	 * @param id
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping(value="delete/{id}")
+	public ModelAndView delete(@PathVariable("id")Long id,Model model){
+		ModelAndView mv = new ModelAndView("redirect:/manager/arcitleType/list");
+		$!{tbb.objectName}Service.deleteByPrimaryKey(id);
+		mv.addObject(model);
+		return mv;
+	}
+	
+	/**
+	 * 跳转修改页面
+	 * @param id
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping(value="toUpdate/{id}")
+	public ModelAndView toUpdate(@PathVariable("id")Long id,Model model){
+		ModelAndView mv = new ModelAndView("promotion/$!{tbb.objectName}/add");
+		$!{tbb.className} $!{tbb.objectName} = $!{tbb.objectName}Service.selectByPrimaryKey(id);
+		model.addAttribute("$!{tbb.objectName}", $!{tbb.objectName});
+		mv.addObject(model);
+		return mv;
+	}
+	
+	
+	/**
+	 * 修改类型方法
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping(value="update",method=RequestMethod.POST)
+	public ModelAndView update($!{tbb.className} $!{tbb.objectName},Model model){
+		ModelAndView mv = new ModelAndView("redirect:/manager/arcitleType/list");
+		if($!{tbb.objectName}.getId()==null){
+			throw new RuntimeException("修改失败，id不能为空");
+		}
+		int i = $!{tbb.objectName}Service.updateByPrimaryKeySelective($!{tbb.objectName});
+		if(i>0){
+			model.addAttribute("data", "修改成功");
+		}else{
+			throw new RuntimeException("修改失败");
+		}
+		mv.addObject(model);
+		return mv;
+	}
+	
+	/**
+	 * 根据id查看详情
+	 * @param id
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping(value="view/{id}",method=RequestMethod.GET)
+	public ModelAndView view(@PathVariable("id")Long id,Model model){
+		ModelAndView mv = new ModelAndView("promotion/$!{tbb.objectName}/add");
+		$!{tbb.className} $!{tbb.objectName} = $!{tbb.objectName}Service.selectByPrimaryKey(id);
+		model.addAttribute("$!{tbb.objectName}", $!{tbb.objectName});
+		mv.addObject(model);
+		return mv;
+	}
+
+	/**
+	 * 搜索列表
+	 * @param pageQuery
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping(value="list")
+	public ModelAndView list($!{tbb.className}Query $!{tbb.objectName}Query,Model model){
+		ModelAndView mv = new ModelAndView("promotion/TemplatePrototypeType/list");
+		PageInfo<$!{tbb.className}> data  = $!{tbb.objectName}Service.selectListByPage($!{tbb.objectName}Query);
+		PublicUtil.initPage(data, $!{tbb.objectName}Query);
+		model.addAttribute(PAGE_QUERY, $!{tbb.objectName}Query);
+		model.addAttribute(PAGE_LIST, data);
+		mv.addObject(model);
+		return mv;
+	}
+}
