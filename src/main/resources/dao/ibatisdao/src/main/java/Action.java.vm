@@ -73,7 +73,7 @@ public class $!{tbb.className}Action implements ISparams{
 	 * @param request
 	 * @return
 	 */
-	@RequestMapping(value="toAdd",method=RequestMethod.POST)
+	@RequestMapping(value="toAdd")
 	public ModelAndView toAdd(Model model,HttpServletRequest request){
 		ModelAndView mv = new ModelAndView("promotion/$!{tbb.objectName}/add");
 		mv.addObject(model);
