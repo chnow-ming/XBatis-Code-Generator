@@ -175,7 +175,7 @@ public class $!{tbb.className}Controller implements ISparams{
 	@ApiOperation(value = "实例列表",
 			notes = "")
 	@RequestMapping(value="list",method=RequestMethod.POST)  
-	public ModelMap list(@RequestBody $!{tbb.className}Query query, BindingResult result,HttpServletRequest request) {
+	public ModelMap list(@RequestBody(required=false) $!{tbb.className}Query query, BindingResult result,HttpServletRequest request) {
 		ModelMap map = new ModelMap();
 		PageInfo<$!{tbb.className}> data = $!{tbb.objectName}Service.selectListByPage(query);
 		map.put(PAGE_QUERY, query);
