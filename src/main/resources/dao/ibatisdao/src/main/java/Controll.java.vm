@@ -83,7 +83,7 @@ import $!{gb.packageName}.util.PublicUtil;
 
 @Api(value = "/接口")
 @RestController
-@RequestMapping("/app/arcitleType/")
+@RequestMapping("/app/$!{tbb.objectName}/")
 public class $!{tbb.className}Controller implements ISparams{
 	
 	private static final Log log = LogFactory.getLog($!{tbb.className}Controller.class);
