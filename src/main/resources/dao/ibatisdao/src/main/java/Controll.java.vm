@@ -36,7 +36,7 @@
 #set($conf=$!{tbb.conf})
 #set($PO = $!{gb.objSuffix})
 #set($clear = "")
-package $!{gb.packageName}.controll;
+package $!{gb.packageName}.controller;
 
 
 #foreach($cb in $tbb.colList)
@@ -54,19 +54,133 @@ import java.math.BigDecimal;
 #set($bigDecimal=true)
 #end
 #end
+
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.springframework.stereotype.Component;
-import $!{gb.packageName}.pojo.$!{tbb.className}${PO};
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+import com.github.pagehelper.PageInfo;
 import $!{gb.packageName}.dto.$!{tbb.className}Query;
-import com.lunjar.base.BaseServiceImpl;
+import $!{gb.packageName}.pojo.$!{tbb.className}${PO};
 import $!{gb.packageName}.service.$!{tbb.className}Service;
+import $!{gb.packageName}.util.ISparams;
+import $!{gb.packageName}.util.PublicUtil;
+
 /**
  * @author $!{gb.userName}
  * @since $!{gb.nowDate}
  */
-@Component
-public class $!{tbb.className}ServiceImpl extends BaseServiceImpl<$!{tbb.className}, $!{tbb.className}Query, Long> implements $!{tbb.className}Service{
+
+@Api(value = "/接口")
+@RestController
+@RequestMapping("/app/arcitleType/")
+public class $!{tbb.className}Controller implements ISparams{
 	
-private static final Log log = LogFactory.getLog($!{tbb.className}ServiceImpl.class);
+	private static final Log log = LogFactory.getLog($!{tbb.className}Controller.class);
+	
+	@Autowired
+	private $!{tbb.className}Service $!{tbb.objectName}Service;
+	
+	
+
+	/**
+	 * 查看单个实例
+	 * @param id
+	 * @return
+	 */
+	@ApiOperation(value = "查看单个实例",
+			notes = "")
+	@RequestMapping(value="view/{id}",method=RequestMethod.POST)  
+    public ModelMap view(@PathVariable("id") Long id) { 
+		ModelMap map = new ModelMap();
+		$!{tbb.className} $!{tbb.objectName} = $!{tbb.objectName}Service.selectByPrimaryKey(id);
+		if($!{tbb.objectName}==null){
+			throw new RuntimeException("找不到该实例，id为："+id);
+		}
+		map.put("data", $!{tbb.objectName});
+        return PublicUtil.returnMap(map);  
+    }  
+	
+	
+	/**
+	 * 新增对象
+	 * @param poster
+	 * @return
+	 */
+	@ApiOperation(value = "新增实例，对象保存",
+			notes = "必填字段：classId,title,startTime,endTime")
+	@RequestMapping(value="add",method=RequestMethod.POST)  
+	public ModelMap add(@Valid @RequestBody $!{tbb.className} $!{tbb.objectName}, BindingResult result,HttpServletRequest request) {
+		ModelMap map = new ModelMap();
+		int i = $!{tbb.objectName}Service.insertSelective($!{tbb.objectName});
+		if(i>0){
+			map.put("flag", "新增成功");
+		}else{
+			map.put("flag", "新增失败");
+		}
+		map.put("data", $!{tbb.objectName});
+		return PublicUtil.returnMap(map);   
+	} 
+	
+	/**
+	 * 删除实例
+	 * @return
+	 */
+	@ApiOperation(value = "删除实例",
+			notes = "")
+	@RequestMapping(value="delete",method=RequestMethod.POST) 
+	public ModelMap delete(@PathVariable("id")Long id, HttpServletRequest request) {
+		ModelMap map = new ModelMap();
+		int i = $!{tbb.objectName}Service.deleteByPrimaryKey(id);
+		if(i>0){
+			map.put("flag", "删除成功");
+		}else{
+			map.put("flag", "删除失败");
+		}
+		return PublicUtil.returnMap(map);   
+	} 
+	
+	/**
+	 * 修改实例
+	 * @param $!{tbb.objectName}
+	 * @param result
+	 * @param request
+	 * @return
+	 */
+	@ApiOperation(value = "修改实例",
+			notes = "")
+	@RequestMapping(value="update",method=RequestMethod.POST)  
+	public ModelMap update(@Valid @RequestBody $!{tbb.className} $!{tbb.objectName}, BindingResult result,HttpServletRequest request) {
+		ModelMap map = new ModelMap();
+		int i = $!{tbb.objectName}Service.updateByPrimaryKeySelective($!{tbb.objectName});
+		if(i>0){
+			map.put("flag", "修改成功");
+		}else{
+			map.put("flag", "修改失败");
+		}
+		map.put("data", $!{tbb.objectName});
+		return PublicUtil.returnMap(map);   
+	} 
+	
+	@ApiOperation(value = "实例列表",
+			notes = "")
+	@RequestMapping(value="list",method=RequestMethod.POST)  
+	public ModelMap list(@RequestBody $!{tbb.className}Query query, BindingResult result,HttpServletRequest request) {
+		ModelMap map = new ModelMap();
+		PageInfo<$!{tbb.className}> data = $!{tbb.objectName}Service.selectListByPage(query);
+		map.put(PAGE_QUERY, query);
+		map.put(PAGE_LIST, data);
+		return PublicUtil.returnMap(map);   
+	} 
+	
 }
